@@ -1,0 +1,5 @@
+<script>
+  setTimeout(function() {
+ document.getElementById("dl").href = "https://drive.google.com";
+    }, 3000);
+</script>
