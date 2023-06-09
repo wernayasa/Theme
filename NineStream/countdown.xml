@@ -1,0 +1,30 @@
+<!--[ Countdown Discount by Fineshop Design ]-->
+
+<div class='cdCont mb-25'>
+  <div class='cdHeadB'>
+    <div class='cdD'>Estimasi Episode selanjutnya.</div>
+  </div>
+  <div class='cdHeadA'>
+    <div class='cdD'>Silahkan nikmati anime kalian</div>
+  </div>
+  <div class='cdTmr'>
+    <div class='cDown'>
+      <div class='cdBox'>
+        <span class='days'>00</span>
+        <span class='unit'>Days</span>
+      </div>
+      <div class='cdBox'>
+        <span class='hours'>00</span>
+        <span class='unit'>Hours</span>
+      </div>
+      <div class='cdBox'>
+        <span class='minutes'>00</span>
+        <span class='unit'>Minutes</span>
+      </div>
+      <div class='cdBox'>
+        <span class='seconds'>00</span>
+        <span class='unit'>Seconds</span>
+      </div>
+    </div>
+  </div>
+</div>

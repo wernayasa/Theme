@@ -1,0 +1,192 @@
+<style>
+  .gta-hpm h1 {
+  grid-area: h;
+}
+.side-menu {
+  grid-area: p;
+}
+.bookmark-wrap {
+  grid-area: m;
+    background: #1c1c1c;
+  padding: 15px;
+  border-radius: .3rem;
+  margin-bottom: 1.66rem;
+}
+  .gta-hpm {
+  display: grid;
+  grid-template-areas: "h h""p m";
+  grid-template-columns: 25% 1fr;
+  gap: 25px;
+}
+  .side-menu img {
+  width: 100%;
+}
+  .bsx img {
+  width: 40px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 2px;
+}
+.box {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "l r";
+  padding: 5px;
+}
+  .side-menu ul {
+  background: #1c1c1c;
+  padding: 15px;
+  border-radius: .3rem;
+  margin-bottom: 1.66rem;
+  list-style: none;
+}
+  .side-menu .menu li a {
+  display: block;
+  padding: 8px 20px;
+  border-radius: .3rem;
+  margin: 3px 0;
+  color: #ababab;
+}
+.side-menu .menu li a:hover {
+  background: #292929;
+}
+  .box:nth-child(2n-1) {
+  background: #181818;
+}
+.bsx img {
+  width: 40px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+}
+.bsx a {
+  grid-area: j;
+}
+.typez {
+  grid-area: t;
+}
+.bt {
+  grid-area: s;
+}
+.bsx img {
+  grid-area: i;
+  overflow: hidden;
+}
+  .btnRemove {
+  grid-area: r;
+}
+.bsx {
+  display: grid;
+  grid-template-areas: "i j j""i t s";
+  grid-template-columns: auto auto 1fr;
+  column-gap: 10px;
+  grid-area: l;
+}
+  .epx {
+  background: #d39e00;
+  color: #212121;
+  padding: 0 5px;
+  border-radius: 3px;
+  font-size: .8em;
+  -webkit-transition: all .15s;
+  -moz-transition: all .15s;
+  transition: all .15s;
+}
+  .btnRemove svg {
+  color: #921925;
+  padding: 5px;
+  border-radius: 2px;
+}
+  .btnRemove:hover svg{
+  color: #dc3545;
+  background: #2e2e2e;
+}
+  @media screen and (max-width: 1279px){
+  .gta-hpm{grid-template-areas: "h h""p p""m m"}
+}
+</style>
+
+<section class="side-menu">
+  <figure>
+    <img src="https://s2.bunnycdn.ru/assets/template_1/style_1/images/user-icon.png"
+         alt="User profile">
+</figure>
+  <ul class="menu"> 
+    <li><a href="user/profile">Edit Profile</a></li> 
+    <li><a href="user/watchlist" class="active">Watch List</a></li> 
+    <li><a href="user/import">MAL Import / Export</a></li> 
+    <li><a href="user/logout">Logout</a></li> </ul>
+  </section>
+<section class="bookmark-wrap">
+ <div class='clearAll more cp'>Clear All</div>
+
+<div class='notice'>Limit menyimpan daftar anime hanya 100 judul. Daftar anime disimpan di browser yang sedang kalian gunakan.Apabila anda membuka halaman ini dengan browser yang berbeda,maka daftar kalian yang sudah kalian simpan sebelumnya tidak akan tampil.</div>
+<p class="text-muted"> - Click to icon to move anime to another folder.<br> - Click to Watched/Unwatched to change watch status. </p>
+<div class='showBookmark'></div>
+
+<script>
+var bookmark = (function(){
+list = [];
+
+//Event Saving to Local Storage
+function setBookmark(){
+	localStorage.setItem('bookmark', JSON.stringify(list));
+}
+
+function loadBookmark() {
+    list = JSON.parse(localStorage.getItem('bookmark'));
+}
+
+if (localStorage.getItem("bookmark") != null) {
+    loadBookmark();
+}
+
+obj = {};
+//Clear Bookmark
+obj.clearALL = function() {
+    list = [];
+    setBookmark();
+  }
+  //Remove Bookmark    
+obj.removeThisItem = function(id) {
+    for(var item in list) {
+      if(list[item].id === id) {
+        list.splice(item, 1);
+        break;
+      }
+    }
+    setBookmark();
+  }
+  return obj;
+})();
+
+function displayIt(){
+var getData = JSON.parse(localStorage.getItem('bookmark'));
+  var structure = '';
+  for(var i in getData){
+   structure += '<article class="box" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">'
+			 +	'<div id="'+getData[i].id+'" class="bsx">'
+			 +	'<a href="'+getData[i].link+'" itemprop="url" title="'+getData[i].name+'">'+getData[i].name+'</a>'
+			 +	'<div class="typez '+getData[i].type+'"><span class="epx">'+getData[i].type+'</span></div>'
+			 +	'<div class="bt"><span class="epx">'+getData[i].status+'</span></div>'
+			 +	'<img src="'+getData[i].img+'" loading="lazy" itemprop="image" title="'+getData[i].name+'" alt="'+getData[i].name+'"></div>'
+			 +	'<div class="btnRemove" data-id="'+getData[i].id+'"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1024 1024"><path fill="currentColor" d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448s448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372s372 166.6 372 372s-166.6 372-372 372z"/><path fill="currentColor" fill-opacity=".15" d="M512 140c-205.4 0-372 166.6-372 372s166.6 372 372 372s372-166.6 372-372s-166.6-372-372-372zm171.8 527.1c1.2 1.5 1.9 3.3 1.9 5.2c0 4.5-3.6 8-8 8l-66-.3l-99.3-118.4l-99.3 118.5l-66.1.3c-4.4 0-8-3.6-8-8c0-1.9.7-3.7 1.9-5.2L471 512.3l-130.1-155a8.32 8.32 0 0 1-1.9-5.2c0-4.5 3.6-8 8-8l66.1.3l99.3 118.4l99.4-118.5l66-.3c4.4 0 8 3.6 8 8c0 1.9-.6 3.8-1.8 5.2l-130.1 155l129.9 154.9z"/><path fill="currentColor" d="M685.8 352c0-4.4-3.6-8-8-8l-66 .3l-99.4 118.5l-99.3-118.4l-66.1-.3c-4.4 0-8 3.5-8 8c0 1.9.7 3.7 1.9 5.2l130.1 155l-130.1 154.9a8.32 8.32 0 0 0-1.9 5.2c0 4.4 3.6 8 8 8l66.1-.3l99.3-118.5L611.7 680l66 .3c4.4 0 8-3.5 8-8c0-1.9-.7-3.7-1.9-5.2L553.9 512.2l130.1-155c1.2-1.4 1.8-3.3 1.8-5.2z"/></svg></div></article>';
+  }
+   if(getData == null || getData == ''){
+  $('.showBookmark').html('Maaf tidak ada item bookmark');
+  }else{
+  $('.showBookmark').html(structure);
+  }
+}
+$('.clearAll').click(function(){
+  bookmark.clearALL();
+  displayIt();
+  displayNum();
+});
+$('.showBookmark').on("click", ".btnRemove", function(event) {
+  bookmark.removeThisItem($(this).data('id'));
+  displayIt();
+  displayNum();
+})
+displayIt();
+</script>
+</section>

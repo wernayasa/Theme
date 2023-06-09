@@ -1,0 +1,36 @@
+<!-- Server download untuk streaming. Hapus bagian jika tidak diperlukan -->
+
+<div class="resIn" id="Server-1"> 
+  <div class="download-links">
+    <table>
+      <thead>
+        <tr>
+          <th>Server</th>
+          <th>Subtitle</th>
+          <th>Kualitas</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="num">#1</span> MEGA</td>
+          <td>Sub</td>
+          <td><span>HD</span></td>
+          <td><a class="btn sm rnd" href="#" rel="nofollow" target="_blank">Download</a></td>
+        </tr>
+        <tr>
+          <td><span class="num">#2</span> Fire</td>
+          <td>Sub</td>
+          <td><span>HD</span></td>
+          <td><a class="btn sm rnd" href="#" rel="nofollow" target="_blank">Download</a></td>
+        </tr>
+        <tr>
+          <td><span class="num">#3</span> Zippy</td>
+          <td>Sub</td>
+          <td><span>HD</span></td>
+          <td><a class="btn sm rnd" href="#" rel="nofollow" target="_blank">Download</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
