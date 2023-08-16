@@ -123,7 +123,7 @@
 */
 /*!************************************************
 * Name		: NineStream lite
-* Version	: 1.2
+* Version	: 1.2.1
 * Website	: emissionhex.blogspot.com
 **************************************************/
 :root {
@@ -201,7 +201,7 @@ ul ul{margin-bottom:0;}
 a{color:#a885da;text-decoration:none;background-color:transparent;transition:all .15s;}
 a:not([href]):not([class]){color:inherit;text-decoration:none;}
 a:not([href]):not([class]):hover{color:inherit;text-decoration:none;}
-button{border-radius:0;}
+button{border-radius:0;border:none;background:transparent;}
 button,input{margin:0;font-family:inherit;font-size:inherit;line-height:inherit;}
 button,input{overflow:visible;}
 button{text-transform:none;}
@@ -800,9 +800,11 @@ th{text-align:inherit;}
 .d-none{display:none!important;}
 @supports (position:sticky){.sticky-top{position:sticky;top:0;z-index:1020;}}
 .w-25{width:25%!important;}
+.w-30{width: 30px}
 .w-50{width:50%!important;}
 .w-75{width:75%!important;}
 .w-100{width:100%!important;}
+.h-30{height: 30px}
 .m-1{margin:.25rem!important;}
 .m-2{margin:.5rem!important;}
 .m-3{margin:1rem!important;}
@@ -1188,7 +1190,7 @@ footer .socials a + a{margin-left:10px;}
 .FeaturedPost{margin-inline:auto;padding-right:15px;padding-left:15px;max-width:1461px;}
 .items{display:flex;align-items:center;position:relative;gap:3rem;border-radius:1rem;overflow:hidden;}
 .image{filter:blur(12px) saturate(3);}
-.items::before{position:absolute;content:"";left:0;top:0;width:100%;height:100%;z-index:2;background:linear-gradient(-90deg,rgba(0,0,0,0) 0,rgba(0,0,0,.15) 0,rgba(0,0,0,.9) 80%);}
+.FeaturedPost .items::before{position:absolute;content:"";left:0;top:0;width:100%;height:100%;z-index:2;background:linear-gradient(-90deg,rgba(0,0,0,0) 0,rgba(0,0,0,.15) 0,rgba(0,0,0,.9) 80%);}
 .FeaturedPost .info{display:flex;gap:20px;position:absolute;padding:20px;z-index:5;align-items:center;width:100%;}
 .FeaturedPost .snip{width:36%;}
 .FeaturedPost .fluid-bg{flex:1;}
@@ -1222,7 +1224,15 @@ footer .socials a + a{margin-left:10px;}
   --postText: #333;
 }
 .cari-isi{padding:.5rem 0;width:100%;box-sizing:border-box}.cari-isi *{box-sizing:border-box}.cari-isi form{position:relative}.cari-input{padding:1rem 4rem 1rem 1.25rem;width:100%;border-radius:7px;background-color:var(--secondary);color:var(--postText);outline:0;border:none}.cari-ikon{display:-moz-box;display:-ms-flexbox;display:-webkit-box;display:-webkit-flex;display:flex;align-items:center;position:absolute;bottom:0;opacity:.5;right:1.25rem;top:-3px;visibility:visible;transition:.3s ease}.cari-input:focus~.cari-ikon{right:3rem;opacity:0;visibility:hidden}.cari-isi svg{height:1.5rem;width:1.5rem}.cari-isi circle,.cari-isi path{clip-rule:evenodd;fill:none;fill-rule:evenodd;stroke:var(--postText);stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:1.25px;transition:stroke .3s ease}.cari-reset{border:none;outline:0;background:0 0;cursor:pointer;font-size:inherit;position:absolute;opacity:0;padding:0;right:2rem;top:0;bottom:0;visibility:hidden;transition:.3s ease}.cari-reset svg{height:1.65rem;margin-right:0;vertical-align:-3px;width:1.65rem}.cari-reset .bulat{fill:red;stroke:none;stroke-width:0}.cari-reset .silang{stroke:#fff}.cari-input:focus~.cari-reset{right:1.25rem;opacity:1;visibility:visible}.live-search-item{position:fixed;z-index:9999;background-color:var(--secondary);border-radius: 8px;color:var(--postText)}.live-search-item ul{padding:0;margin:0;list-style:none;border-radius:8px}.live-search-item li{padding:10px;border-bottom:1px solid var(--dark);overflow:hidden}.live-search-item li a{display:block}.live-search-thumb{margin-right:10px;float:left;width:40px;height:60px;overflow:hidden;padding-bottom:0;box-sizing:content-box;text-decoration:none}.live-search-item li img{max-width:100%;height:100%;object-fit:cover}.live-search-item li .over{overflow:hidden;float:right;width:calc(100% - (40px + 10px));box-sizing:content-box}.live-search-item li .autotitle{font-size:.95em;color:var(--postText);font-weight:500;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.live-search-item .live-meta{display:block;color:var(--gray-light);margin-bottom:2px;font-size:12px;overflow:hidden}
-
+.dn,[mode="not-safe"], .sfw [mode="safe"]{display:none}
+.sfw [mode="not-safe"] {display: flex}
+.nsfw img{top:0;width:100%;height:100%;z-index:2;display:grid;place-content:center;filter:blur(5px) saturate(2);background-position:center;scale:1.1;background-size:cover;}
+.sfw .nsfw img{filter:none}
+.year {
+  padding: 2px 6px;
+  background-color: purple;
+  border-bottom-left-radius: 8px;
+}
 
  ]]></b:skin>
   <b:template-skin>
@@ -1553,7 +1563,7 @@ urlactivepage=location.href,home_page="/";function looppagecurrentg(e){var a="";
   </script>  
 
   <b:include cond='not data:view.isPreview' data='{                         image: data:skin.vars.body_background.image,                         selector: &quot;body.homepage-view .hero-image.has-image&quot;,                         imageSizes: [320, 640, 800, 1024, 1440, 1680, 1920, 2560]                      }' name='responsiveImageStyle'/>
-  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'/>
+
   <b:if cond='data:view.isMultipleItems or data:view.isPost'>
   <script type='text/javascript'>/*<![CDATA[*/
 const mTP={shuffleArray:t=>{var e,i,n=t.length;if(0===n)return!1;for(;--n;)e=Math.floor(Math.random()*(n+1)),i=t[n],t[n]=t[e],t[e]=i;return t},run:(t,e,i=10,n=5)=>{if(0==t("#mTP_Slider").length)return console.log("Tag mTP_Slider tidak ada");mTP.maxCat=n,mTP.max=i,window.matchMedia("(max-width: 600px)").matches&&(mTP.maxCat=3),window.matchMedia("(max-width: 480px)").matches&&(mTP.maxCat=2);const a=0==e?"":`/-/${e}`;t.ajax({url:`/feeds/posts/default${a}?alt=json-in-script&max-results=150`,type:"get",dataType:"jsonp",success:function(e){mTP.compile(t,e)},error:function(t){console.log(t)}})},compile:(t,e)=>{if("entry"in e.feed){const n=mTP.shuffleArray(e.feed.entry);mTP.filter=mTP.shuffleArray(e.feed.category.map(t=>t.term).filter(t=>{if(mTP.Select.includes(t))return t})).slice(0,mTP.maxCat),mTP.obj={},t.each(mTP.filter,function(e,i){n.filter(e=>{const n=e.category.map(t=>t.term);if(n.includes(i)){const a=mTP.obj[i];a?a.length<mTP.max&&a.push({title:e.title.$t,cat:n,link:e.link.find(t=>"alternate"==t.rel).href,image:"media$thumbnail"in e?e.media$thumbnail.url.match(/\/s[0-9]{2}-(w[0-9]+-)?c/)?e.media$thumbnail.url.replace(/\/s[0-9]{2}-(w[0-9]+-)?c/,`/${mTP.iSize}-p-k-no-nu`):e.media$thumbnail.url.replace(/\=s[0-9]{2}-(w[0-9]+-)?c/,`=${mTP.iSize}-p-k-no-nu`):"content"in e?t(e.content.$t).find("img").attr("src"):mTP.noImage}):mTP.obj[i]=[{title:e.title.$t,cat:n,link:e.link.find(t=>"alternate"==t.rel).href,image:"media$thumbnail"in e?e.media$thumbnail.url.match(/\/s[0-9]{2}-(w[0-9]+-)?c/)?e.media$thumbnail.url.replace(/\/s[0-9]{2}-(w[0-9]+-)?c/,`/${mTP.iSize}-p-k-no-nu`):e.media$thumbnail.url.replace(/\=s[0-9]{2}-(w[0-9]+-)?c/,`=${mTP.iSize}-p-k-no-nu`):"content"in e?t(e.content.$t).find("img").attr("src"):mTP.noImage}]}})});const a=t('<div class="series-gen"><div class="head"><div class="r-title"><svg type="button" onclick="mTP.run(jQuery, &#039;Anime&#039;, 11, 3)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M17.65 6.35A7.958 7.958 0 0 0 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0 1 12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" fill="currentColor"/></svg></div><ul class="nav-tabs tabs"></ul></div><div class="listupd"></div></div>'),l=Object.keys(mTP.obj).sort().reduce((t,e)=>(t[e]=mTP.obj[e],t),{});for(var i in l){const e=i.replace(/\W/g,"");a.find(".nav-tabs").append(`<li><span data-id="series-${e}">${i}</span></li>`),a.find(".listupd").append(`<div id="series-${e}" class="customAF scroll"><div class="inner scrolling"></div>${mTP.btnPrev}${mTP.btnNext}</div>`),t.each(mTP.obj[i],function(){a.find(`#series-${e} .inner`).append(`<article class="customAgata">\n          <a href="${this.link}" title="${this.title}">\n            <div class="images">\n              <figure>\n                <img src="${this.image}" alt="${this.title}">\n              </figure>\n            </div>\n            <h2 class="entry-title">${this.title}</h2>\n          </a>\n        </article>`)})}t("#mTP_Slider").html(a),t(".nav-tabs li").click(function(){const e=t(this).find("span").attr("data-id");t(".customAF.scroll, .nav-tabs li").each(function(){t(this).attr("id")==e||t(this).find("span").attr("data-id")==e?t(this).addClass("active"):t(this).removeClass("active")})}),t(".nav-tabs li").first().click()}},sN:t=>{let e=t.parentElement.querySelector(".inner.scrolling"),i=e.clientWidth;e.scrollLeft+=i},sB:t=>{let e=t.parentElement.querySelector(".inner.scrolling"),i=e.clientWidth;e.scrollLeft-=i},btnNext:'<button onclick="mTP.sN(this)" class="scrollButton right"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"><path d="M15.713 12l-6.01-6.01l-1.415 1.414l4.6 4.6l-4.6 4.593l1.414 1.414L15.713 12z" fill="currentColor"/></g></svg></button>',btnPrev:'<button onclick="mTP.sB(this)" class="scrollButton left"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"><path d="M8.288 12l6.01 6.01l1.414-1.414l-4.6-4.6l4.6-4.6l-1.414-1.406L8.288 12z" fill="currentColor"/></g></svg></button>',iSize:"w207-h300",noImage:"https://1.bp.blogspot.com/-BYDJ1dpFEhE/X9QnAUfeORI/AAAAAAAAHxw/OjfaqiPHjhAmCgJts39XIg7o4KR-8YtdACNcBGAsYHQ/w300-h225-p-k-no-nu/dagruel-no-image.png"};
@@ -1563,6 +1573,14 @@ mTP.Select = ["Action", "Adventure", "Comedy", "Drama", "Ecchi", "Fantasy", "Gam
 <script type='text/javascript'>/*<![CDATA[*/
   "use strict";class BloggerScript{constructor(a={}){this.config=a,this._siteMap={arr:new Array,callback:"undefined",fc:"function",max:150,start:1,url:"url"}}siteMap(b,c=function(a){console.log(a)}){let a=this;a.xhr("GET",`${b}?alt=json-in-script&start-index=${a._siteMap.start}&max-results=${a._siteMap.max}`,function(d){if("entry"in d.feed){let e=d.feed.entry;Array.prototype.push.apply(a._siteMap.arr,a.getFeed(d)),e.length>=a._siteMap.max?(a._siteMap.start+=a._siteMap.max,a.siteMap(b,c)):c(a._siteMap.arr)}else c(a._siteMap.arr)})}getFeed(a){if(a.feed.entry){let b=new Array;return a.feed.entry.forEach(a=>{let c={};c.title=a.title.$t,c.link=this.getLink(a.link),c.image=this.getImage(a),c.label=this.getLabel(a.category),c.date=this.getTime(a.published.$t),c.published=a.published.$t,c.updated=a.updated.$t,"summary"in a&&(c.summary=a.summary.$t),"content"in a&&(c.content=a.content.$t),"author"in a&&(c.author=this.getAuthor(a)),b.push(c)}),b}return[]}getImage(a){if("media$thumbnail"in a)return this.resizeImage(a.media$thumbnail.url);if(!("content"in a))return this.config.noImage||"";{let b=a.content.$t,d=b.indexOf("<img"),c=b.indexOf('src="',d),e=b.indexOf('"',c+5),f=b.substr(c+5,e-c-5);return -1!=d&& -1!=c&& -1!=e&&""!=f?f:this.config.noImage||""}}getAuthor(a){var b,c,d,e,f,g;return{name:(null===(b=a.author[0])|| void 0===b?void 0:null===(c=b.name)|| void 0===c?void 0:c.$t)||"",link:(null===(d=a.author[0])|| void 0===d?void 0:null===(e=d.uri)|| void 0===e?void 0:e.$t)||"",image:(null===(f=a.author[0])|| void 0===f?void 0:null===(g=f.gd$image)|| void 0===g?void 0:g.src)||""}}getLink(a){return a.find(a=>"alternate"==a.rel).href}getLabel(a){return a.map(a=>a.term)}getTime(c){if(/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/.test(c)){var b=c,d=b.substring(0,4),e=b.substring(5,7),f=b.substring(8,10),a=new Array;return a[1]="Jan",a[2]="Feb",a[3]="Mar",a[4]="Apr",a[5]="May",a[6]="Jun",a[7]="Jul",a[8]="Aug",a[9]="Sep",a[10]="Oct",a[11]="Nov",a[12]="Dec",f+" "+a[parseInt(e,10)]+" "+d}return!1}resizeImage(a){return this.config.sizeImage?a.match(/\/s[0-9]{2}-(w[0-9]+-)?c/)?a.replace(/\/s[0-9]{2}-(w[0-9]+-)?c/,`/${this.config.sizeImage}`):a.replace(/\=s[0-9]{2}-(w[0-9]+-)?c/,`=${this.config.sizeImage}`):a}relatedPost(b=function(a){console.log(a)}){let a=this,c=0,d=new Array,e=document.location.pathname;"undefined"!=a.config.label&&""!=a.config.label&&0!=a.config.label.length&&a.config.label.forEach(f=>{a.xhr("GET",`/feeds/posts/default/-/${f.replace(/\&amp;/g,"&").replace(/\//g,"%2F")}?alt=json-in-script&max-results=${a.config.jumlah}`,function(g){if("entry"in g.feed&&a.getFeed(g).forEach(a=>{!a.link.includes(e)&&(d.some(b=>b.link==a.link)||d.push(a))}),++c==a.config.label.length){if(0==d.length)return!1;let f=a.shuffle(d);return f.length>a.config.jumlah&&(f=f.slice(0,a.config.jumlah)),b(f)}})})}randomPost(b,c=function(a){console.log(a)}){let a=this,d=a.config.jumlah;a.xhr("GET",`${b}?alt=json-in-script&max-results=0`,function(f){let e=f.feed.openSearch$totalResults.$t;if(a.config.allRandom)e=e<=150?1:a.shuffle2(1,e-150),d=150;else{if(e<a.config.jumlah)return;e=a.shuffle2(1,e-a.config.jumlah)}a.xhr("GET",`${b}?alt=json-in-script&start-index=${e}&max-results=${d}`,function(b){if("entry"in b.feed){let d=a.getFeed(b);return c(d=a.shuffle(d))}})})}shuffle(a){var c,d,b=a.length;if(0===b)return!1;for(;--b;)c=Math.floor(Math.random()*(b+1)),d=a[b],a[b]=a[c],a[c]=d;return a}shuffle2(a,b){return Math.floor(Math.random()*(b-a))+a}xhr(b,c,d){let a=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject("Microsoft.XMLHTTP");a.onreadystatechange=function(){if(4==this.readyState&&200==this.status||304==this.status){let a=this.responseText,b=JSON.parse(a.substring(a.indexOf("{"),a.lastIndexOf("}")+1));d&&d(b)}},a.onerror=a=>console.log(a),a.open(b,c,!0),a.send()}inTag(b){let a=document.createElement("script");a.src=b,document.body.appendChild(a)}}
 /*]]>*/</script>
+  
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js'/> 
+   <script>
+  if (localStorage.getItem(&#39;isDark&#39;)) {
+    document.documentElement.classList.add(&#39;sfw&#39;)
+  }
+</script>  
+
   &lt;!--</head>--&gt;&lt;/head&gt;
   <body class='break-word'>
     <b:class cond='data:view.isHomepage' name='homepage-view'/>
@@ -1789,15 +1807,31 @@ mTP.Select = ["Action", "Adventure", "Comedy", "Drama", "Ecchi", "Fantasy", "Gam
   <b:include name='content'/>
 </b:includable>
       <b:includable id='authorProfileImage'>
-  <img class='profile-img' expr:alt='data:messages.myPhoto' expr:height='data:authorPhoto.height' expr:src='data:authorPhoto.image' expr:width='data:authorPhoto.width'/>
+  <img class='w-30 h-30 rounded' expr:alt='data:messages.myPhoto' expr:height='data:authorPhoto.height' expr:src='data:authorPhoto.image' expr:width='data:authorPhoto.width'/>
 </b:includable>
       <b:includable id='content'>
         <div class='widget-content individual dropdown btn-primary user'>
 <a class='relative flex aic c-fff' href='https://anime-la-bt.blogspot.com/p/bookmark.html'><svg aria-hidden='true' height='33' preserveAspectRatio='xMidYMid meet' role='img' style='vertical-align: -0.125em;' viewBox='0 0 256 256' width='33' xmlns='http://www.w3.org/2000/svg'><path d='M233.6 195.6L192.2 41a16 16 0 0 0-19.6-11.3L141.7 38l-1 .3A16 16 0 0 0 128 32H96a15.8 15.8 0 0 0-8 2.2a15.8 15.8 0 0 0-8-2.2H48a16 16 0 0 0-16 16v160a16 16 0 0 0 16 16h32a15.8 15.8 0 0 0 8-2.2a15.8 15.8 0 0 0 8 2.2h32a16 16 0 0 0 16-16v-99.6l27.8 103.7a16 16 0 0 0 15.5 11.9a19.9 19.9 0 0 0 4.1-.5l30.9-8.3a16 16 0 0 0 11.3-19.6ZM176.7 45.2l6.3 23.1l-30.9 8.3l-6.3-23.1ZM128 48v120H96V48Zm-48 0v24H48V48Zm48 160H96v-24h32v24Zm90.2-8.3l-30.9 8.3l-6.3-23.2l31-8.3l6.2 23.2Z' fill='currentColor'/></svg>
           <sup class='numshow'/>
           </a>
-          <svg aria-hidden='true' height='33' preserveAspectRatio='xMidYMid meet' role='img' style='vertical-align: -0.125em;' viewBox='0 0 24 24' width='33' xmlns='http://www.w3.org/2000/svg'><path d='M12 2C6.579 2 2 6.579 2 12s4.579 10 10 10s10-4.579 10-10S17.421 2 12 2zm0 5c1.727 0 3 1.272 3 3s-1.273 3-3 3c-1.726 0-3-1.272-3-3s1.274-3 3-3zm-5.106 9.772c.897-1.32 2.393-2.2 4.106-2.2h2c1.714 0 3.209.88 4.106 2.2C15.828 18.14 14.015 19 12 19s-3.828-.86-5.106-2.228z' fill='currentColor'/></svg>
-<svg aria-hidden='true' height='33' preserveAspectRatio='xMidYMid meet' role='img' style='vertical-align: -0.125em;' viewBox='0 0 48 48' width='33' xmlns='http://www.w3.org/2000/svg'><path d='M41.5 10h-6m-8-4v8m0-4h-22m8 14h-8m16-4v8m22-4h-22m20 14h-6m-8-4v8m0-4h-22' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='4'/></svg></div>
+           <button aria-expanded='false' class='relative flex aic c-fff' data-dropdown-placement='bottom' data-dropdown-toggle='user-dropdown' id='user-menu-button' type='button'>
+          <svg aria-hidden='true' height='33' preserveAspectRatio='xMidYMid meet' role='img' style='vertical-align: -0.125em;' viewBox='0 0 48 48' width='33' xmlns='http://www.w3.org/2000/svg'><path d='M41.5 10h-6m-8-4v8m0-4h-22m8 14h-8m16-4v8m22-4h-22m20 14h-6m-8-4v8m0-4h-22' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='4'/></svg>
+        </button>
+          <b:include name='profileImage'/>
+        </div>
+        <!-- Dropdown menu -->
+        <div class='widget-content hidden bc-1c1 r4 z-10 p-15 individual dropdown ' id='user-dropdown'>
+          <div class='grid'>       
+          <button class='nsfw-mode m-1.5 rounded text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 text-sm p-2.5' type='button'>
+            <span class='flex aic g-8 c-fff' mode='safe'>
+              <svg class='w-5 h-5' height='24' mode='safe' viewBox='0 0 256 256' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M208 40H48a16 16 0 0 0-16 16v58.78c0 89.61 75.82 119.34 91 124.39a15.53 15.53 0 0 0 10 0c15.2-5.05 91-34.78 91-124.39V56a16 16 0 0 0-16-16Zm0 74.79c0 78.42-66.35 104.62-80 109.18c-13.53-4.51-80-30.69-80-109.18V56h160ZM82.34 141.66a8 8 0 0 1 11.32-11.32L112 148.68l50.34-50.34a8 8 0 0 1 11.32 11.32l-56 56a8 8 0 0 1-11.32 0Z' fill='currentColor'/></svg>SFW Mode
+            </span>
+            <span class='flex aic g-8 c-fff' mode='not-safe'>
+              <svg class='w-5 h-5' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><g fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'><path d='M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0'/><path d='M10 10.5a1.5 1.5 0 1 0 3 0a1.5 1.5 0 1 0-3 0'/><path d='M10 13.5a1.5 1.5 0 1 0 3 0a1.5 1.5 0 1 0-3 0M7 15V9m8.5 3h3M17 10.5v3'/></g></svg>NSFW Mode
+            </span>
+          </button>
+          </div>
+        </div>
   <b:comment><b:if cond='data:team'>
     <div class='widget-content team'>
       <b:include name='teamProfile'/>
@@ -1880,6 +1914,236 @@ mTP.Select = ["Action", "Adventure", "Comedy", "Drama", "Ecchi", "Fantasy", "Gam
   </b:section>
 </header>
     <b:section cond='data:view.isHomepage' id='slide' showaddelement='true'>
+      <b:widget id='HTML9' locked='false' title='Slider' type='HTML' visible='false'>
+        <b:widget-settings>
+          <b:widget-setting name='content'>&lt;style&gt;
+.deslide-poster{position:absolute;top:-130px;left:750px;width:400px;transform:scale(1.2);opacity:0;}
+.deslide-poster{opacity:1;top:-100px;transform:scale(1);}
+.deslide-poster .manga-poster{display:inline-block;transform:rotate(15deg);border:20px solid #fff;box-shadow:0 30px 30px rgba(0,0,0,.2);}
+.deslide-item-content{max-width:600px;width:100%;position:absolute;top:50%;transform:translateY(-50%);left:30px;z-index:3;color:#fff;padding:0 30px;}
+.desi-head-title{font-size:32px;line-height:1.3;font-weight:600;margin-bottom:15px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.sc-detail{font-size:1em;display:block;font-weight:400;margin-bottom:30px;}
+.sc-detail .scd-item.scd-genres span{display:inline-block;margin:0 3px 6px 0;border:1px solid rgba(255,255,255,.5);padding:.3rem .5rem;line-height:1;border-radius:.2rem;font-size:.8em;}
+.btn{display:inline-block;font-weight:400;color:#212529;text-align:center;vertical-align:middle;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-color:transparent;border:1px solid transparent;padding:.375rem .75rem;font-size:1rem;line-height:1.5;border-radius:.25rem;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;}
+.desi-buttons .btn{background:#fff;color:#111;font-weight:500;font-size:14px;line-height:40px;padding:0 20px;border-radius:4px;}
+.desi-buttons .btn-slide-read{background:#ffd702;color:#111;}
+@media screen and (max-width:1023px){.sc-detail .scd-item.scd-genres,.desi-sub-text,.swiper-navigation{display:none;}}
+@media screen and (max-width:860px){.desi-head-title{font-size:20px;margin-bottom:20px;line-height:1.3;}}
+@media screen and (max-width:759px){.sc-detail{display:none;}}
+&lt;/style&gt;
+&lt;div id=&quot;hL8XIdq7vK&quot; class=&quot;relative w-full&quot; data-carousel=&quot;slide&quot; data-carousel-interval=&quot;7000&quot;&gt;
+    &lt;!-- Carousel wrapper --&gt;
+    &lt;div class=&quot;relative h-56 overflow-hidden rounded-lg md:h-96&quot;&gt;
+
+         &lt;!-- Item 1 --&gt;
+        &lt;div class=&quot;hidden overflow-hidden duration-700 ease-in-out&quot; data-carousel-item=&quot;active&quot;&gt;
+            &lt;img src=&quot;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhj_wOQgxpS48S9ubdfgpSo5YYD4NJ-CXZsS7Hw28gvpT5KTeZ1OoT0liCoBBtFkS1Mp-1NC_z83sqtflzM-xdWCEp8kPP0XtdvwQjz1dHWcrXpB06fcDecxSPjak6l5DW5qSHxYp48EfRKXz0-R5uQ-bayj9H2-0Z6HKOp9rrZNowePt9kc8HZNk0wSw/s1920/executed-sage-all-out-war.jpg&quot; class=&quot;blur absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2&quot; alt=&quot;...&quot; /&gt;
+&lt;div class=&quot;deslide-poster&quot;&gt;
+                    &lt;a href=&quot;/my-hero-academia-272&quot; class=&quot;manga-poster&quot;&gt;
+                        &lt;img src=&quot;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhj_wOQgxpS48S9ubdfgpSo5YYD4NJ-CXZsS7Hw28gvpT5KTeZ1OoT0liCoBBtFkS1Mp-1NC_z83sqtflzM-xdWCEp8kPP0XtdvwQjz1dHWcrXpB06fcDecxSPjak6l5DW5qSHxYp48EfRKXz0-R5uQ-bayj9H2-0Z6HKOp9rrZNowePt9kc8HZNk0wSw/s1920/executed-sage-all-out-war.jpg&quot; class=&quot;manga-poster-img&quot; alt=&quot;My Hero Academia&quot; /&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+&lt;div class=&quot;deslide-item-content&quot;&gt;
+                    
+                    &lt;div class=&quot;desi-head-title&quot;&gt;
+                        &lt;a title=&quot;Executed Sage All Out War&quot; href=&quot;#&quot;&gt;The Executed Sage Who Was Reincarnated as a Lich Started an All-Out War&lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;sc-detail&quot;&gt;
+                        &lt;div class=&quot;scd-item mb-3&quot;&gt;The Sage Dwight, he along with the Hero defeated the Demon Lord who sank the world into darkness.
+However, they were falsely accused of becoming the next Demon Lords because of his power, and were thrown to The Valley of the Dead to die...&lt;/div&gt;
+                        &lt;div class=&quot;scd-item scd-genres&quot;&gt;
+                            
+                                &lt;span&gt;Action&lt;/span&gt;
+                            
+                                &lt;span&gt;Drama&lt;/span&gt;
+                            
+                                &lt;span&gt;Magic&lt;/span&gt;
+                            
+                                &lt;span&gt;Taragedy&lt;/span&gt;
+                            
+                                &lt;span&gt;Fantasy&lt;/span&gt;
+                            
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;desi-buttons&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;btn btn-slide-read mr-2&quot;&gt;Read Now&lt;/a&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;btn btn-slide-info&quot;&gt;View Info&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Item 2 --&gt;
+        &lt;div class=&quot;hidden overflow-hidden duration-700 ease-in-out&quot; data-carousel-item=&quot;active&quot;&gt;
+            &lt;img src=&quot;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjjmgp7MtjCeu6_gnr05Bsa0i_8vHroPiUT0iUJF8Gr9NisOWzZ2VzYsY2og2Y937bujt1YllrFQOkbQN5kFYpeqGA2CVabiXBxv2CSzN9Rjddg6pl_T_F0D5edmr4q1MS22HrnU-gnmsnzKM9e16xZYzZLljznpZZBeEvWP7gJlRkF0YO-VyqM5vnhAQ/s728/red-ranger.jpg&quot; class=&quot;blur absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2&quot; alt=&quot;...&quot; /&gt;
+&lt;div class=&quot;deslide-poster&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;manga-poster&quot;&gt;
+                        &lt;img src=&quot;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjjmgp7MtjCeu6_gnr05Bsa0i_8vHroPiUT0iUJF8Gr9NisOWzZ2VzYsY2og2Y937bujt1YllrFQOkbQN5kFYpeqGA2CVabiXBxv2CSzN9Rjddg6pl_T_F0D5edmr4q1MS22HrnU-gnmsnzKM9e16xZYzZLljznpZZBeEvWP7gJlRkF0YO-VyqM5vnhAQ/s728/red-ranger.jpg&quot; class=&quot;manga-poster-img&quot; alt=&quot;Isekai Red Ranger&quot; /&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+&lt;div class=&quot;deslide-item-content&quot;&gt;
+                    
+                    &lt;div class=&quot;desi-head-title&quot;&gt;
+                        &lt;a title=&quot;Isekai Red Ranger&quot; href=&quot;#&quot;&gt;The Red Ranger Becomes an Adventurer in Another World&lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;sc-detail&quot;&gt;
+                        &lt;div class=&quot;scd-item mb-3&quot;&gt;In the final battle against the evil Exterminators, Asagaki Tougo, a power ranger, traded his life for the enemy&#39;s. It seemed like everything was over, but...&lt;/div&gt;
+                        &lt;div class=&quot;scd-item scd-genres&quot;&gt;
+                            
+                                &lt;span&gt;Action&lt;/span&gt;
+                            
+                                &lt;span&gt;Adventure&lt;/span&gt;
+                            
+                                &lt;span&gt;Comedy&lt;/span&gt;
+                            
+                                &lt;span&gt;Fantasy&lt;/span&gt;
+                            
+                                &lt;span&gt;Isekai&lt;/span&gt;
+                            
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;desi-buttons&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;btn btn-slide-read mr-2&quot;&gt;Read Now&lt;/a&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;btn btn-slide-info&quot;&gt;View Info&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Item 3 --&gt;
+        &lt;div class=&quot;hidden overflow-hidden duration-700 ease-in-out&quot; data-carousel-item=&quot;active&quot;&gt;
+            &lt;img src=&quot;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjpjWjqyU7oXrSF3KCB2UdBeBLlAzHUB0bWwe2-PKgEI7Gv_yIC0kAscW_pl2QN_mkZtfE1NntHcGH0fZ14Z6SJqXFlSSRIw4efjjYv7YgYeSGJo3qhBnF-fSENb13VNXLB1X0Y-9YJMmt2fZ4Dp7H8sGWTx1Lji3g0hEugm0oJnHx7vZJGVI6_mi9ehw/s1152/kajiya-isekai.jpg&quot; class=&quot;blur absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2&quot; alt=&quot;...&quot; /&gt;
+&lt;div class=&quot;deslide-poster&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;manga-poster&quot;&gt;
+                        &lt;img src=&quot;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjpjWjqyU7oXrSF3KCB2UdBeBLlAzHUB0bWwe2-PKgEI7Gv_yIC0kAscW_pl2QN_mkZtfE1NntHcGH0fZ14Z6SJqXFlSSRIw4efjjYv7YgYeSGJo3qhBnF-fSENb13VNXLB1X0Y-9YJMmt2fZ4Dp7H8sGWTx1Lji3g0hEugm0oJnHx7vZJGVI6_mi9ehw/s1152/kajiya-isekai.jpg&quot; class=&quot;manga-poster-img&quot; alt=&quot;Blacksmith Isekai&quot; /&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+&lt;div class=&quot;deslide-item-content&quot;&gt;
+                    
+                    &lt;div class=&quot;desi-head-title&quot;&gt;
+                        &lt;a title=&quot;Blacksmith isekai&quot; href=&quot;#&quot;&gt;Kajiya de Hajimeru Isekai Slow Life&lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;sc-detail&quot;&gt;
+                        &lt;div class=&quot;scd-item mb-3&quot;&gt;One night, Eizo, a hapless corporate slave, saves a cat and gets hit by a truck. The cat which seems to be related to a parallel world, in return for his help, grants Eizo a skill of his wish and reincarnates him to...&lt;/div&gt;
+                        &lt;div class=&quot;scd-item scd-genres&quot;&gt;
+                            
+                                &lt;span&gt;Action&lt;/span&gt;
+                            
+                                &lt;span&gt;Adventure&lt;/span&gt;
+                            
+                                &lt;span&gt;Comedy&lt;/span&gt;
+                            
+                                &lt;span&gt;Slice of Life&lt;/span&gt;
+                            
+                                &lt;span&gt;Isekai&lt;/span&gt;
+                            
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;desi-buttons&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;btn btn-slide-read mr-2&quot;&gt;Read Now&lt;/a&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;btn btn-slide-info&quot;&gt;View Info&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Item 4 --&gt;
+        &lt;div class=&quot;hidden overflow-hidden duration-700 ease-in-out&quot; data-carousel-item=&quot;active&quot;&gt;
+            &lt;img src=&quot;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbVjfgt1cVbcNsn-G101Sq-yAskQTnXvHteoGrFkRmzZxndsX6quzC3_BKGk1BMbaFln15K_6pn78Rg2aeEb5jWAuCqbyF7PZanvuDeIicCl0ri7NdWvplPevj4kzdhI-8d65PSy8kbjVLNTcu_sB0wu-WRZFSit530CPAPDqjiH5wMUfkuWuksyXx0w/s729/betrayed-hero.jpg&quot; class=&quot;blur absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2&quot; alt=&quot;...&quot; /&gt;
+&lt;div class=&quot;deslide-poster&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;manga-poster&quot;&gt;
+                        &lt;img src=&quot;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbVjfgt1cVbcNsn-G101Sq-yAskQTnXvHteoGrFkRmzZxndsX6quzC3_BKGk1BMbaFln15K_6pn78Rg2aeEb5jWAuCqbyF7PZanvuDeIicCl0ri7NdWvplPevj4kzdhI-8d65PSy8kbjVLNTcu_sB0wu-WRZFSit530CPAPDqjiH5wMUfkuWuksyXx0w/s729/betrayed-hero.jpg&quot; class=&quot;manga-poster-img&quot; alt=&quot;Blacksmith Isekai&quot; /&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+&lt;div class=&quot;deslide-item-content&quot;&gt;
+                    
+                    &lt;div class=&quot;desi-head-title&quot;&gt;
+                        &lt;a title=&quot;betrayer hero&quot; href=&quot;#&quot;&gt;The Betrayed Hero Who Was Reincarnated as the Strongest Demon Lord&lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;sc-detail&quot;&gt;
+                        &lt;div class=&quot;scd-item mb-3&quot;&gt;The hero, Fried, confronts the demon lord with his student, Lyle. Fried killed the demon lord after a ferocious battle. &#8220;I&#39;m going to put an end to this war!&#8221; Just as he was about to finish off the demon lord, he ...&lt;/div&gt;
+                        &lt;div class=&quot;scd-item scd-genres&quot;&gt;
+                            
+                                &lt;span&gt;Action&lt;/span&gt;
+                            
+                                &lt;span&gt;Adventure&lt;/span&gt;
+                            
+                                &lt;span&gt;Comedy&lt;/span&gt;
+                            
+                                &lt;span&gt;Reincarnation&lt;/span&gt;
+                            
+                                &lt;span&gt;Demon Lord&lt;/span&gt;
+                            
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;desi-buttons&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;btn btn-slide-read mr-2&quot;&gt;Read Now&lt;/a&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;btn btn-slide-info&quot;&gt;View Info&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Item 5 --&gt;
+        &lt;div class=&quot;hidden overflow-hidden duration-700 ease-in-out&quot; data-carousel-item=&quot;active&quot;&gt;
+            &lt;img src=&quot;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhDwZv40c3erzzU5oF6qiYrCsu3OEG7haaSQ1bWDI-OJj-2NQyOmAnCX9VMA1sgKsEuBrD75VsvSoHdStqLpBp6cLcWWdW62fLNK5NJ9QoSq9bPVAHGpXHXrVUfPqYkaB92ukJVNjcp0ajvfXT_eFmV41KSgDvGJq4DQNHyGsLLNZsdbHpq-G31tNbt5w/s728/smoking-supermarket.jpg&quot; class=&quot;blur absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2&quot; alt=&quot;...&quot; /&gt;
+&lt;div class=&quot;deslide-poster&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;manga-poster&quot;&gt;
+                        &lt;img src=&quot;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhDwZv40c3erzzU5oF6qiYrCsu3OEG7haaSQ1bWDI-OJj-2NQyOmAnCX9VMA1sgKsEuBrD75VsvSoHdStqLpBp6cLcWWdW62fLNK5NJ9QoSq9bPVAHGpXHXrVUfPqYkaB92ukJVNjcp0ajvfXT_eFmV41KSgDvGJq4DQNHyGsLLNZsdbHpq-G31tNbt5w/s728/smoking-supermarket.jpg&quot; class=&quot;manga-poster-img&quot; alt=&quot;Blacksmith Isekai&quot; /&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+&lt;div class=&quot;deslide-item-content&quot;&gt;
+                    
+                    &lt;div class=&quot;desi-head-title&quot;&gt;
+                        &lt;a title=&quot;betrayer hero&quot; href=&quot;#&quot;&gt;Super no Ura de Yani Suu Hanashi&lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;sc-detail&quot;&gt;
+                        &lt;div class=&quot;scd-item mb-3&quot;&gt;Sasaki, an overworked salaryman, goes through an average stressful day just for a single light at the end of the tunnel: Yamada, the always-cheerful clerk at his favorite convenience store ...&lt;/div&gt;
+                        &lt;div class=&quot;scd-item scd-genres&quot;&gt;
+                            
+                           
+                            
+                                &lt;span&gt;Comedy&lt;/span&gt;
+                            
+                                &lt;span&gt;Romance&lt;/span&gt;
+                            
+                                &lt;span&gt;Slice of Life&lt;/span&gt;
+                            
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;desi-buttons&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;btn btn-slide-read mr-2&quot;&gt;Read Now&lt;/a&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;btn btn-slide-info&quot;&gt;View Info&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+        &lt;/div&gt;
+
+    &lt;!-- Slider indicators --&gt;
+    &lt;div class=&quot;absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;w-3 h-3 rounded-full&quot; aria-current=&quot;true&quot; aria-label=&quot;Slide 1&quot; data-carousel-slide-to=&quot;0&quot;&gt;&lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;w-3 h-3 rounded-full&quot; aria-current=&quot;false&quot; aria-label=&quot;Slide 2&quot; data-carousel-slide-to=&quot;1&quot;&gt;&lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;w-3 h-3 rounded-full&quot; aria-current=&quot;false&quot; aria-label=&quot;Slide 3&quot; data-carousel-slide-to=&quot;2&quot;&gt;&lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;w-3 h-3 rounded-full&quot; aria-current=&quot;false&quot; aria-label=&quot;Slide 4&quot; data-carousel-slide-to=&quot;3&quot;&gt;&lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;w-3 h-3 rounded-full&quot; aria-current=&quot;false&quot; aria-label=&quot;Slide 5&quot; data-carousel-slide-to=&quot;4&quot;&gt;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;!-- Slider controls --&gt;
+    &lt;button type=&quot;button&quot; class=&quot;absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none&quot; data-carousel-prev&gt;
+        &lt;span class=&quot;inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none&quot;&gt;
+            &lt;svg aria-hidden=&quot;true&quot; class=&quot;w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; viewbox=&quot;0 0 24 24&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M15 19l-7-7 7-7&quot;&gt;&lt;/path&gt;&lt;/svg&gt;
+            &lt;span class=&quot;sr-only&quot;&gt;Previous&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button type=&quot;button&quot; class=&quot;absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none&quot; data-carousel-next&gt;
+        &lt;span class=&quot;inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none&quot;&gt;
+            &lt;svg aria-hidden=&quot;true&quot; class=&quot;w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; viewbox=&quot;0 0 24 24&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;path stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M9 5l7 7-7 7&quot;&gt;&lt;/path&gt;&lt;/svg&gt;
+            &lt;span class=&quot;sr-only&quot;&gt;Next&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;&lt;/div&gt;</b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+  <b:include name='widget-title'/>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+</b:includable>
+      </b:widget>
       <b:widget id='FeaturedPost1' locked='false' title='Featured Post' type='FeaturedPost' version='2' visible='false'>
         <b:widget-settings>
           <b:widget-setting name='showSnippet'>true</b:widget-setting>
@@ -2606,7 +2870,7 @@ mTP.Select = ["Action", "Adventure", "Comedy", "Drama", "Ecchi", "Fantasy", "Gam
   </b:if>
 </b:includable>
           <b:includable id='imagePost'>
-
+<b:class cond='data:post.labels any (l =&gt; l.name == &quot;NSFW&quot;)' name='nsfw'/>
           <a class='block ofc oh' expr:href='data:post.url' expr:title='data:post.title'><img alt='data:post.title' class='ar-3:4 r2 h-auto w-max' expr:src='data:post.featuredImage ? resizeImage(data:post.featuredImage, 140, &quot;3:4&quot;) :  resizeImage(&quot;https://1.bp.blogspot.com/-q5XNfPSweVQ/X-Gpih2Z9rI/AAAAAAAAHyo/7VArMT1coTM4n792SDJ6lYMBxpChGjnvgCPcBGAsYHg/s0/dagruel-no-image.png&quot;, 140, &quot;3:4&quot;)' expr:title='data:post.title' loading='lazy'/></a>
 
       </b:includable>
@@ -3554,6 +3818,7 @@ window.open(location.protocol+ '//' + location.hostname + '/search/label/' + o.j
           <b:includable id='snippetedPostThumbnail'>
 
             <div class='tooltipstered'>
+              <b:class cond='data:post.labels any (l =&gt; l.name == &quot;NSFW&quot;)' name='nsfw'/>
               <a expr:href='data:post.url'>
                 <b:include data='{                         image: data:post.featuredImage,                         imageSizes: [380, 500],                         imageRatio: &quot;1:2&quot;,                         sourceSizes: &quot;500px&quot;                        }' name='responsiveImage'/>
               </a>
@@ -3592,6 +3857,16 @@ window.open(location.protocol+ '//' + location.hostname + '/search/label/' + o.j
       </b:section>
       </b:tag>
       <b:section id='main' showaddelement='true'>
+        <b:widget cond='data:view.isPost' id='Text3' locked='false' title='Notifikasi Post Streaming' type='Text' version='2' visible='false'>
+          <b:widget-settings>
+            <b:widget-setting name='content'>hello world lsdjflsf lsdljfslfa;sldf jlsjldfj sjdlfjlsdjfl j</b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+</b:includable>
+        </b:widget>
         <b:widget id='HTML6' locked='false' title='[ads]' type='HTML' version='2' visible='false'>
           <b:widget-settings>
             <b:widget-setting name='content'><![CDATA[<a class="ads-here" href="#">Responsive Advertisement</a>]]></b:widget-setting>
@@ -4041,7 +4316,14 @@ window.open(location.protocol+ '//' + location.hostname + '/search/label/' + o.j
                       
                     </div>
                   </div>
-                  <div class='grid gtc-raf g-var hfeed'>
+                  <b:if cond='data:posts.empty'>
+                      <b:if cond='data:view.isError'>
+                        <div class='status-msg-body'><data:navMessage/></div>
+                        <b:else/>
+                        <img class='block mx-auto' src='https://upload.wikimedia.org/wikipedia/commons/5/52/Bundesstra%C3%9Fe_404_number.svg'/>
+                      </b:if>
+                    </b:if>
+                  <div class='grid gtc-raf g-var hfeed'>                   
                   <b:loop index='i' values='data:posts' var='post'>
                     <b:include data='post' name='thumbList'/>
                   </b:loop>
@@ -4516,7 +4798,6 @@ max-height: 0;overflow: hidden;transition: max-height .2s;}
             </a>
           </b:includable>
           <b:includable id='post' var='post'>
-            
               <section class='py-09 grid area-hx aic'>
                 <nav class='breadcrumb flex aic a-n'>
                   <a class='mr-5 c-959 tdn' href='/'>Home</a>
@@ -4524,13 +4805,12 @@ max-height: 0;overflow: hidden;transition: max-height .2s;}
                     <path d='M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z' fill='currentColor'/>
                   </svg>
                   <strong><data:post.title/></strong>
-                </nav>
-                
+                </nav>       
               </section>
             <article class='py-09'>
               <section class='stream'>
                 <data:post.body/>
-              </section>
+              </section>             
               <section id='info' itemscope='' itemtype='http://schema.org/Movie'>
                 <div class='thumb'>
                   <div>
@@ -4996,6 +5276,17 @@ max-height: 0;overflow: hidden;transition: max-height .2s;}
     </b:loop>
   </b:if>
 </b:with>
+            <div class='absolute t-0 r-0 fs-13 c-eee'>
+<b:with value='[&quot;2021&quot;,&quot;2022&quot;,&quot;2023&quot;,&quot;2024&quot;]' var='year'>
+  <b:loop index='i' values='data:post.labels' var='label'>
+    <b:if cond='data:label.name in data:year'>
+      <span class='year'>
+        <data:label.name/>
+      </span>
+    </b:if>
+  </b:loop>
+</b:with>
+</div>
             <div class='absolute b-0 r-0 fs-13 c-eee brr5 tlr8 dir ttu'>
               <b:if cond='data:post.labels any (l =&gt; l.name == &quot;Dub&quot;)'>
                <span class='dub'>Dub</span>
@@ -5024,6 +5315,7 @@ max-height: 0;overflow: hidden;transition: max-height .2s;}
               <b:with value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 600, &quot;1:2&quot;) : data:post.thumbnail' var='image'>
                 <b:if cond='data:post.featuredImage'>
                   <img class='ar-2sx h-max w-max' expr:alt='data:post.title' expr:src='data:image' loading='lazy'/>
+                  <b:class cond='data:post.labels any (l =&gt; l.name == &quot;NSFW&quot;)' name='nsfw'/>
                   <b:else/>
                   <span class='post-thumb'>No image</span>
                 </b:if>
@@ -5076,11 +5368,110 @@ max-height: 0;overflow: hidden;transition: max-height .2s;}
 &lt;/div&gt;</b:widget-setting>
           </b:widget-settings>
           <b:includable id='main'>
+            <style>
+              #HTML1 {padding: 0}
+              #main .head {
+  background: url(https://s2.bunnycdn.ru/assets/_9anime/imagesv3/bg-schedule.png) no-repeat center top;
+    background-size: auto;
+  background-size: cover;
+  padding: 20px 10px 0;
+  margin-bottom: 0;
+}
+              .swiper-wrapper {
+  margin: 0 auto;
+}
+              .head .title {
+  margin: 0;
+  padding: 0 50px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #ddd;
+}
+              .head .days .items .day .inner .date {
+  font-size: .8rem;
+  font-weight: 600;
+}
+            
+            .head .now {
+  color: #444;
+              font-size: .9rem
+}
+            
+            .head .days {
+  display: flex;
+  margin-top: 15px;
+  align-items: center;
+}
+            
+            .swiper-container {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+}
+              .swiper-slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+}
+             
+              .head .days .items .day .inner {
+  text-transform: uppercase;
+  color: #444;
+  cursor: pointer;
+}
+              .head .days .items .day .inner .hari {
+  font-family: &quot;Bebas Neue&quot;;
+  font-size: 2rem;
+  height: 45px;
+  line-height: 45px;
+  overflow: hidden;
+}
+              .head .days .items .day .inner:hover, .head .days .items .day.active .inner {
+  color: #aaa;
+}
+            </style>
             <div class='head'>
-              <b:include name='widget-title'/>
-              <a class='more' href='https://anime-la-bt.blogspot.com/p/jadwal.html'>View all</a>
-            </div>
-  <div class='widget-content'>
+  <div class='title'>
+    Estimated Schedule <span class='now'>- Now: <span class='timenow'>4/16/2023 2:47:09 PM</span></span>
+  </div>
+  <div class='days'>
+
+    <div class='items swiper-wrapper'>
+      
+        <div class='day swiper-slide'>
+          <div class='inner'>
+            <div class='date'>Current</div>
+            <div class='hari'>Thu</div>
+          </div>
+        </div>
+      
+    </div>
+
+  </div>
+</div>
+            <div data-label='Ongoing' id='isJadwal'/>
+
+
+<script>//<![CDATA[
+  const isJadwal={
+  config:{
+    days: ["Senin","Selasa","Rabu","Kamis","Jumat","Sabtu","Minggu"]
+  },jQcheck:()=>"function"==typeof jQuery,run:function(){if(0==this.jQcheck())return;let t=$("#isJadwal");if(0!=t.length&&t.data("label")){const e=this.config,a=this;$.ajax({type:"get",url:`${e.site||""}/feeds/posts/summary/-/${t.data("label")}`,data:{alt:"json","max-results":150},dataType:"jsonp",success:t=>{if("entry"in t.feed){let e=new Array;$.each(t.feed.entry,(t,a)=>{e.push({title:a.title.$t,url:a.link.find(t=>"alternate"==t.rel).href,cat:a.category.map(t=>t.term)})}),a.compile(e)}else $("#isJadwal").html(`<p>${e.textNotFound||"Post Not Found"}</p>`)},error:()=>{$("#isJadwal").html(`<p>${e.textError||"Error"}</p>`)}})}},compile:function(t){let e=this.config,a=e.days.reduce((t,e)=>(t[e]=[],t),{}),i=this;$.each(t,(t,i)=>{let l=i.cat.find(t=>e.days.includes(t));if(l)a[l].push(i);else{let t=e.random||"Random";t in a?a[t].push(i):a[t]=[i]}}),i.create(a)},create:function(t){let e="<div class='jrai321'>",a=this.config;$.each(t,(t,i)=>{e+=`<div class='jrai-title daily-Sched'>${t}</div><ul>`,0!=i.length?$.each(i,(t,a)=>{e+=`<li><div class='ep'>${a.cat.find(i => i.includes('Ep'))}</div><a href='${a.url}'>${a.title}</a></li>`}):e+=`<li>${a.textNotFound||"Not Found"}</li>`,e+="</ul>"}),e+="</div>",$("#isJadwal").html(e)}};isJadwal.run();
+setTimeout(function(){
+var d = new Date();
+var n = d.getDay();
+n = n > 0 ? n - 1 : 6; // zero is sunday, not monday in javascript
+$('.daily-Sched').eq(n).addClass('active');
+},3000); 
+  //]]></script>
+
+  <div class='p-15'>
     <data:content/>
   </div>
 </b:includable>
@@ -5096,7 +5487,132 @@ max-height: 0;overflow: hidden;transition: max-height .2s;}
   </div>
 </b:includable>
         </b:widget>
-        <b:widget cond='data:view.isHomepage' id='HTML7' locked='false' title='' type='HTML' visible='true'>
+        <b:widget id='HTML10' locked='false' title='Blog_V2' type='HTML' version='2' visible='true'>
+          <b:widget-settings>
+            <b:widget-setting name='content'>&lt;style&gt;
+.blogv2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+.item-blog {
+  width: 100%;
+  display: grid;
+  cursor: default;
+  padding: 15px;
+  border-radius: 4px;
+  position: relative;
+  font-size: 12px;
+  line-height: 1.4;
+  background: rgb(255,255,255,.05);
+  margin-bottom: .5rem;
+grid-template-areas: &#39;p&#39; &#39;d&#39; &#39;t&#39; &#39;j&#39;;
+}
+.item-blog img {
+  max-width: 100%;
+}
+.item-blog .post-info {display: contents}
+.item-blog .gambar {
+  grid-area: t;
+}
+.item-blog h3 {
+  grid-area: j;
+font-size: 1rem;
+font-weight: 500;
+margin-top: .5rem;
+}
+.item-blog h3 a {color: white}
+.item-blog .pub {
+  grid-area: p;
+display: flex;
+gap: 4px;
+align-items: center;
+}
+.item-blog .desc {
+  grid-area: d;
+}
+.item-blog .pub span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.item-blog .pub span:nth-child(3) {
+  margin-inline-start: auto;
+}
+&lt;/style&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+  function mycallback(json) {
+    for (var i = 0; i &lt; json.feed.entry.length; i++) {
+      var entry = json.feed.entry[i];
+      var postTitle = entry.title.$t;
+      var postSummary = entry.summary.$t.substr(0, 70) + &#39;...&#39;;
+      var postUrl = &quot;&quot;;
+
+      // Find the alternate URL
+      for (var j = 0; j &lt; entry.link.length; j++) {
+        if (entry.link[j].rel === &#39;alternate&#39;) {
+          postUrl = entry.link[j].href;
+          break;
+        }
+      }
+
+      // Find the thumbnail URL
+      var thumbnailUrl = &quot;&quot;;
+      if (entry.media$thumbnail) {
+        thumbnailUrl = entry.media$thumbnail.url.replace(&#39;s72-c&#39;, &#39;s0&#39;);
+      }
+
+      var item = &#39;&lt;div class=&quot;item-blog&quot;&gt;&#39;;
+      if (thumbnailUrl !== &quot;&quot;) {
+        item += &#39;&lt;a class=&quot;gambar&quot; href=&quot;&#39; + postUrl + &#39;&quot;&gt;&lt;img src=&quot;&#39; + thumbnailUrl + &#39;&quot; alt=&quot;&#39; + postTitle + &#39;&quot;&gt;&lt;/a&gt;&#39;;
+      }
+      item += &#39;&lt;div class=&quot;post-info&quot;&gt;&#39;;
+      item += &#39;&lt;h3&gt;&lt;a href=&quot;&#39; + postUrl + &#39;&quot;&gt;&#39; + postTitle + &#39;&lt;/a&gt;&lt;/h3&gt;&#39;;
+
+ 
+        // SVG icon for Publisher
+      var publisherIcon = &#39;&lt;svg id=&quot;Layer_1&quot; height=&quot;16px&quot; fill=&quot;currentColor&quot; viewBox=&quot;0 0 462 462&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; data-name=&quot;Layer 1&quot;&gt;&#39; +
+        &#39;&lt;path d=&quot;m231 229.91a72 72 0 1 1 72-72 72.08 72.08 0 0 1 -72 72zm0-124a52 52 0 1 0 52 52 52.06 52.06 0 0 0 -52-52z&quot;/&gt;&#39; +
+        &#39;&lt;path d=&quot;m356 376.09a10 10 0 0 1 -10-10v-24.72a71.7 71.7 0 0 0 -71.62-71.62h-86.76a71.7 71.7 0 0 0 -71.62 71.62v24.72a10 10 0 0 1 -20 0v-24.72a91.73 91.73 0 0 1 91.62-91.62h86.75a91.73 91.73 0 0 1 91.63 91.62v24.72a10 10 0 0 1 -10 10z&quot;/&gt;&#39; +
+        &#39;&lt;/svg&gt;&#39;;
+      // SVG icon for Date
+      var dateIcon = &#39;&lt;svg id=&quot;Expand&quot; height=&quot;13px&quot; fill=&quot;currentColor&quot; viewBox=&quot;0 0 16 16&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&#39; +
+  
+  &#39;&lt;path d=&quot;m8 .5a7.5 7.5 0 1 0 7.5 7.5 7.5083 7.5083 0 0 0 -7.5-7.5zm0 14a6.5 6.5 0 1 1 6.5-6.5 6.5075 6.5075 0 0 1 -6.5 6.5z&quot;/&gt;&#39; + &#39;&lt;path d=&quot;m8.5 7.793v-3.793a.5.5 0 0 0 -1 0v4a.4993.4993 0 0 0 .1465.3535l2 2a.5.5 0 0 0 .707-.707z&quot;/&gt;&#39; + &#39;&lt;/svg&gt;&#39;;
+      // SVG icon for Comment
+      var commentIcon = &#39;&lt;svg clip-rule=&quot;evenodd&quot; height=&quot;15px&quot; fill=&quot;currentColor&quot; fill-rule=&quot;evenodd&quot; image-rendering=&quot;optimizeQuality&quot; shape-rendering=&quot;geometricPrecision&quot; text-rendering=&quot;geometricPrecision&quot; viewBox=&quot;0 0 1.70666 1.70666&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&#39; + &#39;&lt;g id=&quot;Layer_x0020_1&quot; fill-rule=&quot;nonzero&quot;&gt;&#39; + &#39;&lt;path d=&quot;m.303331.420972c-.0294528 0-.0533346.0238819-.0533346.0533346 0 .0294528.0238819.0533346.0533346.0533346h.770142c.0294528 0 .0533346-.0238819.0533346-.0533346 0-.0294528-.0238819-.0533346-.0533346-.0533346z&quot;/&gt;&#39; + &#39;&lt;path d=&quot;m.303331.650839c-.0294528 0-.0533346.0238819-.0533346.0533346 0 .0294528.0238819.0533346.0533346.0533346h1.10001c.0294528 0 .0533346-.0238819.0533346-.0533346 0-.0294528-.0238819-.0533346-.0533346-.0533346z&quot;/&gt;&#39; + &#39;&lt;path d=&quot;m.303331.880705c-.0294528 0-.0533346.0238819-.0533346.0533346 0 .0294528.0238819.0533346.0533346.0533346h1.09306c.0294528 0 .0533346-.0238819.0533346-.0533346 0-.0294528-.0238819-.0533346-.0533346-.0533346z&quot;/&gt;&#39; + &#39;&lt;path d=&quot;m1.37188 1.2539-.297535.313252c-.0202874.0213465-.0540512.0222047-.0753976.00191732-.00700394-.00665354-.0117953-.0147598-.0143661-.0234016l-.109984-.291768h-.673835c-.110531 0-.20076-.0902283-.20076-.20076v-.729472c0-.110528.0902323-.200764.20076-.200764h1.30515c.110528 0 .200764.0902362.200764.200764v.729472c0 .110528-.0902362.20076-.200764.20076h-.134028zm-.316323.17839.252417-.265583c.00978346-.0118937.0246102-.0194764.0412087-.0194764h.156724c.0516457 0 .0940945-.0424409.0940945-.0940906v-.729472c0-.0516496-.0424449-.0940945-.0940945-.0940945h-1.30515c-.0516496 0-.0940906.0424488-.0940906.0940945v.729472c0 .0516496.0424409.0940906.0940906.0940906h.709701c.0218858-.00036221.0426299.0128701.0507913.0345236l.0943031.250535z&quot;/&gt;&#39; + &#39;&lt;/g&gt;&#39; + &#39;&lt;/svg&gt;&#39;;
+    
+      
+      // Get publisher, date, and comment count
+      var publisher = entry.author[0].name.$t;
+      var date = new Date(entry.published.$t);
+      var formattedDate = date.toLocaleDateString(&#39;id-ID&#39;, { day: &#39;numeric&#39;, month: &#39;long&#39;, year: &#39;numeric&#39; });
+      var commentCount = entry.thr$total.$t;
+
+      item += &#39;&lt;div class=&quot;pub&quot;&gt; &lt;span&gt;&#39;+ publisherIcon + &#39; &#39; + publisher + &#39;  &lt;/span&gt;  &#39;;
+
+      item += &#39;&lt;span&gt;&#39;+ dateIcon +&#39; &#39; + formattedDate + &#39;   &lt;/span&gt;&#39;;
+      item += &#39; &lt;span&gt;&#39;+ commentIcon + &#39; &#39; + commentCount + &#39;&lt;/span&gt;&lt;/div&gt;&#39;;
+
+      item += &#39;&lt;p class=&quot;desc&quot;&gt;&#39; + postSummary + &#39;&lt;/p&gt;&#39;;
+      item += &#39;&lt;/div&gt;&#39;; // Close post-info div
+      item += &#39;&lt;/div&gt;&#39;; // Close wrapper div
+      item += &#39;&#39;; // Divider line
+
+      document.write(item);
+    }
+  }
+&lt;/script&gt;
+&lt;script src=&quot;https://emissionhex.blogspot.com/feeds/posts/summary/-/Tema?max-results=3&amp;alt=json-in-script&amp;callback=mycallback&quot;&gt;&lt;/script&gt;</b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+  <b:include name='widget-title'/>
+  <div class='widget-content blogv2'>
+    <data:content/>
+  </div>
+</b:includable>
+        </b:widget>
+        <b:widget cond='data:view.isHomepage' id='HTML7' locked='false' title='' type='HTML' visible='false'>
           <b:widget-settings>
             <b:widget-setting name='content'>&lt;style&gt;
 
@@ -5793,6 +6309,9 @@ function feelingLucky(){
     }
 //]]>
 </script> 
+    
+   
+    
     <script type='text/javascript'>
   const _liveSearch = {
     filterLabel: &quot;&quot;,
@@ -5804,5 +6323,22 @@ function feelingLucky(){
     eval(function(p,a,c,k,e,d){e=function(c){return(c&lt;a?&quot;&quot;:e(parseInt(c/a)))+((c=c%a)&gt;35?String.fromCharCode(c+29):c.toString(36))};if(!&#39;&#39;.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return&#39;\\w+&#39;};c=1;};while(c--)if(k[c])p=p.replace(new RegExp(&#39;\\b&#39;+e(c)+&#39;\\b&#39;,&#39;g&#39;),k[c]);return p;}(&#39;F a=[&quot;&quot;,&quot;\\c\\f\\V\\b\\e\\n\\b\\h&quot;,&quot;\\G\\i\\e\\h\\c\\y\\c\\f\\c&quot;,&quot;\\G\\g\\c\\t\\b\\y\\f\\b\\e\\h\\i\\w\\y\\c\\d\\b\\q&quot;,&quot;\\z\\b\\d\\1O\\o\\v\\j\\n\\c\\j\\z\\T\\g\\c\\b\\j\\d\\N\\b\\i\\d&quot;,&quot;\\g\\b\\u\\d&quot;,&quot;\\r\\E&quot;,&quot;\\A\\o\\d\\d\\o\\q&quot;,&quot;\\U\\c\\n\\d\\w&quot;,&quot;\\i\\f\\f&quot;,&quot;\\g\\b\\j\\z\\d\\w&quot;,&quot;\\i\\g\\o\\f\\b\\f\\d&quot;,&quot;\\d\\e\\h\\z\\b\\d&quot;,&quot;\\k\\n\\c\\t\\s\\i\\g\\e\\f\\f\\x\\m\\g\\c\\t\\b\\y\\f\\b\\e\\h\\i\\w\\y\\c\\d\\b\\q\\m\\l\\k\\p\\n\\c\\t\\l&quot;,&quot;\\w\\d\\q\\g&quot;,&quot;\\e\\r\\r\\b\\j\\n&quot;,&quot;\\A\\o\\n\\B&quot;,&quot;\\h\\b\\f\\c\\H\\b&quot;,&quot;\\o\\j&quot;,&quot;\\f\\i\\h\\o\\g\\g&quot;,&quot;\\i\\g\\c\\i\\C&quot;,&quot;\\h\\b\\q\\o\\t\\b&quot;,&quot;\\o\\u\\u&quot;,&quot;\\f\\c\\H\\b\\J\\q\\e\\z\\b&quot;,&quot;\\q\\e\\d\\i\\w&quot;,&quot;\\p&quot;,&quot;\\h\\b\\r\\g\\e\\i\\b&quot;,&quot;\\x&quot;,&quot;\\q\\b\\n\\c\\e\\I\\d\\w\\v\\q\\A\\j\\e\\c\\g&quot;,&quot;\\v\\h\\g&quot;,&quot;\\i\\o\\j\\d\\b\\j\\d&quot;,&quot;\\I\\d&quot;,&quot;\\k\\c\\q\\z&quot;,&quot;\\c\\j\\n\\b\\E\\1a\\u&quot;,&quot;\\f\\h\\i\\x\\m&quot;,&quot;\\m&quot;,&quot;\\f\\v\\A\\f\\d\\h&quot;,&quot;\\j\\o\\J\\q\\e\\z\\b&quot;,&quot;\\G\\i\\e\\h\\c\\y\\c\\j\\r\\v\\d&quot;,&quot;\\C\\b\\B\\v\\r&quot;,&quot;\\t\\e\\g&quot;,&quot;\\k\\i\\b\\j\\d\\b\\h\\s\\i\\g\\e\\f\\f\\x\\m\\r\\c\\j\\H\\E\\m\\l\\k\\c\\s\\i\\g\\e\\f\\f\\x\\m\\u\\e\\s\\u\\e\\y\\f\\B\\j\\i\\s\\u\\e\\y\\f\\r\\c\\j\\m\\l\\k\\p\\c\\l\\k\\p\\i\\b\\j\\d\\b\\h\\l&quot;,&quot;\\z\\b\\d&quot;,&quot;\\f\\c\\d\\b&quot;,&quot;\\p\\u\\b\\b\\n\\f\\p\\r\\o\\f\\d\\f\\p\\n\\b\\u\\e\\v\\g\\d&quot;,&quot;\\D\\f\\o\\j&quot;,&quot;\\u\\c\\g\\d\\b\\h\\Z\\e\\A\\b\\g&quot;,&quot;\\g\\e\\A\\b\\g\\1c&quot;,&quot;\\s&quot;,&quot;\\D\\f\\o\\j\\r&quot;,&quot;\\b\\j\\d\\h\\B&quot;,&quot;\\u\\b\\b\\n&quot;,&quot;\\d\\c\\d\\g\\b&quot;,&quot;\\w\\h\\b\\u&quot;,&quot;\\e\\g\\d\\b\\h\\j\\e\\d\\b&quot;,&quot;\\h\\b\\g&quot;,&quot;\\u\\c\\j\\n&quot;,&quot;\\g\\c\\j\\C&quot;,&quot;\\1b\\s&quot;,&quot;\\D\\o\\c\\j&quot;,&quot;\\d\\b\\h\\q&quot;,&quot;\\q\\e\\r&quot;,&quot;\\i\\e\\d\\b\\z\\o\\h\\B&quot;,&quot;\\k\\g\\c\\l\\k\\e\\s\\w\\h\\b\\u\\x\\m&quot;,&quot;\\m\\l\\k\\n\\c\\t\\s\\i\\g\\e\\f\\f\\x\\m\\g\\c\\t\\b\\y\\f\\b\\e\\h\\i\\w\\y\\d\\w\\v\\q\\A\\m\\l\\k\\c\\q\\z\\s\\f\\h\\i\\x\\m&quot;,&quot;\\m\\l\\k\\p\\n\\c\\t\\l\\k\\n\\c\\t\\s\\i\\g\\e\\f\\f\\x\\m\\o\\t\\b\\h\\m\\l\\k\\n\\c\\t\\s\\i\\g\\e\\f\\f\\x\\m\\e\\v\\d\\o\\d\\c\\d\\g\\b\\m\\l&quot;,&quot;\\k\\p\\n\\c\\t\\l\\k\\f\\r\\e\\j\\s\\i\\g\\e\\f\\f\\x\\m\\g\\c\\t\\b\\y\\q\\b\\d\\e\\m\\l&quot;,&quot;\\k\\p\\f\\r\\e\\j\\l\\k\\p\\n\\c\\t\\l\\k\\p\\e\\l\\k\\p\\g\\c\\l&quot;,&quot;\\b\\e\\i\\w&quot;,&quot;\\k\\v\\g\\l&quot;,&quot;\\k\\p\\v\\g\\l&quot;,&quot;\\k\\r\\l\\k\\i\\b\\j\\d\\b\\h\\l\\m&quot;,&quot;\\m\\s\\X\\c\\n\\e\\C\\s\\n\\c\\s\\d\\b\\q\\v\\C\\e\\j\\k\\p\\i\\b\\j\\d\\b\\h\\l\\k\\p\\r\\l&quot;,&quot;\\k\\r\\l\\k\\i\\b\\j\\d\\b\\h\\l\\Y\\h\\h\\o\\h\\k\\p\\i\\b\\j\\d\\b\\h\\l\\k\\p\\r\\l&quot;,&quot;\\e\\D\\e\\E&quot;];F W=[a[0],a[1],a[2],a[3],a[4],a[5],a[6],a[7],a[8],a[9],a[10],a[11],a[12],a[13],a[14],a[15],a[16],a[17],a[18],a[19],a[Q],a[R],a[S],a[P],a[M],a[O],a[1K],a[1J],a[1I],a[1N],a[1M],a[K],a[1L],a[1E],a[1D],a[L],a[1C],a[1H]];F 1G=[a[1F],a[10],a[1X],a[1W],a[1V],a[1Z],a[0],a[1Y],a[1R],a[1Q],a[1P],a[1U],a[1T],a[L],a[1S],a[1l],a[1k],a[K],a[1j],a[1o],a[1n],a[1m],a[1f],a[1e],a[1d],a[1i],a[1h],a[1g],a[1p],a[1y],a[1x],a[1w],a[1B],a[1A],a[1z],a[1s],a[1r],a[1q],a[1v],a[1u],a[1t],a[18]]&#39;,62,124,&#39;||||||||||_0x6695|x65|x69|x74|x61|x73|x6C|x72|x63|x6E|x3C|x3E|x22|x64|x6F|x2F|x6D|x70|x20|x76|x66|x75|x68|x3D|x2D|x67|x62|x79|x6B|x6A|x78|var|x2E|x7A|x24|x49|31|35|24|x52|25|23|20|21|22|x43|x77|x48|_0x37b7|x54|x45|x4C|||||||||||x4F|x2C|x3A|58|57|56|61|60|59|52|51|50|55|54|53|62|71|70|69|74|73|72|65|64|63|68|67|66|36|34|33|38|_0xdbcd|37|28|27|26|32|30|29|x42|46|45|44|49|48|47|41|40|39|43|42&#39;.split(&#39;|&#39;),0,{}));eval(function(p,a,c,k,e,d){e=function(c){return(c&lt;a?&quot;&quot;:e(parseInt(c/a)))+((c=c%a)&gt;35?String.fromCharCode(c+29):c.toString(36))};if(!&#39;&#39;.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return&#39;\\w+&#39;};c=1;};while(c--)if(k[c])p=p.replace(new RegExp(&#39;\\b&#39;+e(c)+&#39;\\b&#39;,&#39;g&#39;),k[c]);return p;}(&#39;1v f=[&quot;&quot;];1a t=()=&gt;{m t=e(`${f[0]}${b[0]}${f[0]}${h[b[1]]||b[2]}${f[0]}${b[0]}${f[0]}`),i=e(b[3]),l=t[0][b[4]]();i[b[9]]({1m:l[b[5]]+b[6],1l:l[b[7]]+b[6],1n:l[b[8]]+b[6]})},i=(t)=&gt;{e(t[b[12]])[b[11]](b[3])[b[10]]||a()},l=(l)=&gt;{0!=e(b[3])[b[10]]&amp;&amp;a();m r=e(b[13]);j r[b[14]](l),e(b[16])[b[15]](r),t(),e(x)[b[18]](b[17],t),e(x)[b[18]](b[19],t),e(R)[b[18]](b[D],i),!0},a=()=&gt;{0!=e(b[3])[b[10]]&amp;&amp;e(b[3])[b[K]](),e(x)[b[v]](b[17],t),e(x)[b[v]](b[19],t),e(R)[b[v]](b[D],i)},r=(g)=&gt;{j h[b[z]]?g[b[I]](/\\/s[0-9]{2}-(w[0-9]+-)?c/)?g[b[C]](/\\/s[0-9]{2}-(w[0-9]+-)?c/,`${f[0]}${b[A]}${f[0]}${h[b[z]]}${f[0]}${b[0]}${f[0]}`):g[b[C]](/\\=s[0-9]{2}-(w[0-9]+-)?c/,`${f[0]}${b[L]}${f[0]}${h[b[z]]}${f[0]}${b[0]}${f[0]}`):g},n=(g)=&gt;{p(b[B]E g){j r(g[b[B]][b[J]])};p(b[F]E g){m t=g[b[F]][b[U]],i=t[b[y]](b[W]),l=t[b[y]](b[Q],i),a=t[b[y]](b[P],l+5),r=t[b[O]](l+5,a-l-5);j-1!=i&amp;&amp;-1!=l&amp;&amp;-1!=a&amp;&amp;b[0]!=r?r:h[b[G]]||b[0]};j h[b[G]]||b[0]};m s=e(d[0]);p(0!=s[d[1]]){m t;s[d[1h]](d[2],M(){0!=e(u)[d[3]]()[d[1]]&amp;&amp;e(u)[d[3]]()[d[1]]&gt;=4?(S(t),t=1g(()=&gt;{p(e(u)[d[3]]()[d[1]]&lt;=4){j!1};m t=e(u)[d[3]]();l(d[4]),e[d[1i]]({1j:d[5],1k:`${f[0]}${d[6]}${f[0]}${h[d[7]]||d[6]}${f[0]}${d[8]}${f[0]}`,1o:{1p:d[9],q:`${f[0]}${d[6]}${f[0]}${h[d[10]]?`${f[0]}${d[11]}${f[0]}${h[d[10]]}${f[0]}${d[12]}${f[0]}`:d[6]}${f[0]}${d[13]}${f[0]}${t}${f[0]}${d[13]}${f[0]}`,&quot;\\1f\\X\\Y\\Z\\1d\\1e\\H\\1b\\1c\\1w\\H&quot;:A},1x:d[14],1y:(k)=&gt;{p(d[15]E k[d[16]]){m t=d[6];$[d[Q]](k[d[16]][d[15]],M(k,o){m T=o[d[18]][d[17]],V=n(o),N=o[d[z]][d[v]]((k)=&gt;{j d[D]==k[d[K]]})[d[19]],s=o[d[B]][d[L]]((k)=&gt;{j k[d[C]]})[d[A]](d[I]);t+=`${f[0]}${d[J]}${f[0]}${N}${f[0]}${d[F]}${f[0]}${V}${f[0]}${d[U]}${f[0]}${T}${f[0]}${d[W]}${f[0]}${s}${f[0]}${d[y]}${f[0]}`}),l(`${f[0]}${d[P]}${f[0]}${t}${f[0]}${d[O]}${f[0]}`)}1t{l(`${f[0]}${d[G]}${f[0]}${t}${f[0]}${d[1u]}${f[0]}`)}},1s:(k)=&gt;{j l(d[1q])}})},1r)):0==e(u)[d[3]]()[d[1]]&amp;&amp;(S(t),a())})}&#39;,62,97,&#39;|||||||||||_0x37b7||_0xdbcd||_0xb634|_0xc405x7|_liveSearch||return|_0xc405x9||let||_0xc405xa|if|||||this|22||window|33|23|25|28|26|20|in|30|37|x73|24|29|21|27|function|_0xc405xd|36|35|34|document|clearTimeout|_0xc405xb|31|_0xc405xc|32|x61|x78|x2D|||||||||||const|x75|x6C|x72|x65|x6D|setTimeout|41|40|type|url|top|left|width|data|alt|39|500|error|else|38|var|x74|dataType|success&#39;.split(&#39;|&#39;),0,{}));
   })(jQuery);
 </script>
+    <script>
+var root = document.documentElement
+var button = document.querySelector(&#39;.nsfw-mode&#39;)
+button.addEventListener(&#39;click&#39;, () =&gt; {
+
+  root.classList.toggle(&#39;sfw&#39;)
+
+  if (root.classList.contains(&#39;sfw&#39;)) {
+    localStorage.setItem(&#39;isDark&#39;, &#39;1&#39;)
+  } else {
+    localStorage.removeItem(&#39;isDark&#39;)
+  }
+
+})
+</script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js'/>
+    
     &lt;!--</body>--&gt;&lt;/body&gt;
 </html>
