@@ -220,13 +220,7 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
 * [silawuh/Pagination](https://github.com/siwaluh/Pagination/tree/main)
-* [Dayat/BloggerScript]([https://www.webpagefx.com/tools/emoji-cheat-sheet](https://github.com/siwaluh/BloggerScript))
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+* [Dayat/BloggerScript](https://github.com/siwaluh/BloggerScript)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
