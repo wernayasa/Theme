@@ -94,6 +94,8 @@ Use the `BLANK_README.md` to get started.
 
 ## Update
 * Tombol dark/light mode baru
+* Slider baru
+* Menghapus iconify
 
 
 ### Built With
