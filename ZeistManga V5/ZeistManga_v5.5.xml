@@ -2,7 +2,9 @@
 <!DOCTYPE html>
 <html b:css='false' b:defaultwidgetversion='2' b:js='true' b:layoutsVersion='3' b:responsive='true' b:templateUrl='indie.xml' b:templateVersion='1.3.0' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
   <head>
-    <link href='https://fonts.googleapis.com/css?family=Fira Sans' rel='stylesheet'/>
+    <link href='https://fonts.googleapis.com' rel='preconnect'/>
+<link crossorigin='' href='https://fonts.gstatic.com' rel='preconnect'/>
+<link href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap' rel='stylesheet'/>
     <!-- Meta Umum -->
     <b:include data='blog' name='google-analytics'/>
     <meta content='width=device-width,initial-scale=1' name='viewport'/>
@@ -75,11 +77,11 @@
     <b:skin><![CDATA[ 
 
 /*
-<Variable name="keycolor" description="Main Color" type="color" default="#ff0000" hideEditor="true"  value="#6e4f9d"/>
+<Variable name="keycolor" description="Main Color" type="color" default="#ff0000" hideEditor="true"  value="#ff5722"/>
 <Group description="Body">
   <Variable name="body.background.color" description="Background color" type="color" default="#fff"  value="#ffffff"/>
 </Group>
-<Variable name="secclr" description="Secondary Color" type="color" default="#7b0000"  value="#6e4f9d"/>
+<Variable name="secclr" description="Secondary Color" type="color" default="#7b0000"  value="#ff5722"/>
 <Variable name="border.radius" description="Border Radius" type="length"
             min="2px" max="50px" default="2px"  value="3px"/>
 <Variable name="b.w" description="Blog Width" type="length"
@@ -87,20 +89,20 @@
 <Variable name="s.w" description="Sidebar Width" type="length"
             min="300px" max="500px" default="315px"  value="339px"/>
 <Group description="Status Color">
-<Variable name="com" description="Completed Color" type="color" default="#228b22"  value="#854921"/>
-<Variable name="ong" description="Ongoing Color" type="color" default="#ffa500"  value="#fc00f1"/>
-<Variable name="soo" description="Coming Soon Color" type="color" default="#2f4f4f"  value="#3b4629"/>
-<Variable name="drp" description="Dropped Color" type="color" default="#ff0000"  value="#6400fc"/>
+<Variable name="com" description="Completed Color" type="color" default="#228b22"  value="#24943f"/>
+<Variable name="ong" description="Ongoing Color" type="color" default="#ffa500"  value="#ffe306"/>
+<Variable name="soo" description="Coming Soon Color" type="color" default="#2f4f4f"  value="#36535c"/>
+<Variable name="drp" description="Dropped Color" type="color" default="#ff0000"  value="#ff4106"/>
 </Group>
 <Group description="New Comment Required - Dont edit">
 <Variable name="body.background" description="Background" color="#505050" type="background" default="$(color) none repeat scroll center center"  value="$(color) none repeat scroll center center"/>
 <Variable name="body.text.font" description="Font komentar Blogger" type="font" default="$(fontBody)" value="400 14px &#39;Roboto&#39;, sans-serif"/>
-<Variable name="body.text.color" description="Color" type="color" default="#505050"  value="#4c4c4c"/>
-<Variable name="body.link.color" description="Link color" type="color" default="#161617"  value="#000000"/>
-<Variable name="posts.title.color" description="Post title color" type="color" default="#161617"  value="#000000"/>
-<Variable name="posts.text.color" description="Post text color" type="color" default="#505050"  value="#4c4c4c"/>
-<Variable name="posts.icons.color" description="Post info color" type="color" default="#505050" value="#4c4c4c"/>
-<Variable name="posts.background.color" description="Post background color" type="color" default="#f7f7fc"  value="#f6fcf9"/>
+<Variable name="body.text.color" description="Color" type="color" default="#505050"  value="#575757"/>
+<Variable name="body.link.color" description="Link color" type="color" default="#161617"  value="#353436"/>
+<Variable name="posts.title.color" description="Post title color" type="color" default="#161617"  value="#353436"/>
+<Variable name="posts.text.color" description="Post text color" type="color" default="#505050"  value="#575757"/>
+<Variable name="posts.icons.color" description="Post info color" type="color" default="#505050" value="#575757"/>
+<Variable name="posts.background.color" description="Post background color" type="color" default="#f7f7fc"  value="#f9f8fc"/>
 <Variable name="tabs.font" description="Font" type="font" default="400 14px &#39;Roboto&#39;, sans-serif" value="400 14px &#39;Roboto&#39;, sans-serif"/>
 <Variable name="tabs.overflow.background.color" description="Popup background color" type="color" default="#ffffff"  value="#ffffff"/>
 <Variable name="labels.background.color" description="Labels background color" type="color" default="#fff" value="#ffffff"/>
@@ -108,7 +110,7 @@
 */
 /*!************************************************
 * Name		: ZeistManga
-* Version	: 5.5
+* Version	: 5.5.2
 * Revisi	: 2024
 * Website	: emissionhex.blogspot.com
 **************************************************/
@@ -143,7 +145,7 @@ svg{width:24px;height:24px}
 .toggleSwitch::before{position:absolute;content:"";height:15px;width:15px;left:1px;bottom:1px;background-color:#333;transition:.4s;border-radius:50%;background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15px' height='15px' viewBox='0 0 24 24'%3E%3Cg fill='%23636363' fill-opacity='0'%3E%3Cpath d='M15.22 6.03L17.75 4.09L14.56 4L13.5 1L12.44 4L9.25 4.09L11.78 6.03L10.87 9.09L13.5 7.28L16.13 9.09L15.22 6.03Z'%3E%3Canimate fill='freeze' attributeName='fill-opacity' begin='0.7s' dur='0.4s' values='0;1'/%3E%3C/path%3E%3Cpath d='M19.61 12.25L21.25 11L19.19 10.95L18.5 9L17.81 10.95L15.75 11L17.39 12.25L16.8 14.23L18.5 13.06L20.2 14.23L19.61 12.25Z'%3E%3Canimate fill='freeze' attributeName='fill-opacity' begin='1.1s' dur='0.4s' values='0;1'/%3E%3C/path%3E%3C/g%3E%3Cg fill-opacity='0' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cpath fill='%23636363' stroke-dasharray='56' stroke-dashoffset='56' d='M7 6 C7 12.08 11.92 17 18 17 C18.53 17 19.05 16.96 19.56 16.89 C17.95 19.36 15.17 21 12 21 C7.03 21 3 16.97 3 12 C3 8.83 4.64 6.05 7.11 4.44 C7.04 4.95 7 5.47 7 6 Z'%3E%3Canimate fill='freeze' attributeName='stroke-dashoffset' dur='0.6s' values='56;0'/%3E%3Canimate fill='freeze' attributeName='fill-opacity' begin='1.5s' dur='0.5s' values='0;1'/%3E%3C/path%3E%3C/g%3E%3C/svg%3E");}
 input:focus+.toggleSwitch{box-shadow:0 0 1px #2196f3}
 .dark-mode input + .toggleSwitch::before{transform:translateX(15px);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15px' height='15px' viewBox='0 0 24 24'%3E%3Cg stroke='white' stroke-linecap='round' stroke-width='2'%3E%3Cpath fill='white' fill-opacity='0' stroke-dasharray='34' stroke-dashoffset='34' d='M12 7C14.76 7 17 9.24 17 12C17 14.76 14.76 17 12 17C9.24 17 7 14.76 7 12C7 9.24 9.24 7 12 7'%3E%3Canimate fill='freeze' attributeName='stroke-dashoffset' dur='0.4s' values='34;0'/%3E%3Canimate fill='freeze' attributeName='fill-opacity' begin='0.9s' dur='0.5s' values='0;1'/%3E%3C/path%3E%3Cg fill='none' stroke-dasharray='2' stroke-dashoffset='2'%3E%3Cpath d='M0 0'%3E%3Canimate fill='freeze' attributeName='d' begin='0.5s' dur='0.2s' values='M12 19v1M19 12h1M12 5v-1M5 12h-1;M12 21v1M21 12h1M12 3v-1M3 12h-1'/%3E%3Canimate fill='freeze' attributeName='stroke-dashoffset' begin='0.5s' dur='0.2s' values='2;0'/%3E%3C/path%3E%3Cpath d='M0 0'%3E%3Canimate fill='freeze' attributeName='d' begin='0.7s' dur='0.2s' values='M17 17l0.5 0.5M17 7l0.5 -0.5M7 7l-0.5 -0.5M7 17l-0.5 0.5;M18.5 18.5l0.5 0.5M18.5 5.5l0.5 -0.5M5.5 5.5l-0.5 -0.5M5.5 18.5l-0.5 0.5'/%3E%3Canimate fill='freeze' attributeName='stroke-dashoffset' begin='0.7s' dur='0.2s' values='2;0'/%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
-body{font-family:fira sans,sans-serif;counter-reset:section;background-color:#e8ebf5;color:#222d34;font-size:15px;line-height:1.4;}
+body{font-family:"Poppins", sans-serif;counter-reset:section;background-color:#e8ebf5;color:#222d34;font-size:15px;line-height:1.4;}
 a{color:#222d34;text-decoration:none}
 a:hover,.infolimit a,::marker{color:$(keycolor)}
 .link a,.dark-mode .link a,#allert a{color:$(keycolor)}
@@ -1153,6 +1155,11 @@ i.icon-star.silver:before,i.icon-star.silver:before{content:&#39;&#39;;width:17p
 #synopsis.sersysfull > p{max-height:none;-webkit-line-clamp:unset;}
 .sysmore{padding-top:5px;font-weight:500;text-decoration:underline;cursor:pointer;}
 
+.absolute.cl{bottom:3px;left:5px;background-color:#eccf07;font-size:12px;padding:0 6px;border-radius:3px;color:#463e00;font-weight:bold;}
+.absolute.cl::before{content:"";display:inline-block;width:12px;height:12px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12px' height='12px' viewBox='0 0 24 24'%3E%3Cpath fill='%23463e00' d='M17.5 12a1.5 1.5 0 0 1-1.5-1.5A1.5 1.5 0 0 1 17.5 9a1.5 1.5 0 0 1 1.5 1.5a1.5 1.5 0 0 1-1.5 1.5m-3-4A1.5 1.5 0 0 1 13 6.5A1.5 1.5 0 0 1 14.5 5A1.5 1.5 0 0 1 16 6.5A1.5 1.5 0 0 1 14.5 8m-5 0A1.5 1.5 0 0 1 8 6.5A1.5 1.5 0 0 1 9.5 5A1.5 1.5 0 0 1 11 6.5A1.5 1.5 0 0 1 9.5 8m-3 4A1.5 1.5 0 0 1 5 10.5A1.5 1.5 0 0 1 6.5 9A1.5 1.5 0 0 1 8 10.5A1.5 1.5 0 0 1 6.5 12M12 3a9 9 0 0 0-9 9a9 9 0 0 0 9 9a1.5 1.5 0 0 0 1.5-1.5c0-.39-.15-.74-.39-1c-.23-.27-.38-.62-.38-1a1.5 1.5 0 0 1 1.5-1.5H16a5 5 0 0 0 5-5c0-4.42-4.03-8-9-8'/%3E%3C/svg%3E");margin-inline-end:3px;}
+
+
+
  ]]></b:skin>
 
     <b:template-skin>
@@ -1191,7 +1198,7 @@ function _related(post) {
       let tipe = post.label.find(i => ['Manga', 'Manhwa', 'Manhua'].includes(i)) || false;
       let konten = post.label.find(i => ['Ecchi', 'Hentai', '18+', 'NSFW'].includes(i)) || "";
 html += `<li class='cp1_items ${konten.toLowerCase()}'><div class='cp1_item'>`;
-   status && (html += `<div class='cp1_limit'><span class='absolute' style='z-index:1;'>${konten}</span>`);
+   html += `<div class='cp1_limit'><span class='absolute' style='z-index:1;'>${konten}</span>`;
    html += `<img alt='${post.title}' class='absolute inset-0 object-cover w-full h-full shadow' loading='lazy' src='${post.image}'/><span class='cp1_status ${status}'>${status}</span><a href='${post.link}'></a>`;
    tipe && (html += `<span class='absolute po ${tipe.toLowerCase()}'>${tipe}</span></div>`);
    html += `<div class='cp1_bigor'><a class='cp1_tt' href='${post.link}'>${post.title}</a>
@@ -1641,6 +1648,14 @@ if ("Manga" == label2) {
 } else if ("Manhwa" == label2) {
   typ = "<span class='absolute po manhwa'>Manhwa</span>";
 } else typ = "";
+
+var cl = "";
+var label = r.find(i => "Color".includes(i));
+if ("Color" == label) {
+  cl = "<span class='absolute cl flex aic'>Color</span>";
+} else cl = "";
+
+
 console.log(`${label} & ${lang}`);
           update.subItemArr.length > 0 && update.subItemArr.forEach(function({
             titleSub: t,
@@ -1657,7 +1672,7 @@ console.log(`${label} & ${lang}`);
             }), n.filter(function(n) {
               r.join(", ").includes(n) && (o += '<li class="char"><div class="chpName"><a href="' + e + '" title="' + t + '">' + a + '</a></div><time class="chpDate">' + i + "</time></li>")
             })
-          }), n += '<div class="bookItem bb-1pxsf"><a href="' + e + '" title="' + t + '"><div class="snippet-thumbnail"><img loading="lazy" src="' + i + '"/>'+lang+typ+'</div></a><div class="data"><h2><a href="' + e + '" title="' + t + '">' + t + '</a></h2><ul class="subItem">' + o + "</ul></div></div>"
+          }), n += '<div class="bookItem bb-1pxsf"><a href="' + e + '" title="' + t + '"><div class="snippet-thumbnail"><img loading="lazy" src="' + i + '"/>'+lang+typ+cl+'</div></a><div class="data"><h2><a href="' + e + '" title="' + t + '">' + t + '</a></h2><ul class="subItem">' + o + "</ul></div></div>"
         }), i.innerHTML = n
       }
     },
