@@ -110,7 +110,7 @@
 */
 /*!************************************************
 * Name		: ZeistManga
-* Version	: 5.5.2
+* Version	: 5.5.3
 * Revisi	: 2024
 * Website	: emissionhex.blogspot.com
 **************************************************/
@@ -1158,7 +1158,8 @@ i.icon-star.silver:before,i.icon-star.silver:before{content:&#39;&#39;;width:17p
 .absolute.cl{bottom:3px;left:5px;background-color:#eccf07;font-size:12px;padding:0 6px;border-radius:3px;color:#463e00;font-weight:bold;}
 .absolute.cl::before{content:"";display:inline-block;width:12px;height:12px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12px' height='12px' viewBox='0 0 24 24'%3E%3Cpath fill='%23463e00' d='M17.5 12a1.5 1.5 0 0 1-1.5-1.5A1.5 1.5 0 0 1 17.5 9a1.5 1.5 0 0 1 1.5 1.5a1.5 1.5 0 0 1-1.5 1.5m-3-4A1.5 1.5 0 0 1 13 6.5A1.5 1.5 0 0 1 14.5 5A1.5 1.5 0 0 1 16 6.5A1.5 1.5 0 0 1 14.5 8m-5 0A1.5 1.5 0 0 1 8 6.5A1.5 1.5 0 0 1 9.5 5A1.5 1.5 0 0 1 11 6.5A1.5 1.5 0 0 1 9.5 8m-3 4A1.5 1.5 0 0 1 5 10.5A1.5 1.5 0 0 1 6.5 9A1.5 1.5 0 0 1 8 10.5A1.5 1.5 0 0 1 6.5 12M12 3a9 9 0 0 0-9 9a9 9 0 0 0 9 9a1.5 1.5 0 0 0 1.5-1.5c0-.39-.15-.74-.39-1c-.23-.27-.38-.62-.38-1a1.5 1.5 0 0 1 1.5-1.5H16a5 5 0 0 0 5-5c0-4.42-4.03-8-9-8'/%3E%3C/svg%3E");margin-inline-end:3px;}
 
-
+#nextPrevJS{display:-moz-box;display:-ms-flexbox;display:-webkit-box;display:-webkit-flex;display:flex;justify-content:space-between;align-items:center}#nextPrevJS select{background:#333;border:1px solid #333;display:block;color:#9b9b9b;padding:5px 10px;padding-right:25px;border-radius:20px;font-size:13px}#nextPrevJS .nav-right{display:-moz-box;display:-ms-flexbox;display:-webkit-box;display:-webkit-flex;display:flex;flex-wrap:wrap;gap:10px;order:2}#nextPrevJS .nav-right a{text-decoration:none;display:block;padding:2px 15px;border-radius:20px;color:#fff;font-size:13px;text-align:center;background:#366ad3;line-height:25px}#nextPrevJS .nav-right a:hover{background-color:#1c2834;color:#77828d}
+#nextPrevJS select {max-width:100px;}
 
  ]]></b:skin>
 
@@ -1510,9 +1511,7 @@ setHistory();
 return obj;
 })(); //]]></script>
 
-      <script type='text/javascript'>/*<![CDATA[*/
-  const nPL={arr:new Array,compile:function(){const t=this.arr;let e='<div class="inner_nPL"><a id="dl" href="#" class="dlx r"><i class="fas fa-cloud-download-alt mr-7"></i>Download</a>',n='<div><select id="nPL_select" onchange="this.options[this.selectedIndex].value&&window.open(this.options[this.selectedIndex].value,\'_self\')" name="nPL_list"><option value="" selected>Select Chapter</option>';for(let s=0;s<t.length;s++){s!=t.length-0&&(n+=`<option value="${t[s].link}">${t[s].title}</option>`);const l=window.location.pathname;t[s].link.includes(l)&&(t[s+1]&&t[s+1]!=t.length-0&&(console.log(t[s+1]),s+1!=t.length-0&&(e+=`<a href="${t[s+1].link}" title="${t[s+1].title}"><i class="fas fa-angle-left mr-7"></i><span>Prev</span></a>`)),t[t.length-0]&&(e+=`<a href="${t[t.length-0].link}" title="${t[t.length-0].title}"><span>Home</span></a>`),t[s-1]&&(console.log(t[s-1]),e+=`<a href="${t[s-1].link}" title="${t[s-1].title}"><span class="mr-7">Next</span><i class="fas fa-angle-right"></i></a>`))}n+=`</select></div>${e}</div>`,jQuery("#nPL").html(n)},create:function(t){const e=this;t.ajax({type:"get",url:`/feeds/posts/summary/-/${e.settings.cat}?alt=json-in-script&start-index=${e.settings.start}&max-results=${e.settings.max}`,dataType:"jsonp",success:function(t){"entry"in t.feed?(t.feed.entry.forEach(t=>{e.arr.push({title:t.title.$t,link:t.link.find(t=>"alternate"==t.rel).href})}),t.feed.length>=e.settings.max?(e.settings.start+=e.settings.max,e.run(e.settings.cat)):e.compile()):e.arr.length>0&&e.compile()},error:function(t){console.log(t)}})},run:function(t){"function"==typeof jQuery&&document.getElementById("nPL")?(this.settings.cat=t,this.create(jQuery)):console.log("Error not function")},settings:{start:1,max:150}};
-/*]]>*/</script>
+      
       <script type='text/javascript'>/*<![CDATA[*/
   const nPL2={arr:new Array,compile:function(){const t=this.arr;let e='<div class="inner_nPL">',n='<div><select id="nPL_select" onchange="this.options[this.selectedIndex].value&&window.open(this.options[this.selectedIndex].value,\'_self\')" name="nPL_list"><option value="" selected>Select Chapter</option>';for(let s=0;s<t.length;s++){s!=t.length-0&&(n+=`<option value="${t[s].link}">${t[s].title}</option>`);const l=window.location.pathname;t[s].link.includes(l)&&(t[s+1]&&t[s+1]!=t.length-0&&(console.log(t[s+1]),s+1!=t.length-0&&(e+=`<a href="${t[s+1].link}" title="${t[s+1].title}"><i class="fas fa-angle-left mr-7"></i><span>Prev</span></a>`)),t[t.length-0]&&(e+=`<a href="${t[t.length-0].link}" title="${t[t.length-0].title}"><span>Home</span></a>`),t[s-1]&&(console.log(t[s-1]),e+=`<a href="${t[s-1].link}" title="${t[s-1].title}"><span class="mr-7">Next</span><i class="fas fa-angle-right"></i></a>`))}n+=`</select></div>${e}</div>`,jQuery("#nPL2").html(n)},create:function(t){const e=this;t.ajax({type:"get",url:`/feeds/posts/summary/-/${e.settings.cat}?alt=json-in-script&start-index=${e.settings.start}&max-results=${e.settings.max}`,dataType:"jsonp",success:function(t){"entry"in t.feed?(t.feed.entry.forEach(t=>{e.arr.push({title:t.title.$t,link:t.link.find(t=>"alternate"==t.rel).href})}),t.feed.length>=e.settings.max?(e.settings.start+=e.settings.max,e.run(e.settings.cat)):e.compile()):e.arr.length>0&&e.compile()},error:function(t){console.log(t)}})},run:function(t){"function"==typeof jQuery&&document.getElementById("nPL2")?(this.settings.cat=t,this.create(jQuery)):console.log("Error not function")},settings:{start:1,max:150}};
 /*]]>*/</script>
@@ -1549,7 +1548,7 @@ console.log(`${label} & ${lang}`);
 mangaPost.subItemArr.length>0&&mangaPost.subItemArr.forEach(function({titleSub:t,linkSub:e,publishedSub:i,categorySub:n}){var a=t;mangaPost.settingTitle.forEach(function({name:e,news:i}){a.includes(e)&&(a=i+" "+t.split(e)[1].replace(/[^0-9\.-]+/g,""))}),n.filter(function(n){r.join(", ").includes(n)&&(o+='<li class="char"><div class="chpName"><a href="'+e+'" title="'+t+'">'+a+'</a></div><time class="chpDate">'+i+"</time></li>")})}),n+='<div class="bookItem bb-1pxsf"><a href="'+e+'" title="'+t+'"><div class="snippet-thumbnail"><img loading="lazy" src="' + i + '"/>'+lang+typ+'</div></a><div class="data"><h2><a href="'+e+'" title="'+t+'">'+t+'</a></h2><ul class="subItem">'+o+"</ul></div></div>"}),i.innerHTML=n}},run:function(t,e){var i=document.createElement("script");i.src="/feeds/posts/default/-/"+t+"?orderby=published&alt=json-in-script&max-results="+e+"&callback=mangaPost.compile",document.body.appendChild(i)}};
 
   //Setting Script
-  mangaPost.mainItem = ['Manga','Manhwa','Manhua'];
+  mangaPost.mainItem = ['Manga','Manhwa','Manhua','Novel'];
   mangaPost.subItem = ['Chapter'];
   mangaPost.settingTitle = [{
     name: 'Chapter',
@@ -1702,6 +1701,10 @@ mTP.Select = ["Action", "Adventure", "Comedy", "Drama", "Ecchi", "Fantasy", "Gam
   const clwd={arr:new Array,compile:function(){const t=this,e=this.arr.length;t.settings.title.some(e=>t.arr[0].title.includes(e.in))||t.arr.push(t.arr.shift());let n="<ul>",s='<div class="lastend">';jQuery.each(t.arr,function(i,a){let l=a.title;if(jQuery.each(t.settings.title,function(t,e){l.includes(e.in)&&(l=e.out+" "+l.split(e.in)[1].replace(/[^0-9\.-]+/g,""))}),i==e-2&&(s+=`<div class="inepcx" data-id="1"><a href="${a.link}"><span>Chapter Awal</span><span class="epcur epcurfirst">${l}</span></a></div>`),0==i&&(s+=`<div class="inepcx" data-id="2"><a href="${a.link}"> <span>Chapter Baru</span> <span class="epcur epcurlast">${l}</span></a></div>`),i!=e-1){let t=0==a.dLink?"":`<div class="dt"> <a href="${a.dLink}" rel="nofollow" class="dload" target="_blank"><i class="fas fa-cloud-download-alt"></i></a></div>`;n+=`<li><div class="chbox"><div class="eph-num"><a href="${a.link}"><span class="chapternum">${l}</span> <span class="chapterdate">${a.published}</span></a></div>${t}</div></li>`}}),s+="</div>",n+="</ul>",document.getElementById("clwd").innerHTML=`${s+n}`},get:function(t){const e=this;t.ajax({url:`/feeds/posts/default/-/${this.settings.cat}?alt=json-in-script&start-index=${this.settings.start}&max-results=${this.settings.max}`,type:"get",dataType:"jsonp",success:function(n){"entry"in n.feed?(n.feed.entry.forEach(n=>{e.arr.push({title:n.title.$t,link:n.link.find(t=>"alternate"==t.rel).href,dLink:"content"in n&&(0!=t(n.content.$t).find("#downBTN").length&&t(n.content.$t).find("#downBTN").attr("href")),published:"function"==typeof timeAgo?timeAgo(new Date(n.updated.$t)):e.timeStirng(n.updated.$t)})}),n.feed.entry.length>=e.settings.max?(e.settings.start+=e.settings.max,e.run(e.settings.cat)):e.compile()):0!=e.arr.length&&e.compile()},error:function(t){console.log(t)}})},run:function(t){this.settings.cat=t,"function"==typeof jQuery&&document.getElementById("clwd")?this.get(jQuery):console.log("Output Nothing")},settings:{max:150,start:1,title:[{in:"Episode",out:"Ep."},{in:"Chapter",out:"Ch."},{in:"Volume",out:"Vol."}],judul:"Chapter List"},timeStirng:function(t){if(/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/.test(t)){var e=t,n=e.substring(0,4),s=e.substring(5,7),i=e.substring(8,10),a=new Array;return a[1]="Jan",a[2]="Feb",a[3]="Mar",a[4]="Apr",a[5]="May",a[6]="Jun",a[7]="Jul",a[8]="Aug",a[9]="Sep",a[10]="Oct",a[11]="Nov",a[12]="Dec",i+" "+a[parseInt(s,10)]+" "+n}return!1}};
 /*]]>*/</script>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'/>
+    <link href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css' rel='stylesheet'/>
+
+<script src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js'/>
+
       <b:comment><script src='//code.iconify.design/1/1.0.6/iconify.min.js'/></b:comment>
     <style>
   @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css);
@@ -1758,7 +1761,6 @@ $(widget).remove();
                 <b:with value='[&quot;Light Novel (JP)&quot;,&quot;Web Novel (CN)&quot;,&quot;Web Novel (JP)&quot;,&quot;Web Novel (KR)&quot;,&quot;Manga&quot;,&quot;Manhua&quot;,&quot;Manhwa&quot;,&quot;Doujinshi&quot;,&quot;Long Strip&quot;,&quot;Full Color&quot;,&quot;One Shot&quot;,&quot;Web Comic&quot;,&quot;Official Colored&quot;,&quot;Jepang&quot;,&quot;Korea&quot;,&quot;Cina&quot;,&quot;Indonesia&quot;,&quot;Webtoon&quot;,&quot;Webtoons&quot;,&quot;WN&quot;,&quot;LN&quot;]' var='Format'>
                   <b:with value='[&quot;Ongoing&quot;,&quot;Completed&quot;,&quot;Cancelled&quot;,&quot;Hiatus&quot;,&quot;Dropped&quot;,&quot;Coming Soon&quot;]' var='Status'>
                     <b:with value='[&quot;Score 0.5&quot;,&quot;Score 1.0&quot;,&quot;Score 1.5&quot;,&quot;Score 2.0&quot;,&quot;Score 2.5&quot;,&quot;Score 3.0&quot;,&quot;Score 3.5&quot;,&quot;Score 4.0&quot;,&quot;Score 4.5&quot;,&quot;Score 5.0&quot;,&quot;Score 5.5&quot;,&quot;Score 6.0&quot;,&quot;Score 6.5&quot;,&quot;Score 7.0&quot;,&quot;Score 7.5&quot;,&quot;Score 8.0&quot;,&quot;Score 8.5&quot;,&quot;Score 9.0&quot;,&quot;Score 9.5&quot;,&quot;Score 10.0&quot;]' var='Score'>
-
                       <header class='bg-main'>
                         <b:section class='max-w mra mla grid gtc-header aic gg-30' growth='vertical' id='header' maxwidgets='3' showaddelement='true'>
                           <b:widget id='Header1' locked='true' title='Zeistmanga (Header)' type='Header' version='2' visible='true'>
@@ -1943,9 +1945,9 @@ https://cararegistrasi.com/zeistmanga
                       <b:section class='mb-15' cond='data:view.isHomepage' id='hero' maxwidgets='2' showaddelement='true'>
                         <b:widget id='HTML3' locked='true' title='Slider v2 Manual' type='HTML' version='2' visible='true'>
                           <b:widget-settings>
-                            <b:widget-setting name='content'><![CDATA[<div class="big-slider swiper-container slidernom3" id="default-carousel" data-carousel="slide">
+                            <b:widget-setting name='content'><![CDATA[<div class="big-slider swiper swiper-container slidernom3" id="default-carousel" data-carousel="slide">
   <div class="swiper-wrapper">
-     <div class="swiper-slide hidden duration-700 ease-in-out" data-carousel-item>
+     <div class="swiper-slide ">
         <div class="mainslider">
            <div class="limit">
               <div class="sliderinfo">
@@ -1977,7 +1979,7 @@ https://cararegistrasi.com/zeistmanga
            </div>
         </div>
      </div>
-     <div class="swiper-slide hidden duration-700 ease-in-out" data-carousel-item>
+     <div class="swiper-slide ">
         <div class="mainslider">
            <div class="limit">
               <div class="sliderinfo">
@@ -2009,7 +2011,7 @@ https://cararegistrasi.com/zeistmanga
            </div>
         </div>
      </div>
-     <div class="swiper-slide hidden duration-700 ease-in-out" data-carousel-item>
+     <div class="swiper-slide ">
         <div class="mainslider">
            <div class="limit">
               <div class="sliderinfo">
@@ -2041,7 +2043,7 @@ https://cararegistrasi.com/zeistmanga
            </div>
         </div>
      </div>
-     <div class="swiper-slide hidden duration-700 ease-in-out" data-carousel-item>
+     <div class="swiper-slide ">
         <div class="mainslider">
            <div class="limit">
               <div class="sliderinfo">
@@ -2073,37 +2075,20 @@ https://cararegistrasi.com/zeistmanga
            </div>
         </div>
      </div>
-  </div>
-  <div class="paging">
-     <div class="centerpaging">
-        <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></span></div>
-     </div>
-  </div>   
-  <div class="grid pcc absolute end-0 bottom-0 z-30">
-<!-- Slider controls -->
-   <button type="button" class="flex items-center justify-center h-full bn cursor-pointer group focus:outline-none" data-carousel-prev>
-       <span class="inline-flex items-center justify-center w-10 h-10 r2 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-           <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 6 10">
-               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-           </path></svg>
-           <span class="sr-only">Previous</span>
-       </span>
-   </button>
-   <button type="button" class="flex items-center justify-center h-full bn cursor-pointer group focus:outline-none" data-carousel-next>
-       <span class="inline-flex items-center justify-center w-10 h-10 r2 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-           <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 6 10">
-               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-           </path></svg>
-           <span class="sr-only">Next</span>
-       </span>
-   </button>
-</div>
+  </div> 
+ <!-- If we need pagination -->
+ <div class="swiper-pagination"></div>
+
+ <!-- If we need navigation buttons -->
+ <div class="swiper-button-prev"></div>
+ <div class="swiper-button-next"></div>
+
+ <!-- If we need scrollbar -->
+ <div class="swiper-scrollbar"></div>
 </div>]]></b:widget-setting>
                           </b:widget-settings>
                           <b:includable id='main'>
-                            <div class='widget-content relative max-w mla mra mt-15'>
                               <data:content/>
-                            </div>
                           </b:includable>
                         </b:widget>
                         <b:widget id='Label3' locked='true' title='Popular Genre' type='Label' version='2' visible='true'>
@@ -2521,8 +2506,332 @@ https://cararegistrasi.com/zeistmanga
   </div>
 </b:includable>
                           </b:widget>
+                          <b:widget id='HTML12' locked='false' title='Custom post with label' type='HTML' visible='true'>
+                            <b:widget-settings>
+                              <b:widget-setting name='content'><![CDATA[<div id='relatedPostV2'/>
+        
+        <script crossorigin='anonymous' defer='defer' fetchpriority='low'>//<![CDATA[
+         var related = new BloggerRelated({
+   labels: ['Action'],
+   jumlah: 7,
+   noImage: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgu__ZMDj4Q-1v-2c50s55Sp0vnfiabiNy7aMqr6nykUKgXi7E_1r6upRUvORBA1eMyO_Iia4dPvWGHJXPdtF1rmY5-dk3ZzFGgT85ia52BAFXiFAPqu3ciwtAu0BHZPwhFaAKe2Gxg7afpv4LRqj_HUf1IuO7uvrXNop0Kqp3-geZv3e0WjYP88OFn/s128/blogger.png',
+   sizeImage: 's320'
+});
+
+function _related(post) {
+   let html = `<ul class='custom_post_v1 m-0 lsn'>`;
+   post.forEach(post => {
+      let ep = post.label.find(i => /^Ch\s\d+/.test(i)) || post.label.find(i => i.includes('Ch'))?.split(' ')[1] || '?';
+		let score = post.label.find(i => !/[^0-9\.-]+/g.test(i)) || post.label.find(i => i.includes('Score'))?.split(' ')[1] || '0.0';
+      let status = post.label.find(i => ['Ongoing', 'Completed', 'Dropped', 'Cooming Soon'].includes(i)) || '';
+      let tipe = post.label.find(i => ['Manga', 'Manhwa', 'Manhua'].includes(i)) || false;
+      let konten = post.label.find(i => ['Ecchi', 'Hentai', '18+', 'NSFW'].includes(i)) || "";
+html += `<li class='cp1_items ${konten.toLowerCase()}'><div class='cp1_item'>`;
+   html += `<div class='cp1_limit'><span class='absolute' style='z-index:1;'>${konten}</span>`;
+   html += `<img alt='${post.title}' class='absolute inset-0 object-cover w-full h-full shadow' loading='lazy' src='${post.image}'/><span class='cp1_status ${status}'>${status}</span><a href='${post.link}'></a>`;
+   tipe && (html += `<span class='absolute po ${tipe.toLowerCase()}'>${tipe}</span></div>`);
+   html += `<div class='cp1_bigor'><a class='cp1_tt' href='${post.link}'>${post.title}</a>
+      <div class="cp1_adds"><span class='cp1_epxs' data-name='${status}'>${ep}</span>
+<div class='cp1_rating'>
+<div class='cp1_rating-prc'>
+   <div class='cp1_rtp'>
+      <div class='cp1_rtb'><span style='width:${score.length == 4 ? score == '10.0' ? score.replace('.', '') : score.replace('.', '').slice(0, -1) : score.replace('.', '')}%'/></div>
+   </div>
+</div>
+<div class='num' content='${score}'>${score}</div>
+</div></div>
+</div>`;
+   html += '</div></li>';
+   });
+   html += '</ul>';
+   document.getElementById('relatedPostV2').innerHTML = html;
+}
+related.run('/feeds/posts/default', _related);
+        //]]]]><![CDATA[></script></div>]]></b:widget-setting>
+                            </b:widget-settings>
+                            <b:includable id='main'>
+  <b:include name='widget-title'/>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+</b:includable>
+                          </b:widget>
                         </b:section>
                         <b:section class='grid gg-20 mb-15' id='main' showaddelement='true'>
+                          <b:widget cond='data:view.isLabelSearch' id='BlogSearch22' locked='true' title='Search' type='BlogSearch' version='2' visible='true'>
+                            <b:includable id='main'>
+                              <b:class name='r2 s1 bc-fff mt-24'/>
+            <h3 class='title flex aic'>
+    <svg aria-hidden='true' height='1em' preserveAspectRatio='xMidYMid meet' role='img' viewBox='0 0 16 16' width='1em' xmlns='http://www.w3.org/2000/svg'><path d='M6 12v-1h4v1H6zM4 7h8v1H4V7zm10-4v1H2V3h12z' fill='currentColor'/></svg>
+<data:title/>
+</h3>
+            <b:include name='content'/>
+          </b:includable>
+                            <b:includable id='content'>
+            <section class='quickfilter' role='search'>
+              <div class='filters'>
+                <div class='opt'>
+                  <!-- List Label -->
+                  <div class='filter'>
+                    <input class='hidden chk' id='Genre' name='genre' type='checkbox'/>
+                    <label class='dropdown-toggle' data-toggle='dropdown' for='Genre'> Genre <span class='value' data-label-placement='true'>All</span> </label>
+                    <ul class='dropdown-menu lg c4'>
+                      <li>
+                        <input class='genre' id='Action' type='checkbox' value='Action'/>
+                        <label for='Action'>Action</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Adventurer' type='checkbox' value='Adventurer'/>
+                        <label for='Adventurer'>Adventurer</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Comedy' type='checkbox' value='Comedy'/>
+                        <label for='Comedy'>Comedy</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Dementia' type='checkbox' value='Dementia'/>
+                        <label for='Dementia'>Dementia</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Demons' type='checkbox' value='Demons'/>
+                        <label for='Demons'>Demons</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Drama' type='checkbox' value='Drama'/>
+                        <label for='Drama'>Drama</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Ecchi' type='checkbox' value='Ecchi'/>
+                        <label for='Ecchi'>Ecchi</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Fantasy' type='checkbox' value='Fantasy'/>
+                        <label for='Fantasy'>Fantasy</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Game' type='checkbox' value='Game'/>
+                        <label for='Game'>Game</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Harem' type='checkbox' value='Harem'/>
+                        <label for='Harem'>Harem</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Historical' type='checkbox' value='Historical'/>
+                        <label for='Historical'>Historical</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Horror' type='checkbox' value='Horror'/>
+                        <label for='Horror'>Horror</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Josei' type='checkbox' value='Josei'/>
+                        <label for='Josei'>Josei</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Magic' type='checkbox' value='Magic'/>
+                        <label for='Magic'>Magic</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Martial Arts' type='checkbox' value='Martial Arts'/>
+                        <label for='Martial Arts'>Martial Arts</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Mecha' type='checkbox' value='Mecha'/>
+                        <label for='Mecha'>Mecha</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Military' type='checkbox' value='Military'/>
+                        <label for='Military'>Military</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Music' type='checkbox' value='Music'/>
+                        <label for='Music'>Music</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Mystery' type='checkbox' value='Mystery'/>
+                        <label for='Mystery'>Mystery</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Parody' type='checkbox' value='Parody'/>
+                        <label for='Parody'>Parody</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Police' type='checkbox' value='Police'/>
+                        <label for='Police'>Police</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Psychological' type='checkbox' value='Psychological'/>
+                        <label for='Psychological'>Psychological</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Romance' type='checkbox' value='Romance'/>
+                        <label for='Romance'>Romance</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Samurai' type='checkbox' value='Samurai'/>
+                        <label for='Samurai'>Samurai</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='School' type='checkbox' value='School'/>
+                        <label for='School'>School</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Sci-Fi' type='checkbox' value='Sci-Fi'/>
+                        <label for='Sci-Fi'>Sci-Fi</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Seinen' type='checkbox' value='Seinen'/>
+                        <label for='Seinen'>Seinen</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Shoujo' type='checkbox' value='Shoujo'/>
+                        <label for='Shoujo'>Shoujo</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Shoujo Ai' type='checkbox' value='Shoujo Ai'/>
+                        <label for='Shoujo Ai'>Shoujo Ai</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Shounen' type='checkbox' value='Shounen'/>
+                        <label for='Shounen'>Shounen</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Slice of Life' type='checkbox' value='Slice of Life'/>
+                        <label for='Slice of Life'>Slice of Life</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Space' type='checkbox' value='Space'/>
+                        <label for='Space'>Space</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Sports' type='checkbox' value='Sports'/>
+                        <label for='Sports'>Sports</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Super Power' type='checkbox' value='Super Power'/>
+                        <label for='Super Power'>Super Power</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Supernatural' type='checkbox' value='Supernatural'/>
+                        <label for='Supernatural'>Supernatural</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Thriller' type='checkbox' value='Thriller'/>
+                        <label for='Thriller'>Thriller</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Vampire' type='checkbox' value='Vampire'/>
+                        <label for='Vampire'>Vampire</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Work Life' type='checkbox' value='Work Life'/>
+                        <label for='Work Life'>Work Life</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Yuri' type='checkbox' value='Yuri'/>
+                        <label for='Yuri'>Yuri</label>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class='filter'>
+                    <input class='hidden chk' id='Status' name='status' type='checkbox'/>
+                    <label class='dropdown-toggle' data-toggle='dropdown' for='Status'> Status <span class='value' data-label-placement='true'>All</span> </label>
+                    <ul class='dropdown-menu lg c1'>
+                      <li>
+                        <input class='genre' id='Ongoing' type='checkbox' value='Ongoing'/>
+                        <label for='Ongoing'>Ongoing</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Completed' type='checkbox' value='Completed'/>
+                        <label for='Completed'>Completed</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Dropped' type='checkbox' value='Dropped'/>
+                        <label for='Dropped'>Dropped</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Upcoming' type='checkbox' value='Upcoming'/>
+                        <label for='Upcoming'>Upcoming</label>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class='filter'>
+                    <input class='hidden chk' id='Type' name='type' type='checkbox'/>
+                    <label class='dropdown-toggle' data-toggle='dropdown' for='Type'> Type <span class='value' data-label-placement='true'>All</span> </label>
+                    <ul class='dropdown-menu lg c1'>
+                      <li>
+                        <input class='genre' id='Manga' type='checkbox' value='Manga'/>
+                        <label for='Manga'>Manga</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Manhua' type='checkbox' value='Manhua'/>
+                        <label for='Manhua'>Manhua</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Manhwa' type='checkbox' value='Manhwa'/>
+                        <label for='Manhwa'>Manhwa</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='Novel' type='checkbox' value='Novel'/>
+                        <label for='Novel'>Novel</label>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class='filter'>
+                    <input class='hidden chk' id='Lang' name='lang' type='checkbox'/>
+                    <label class='dropdown-toggle' data-toggle='dropdown' for='Lang'> Language <span class='value' data-label-placement='true'>All</span> </label>
+                    <ul class='dropdown-menu lg c1'>
+                      <li>
+                        <input class='genre' id='Indonesian' type='checkbox' value='Indonesian'/>
+                        <label for='Indonesian'>Indonesian</label>
+                      </li>
+                      <li>
+                        <input class='genre' id='English' type='checkbox' value='English'/>
+                        <label for='English'>English</label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class='p-15'>
+                <button class='submit' type='submit'><svg aria-hidden='true' height='1em' preserveAspectRatio='xMidYMid meet' role='img' style='vertical-align: -0.125em;' viewBox='0 0 20 20' width='1em' xmlns='http://www.w3.org/2000/svg'><path d='M8.5 3a5.5 5.5 0 0 1 4.383 8.823l4.147 4.147a.75.75 0 0 1-.976 1.133l-.084-.073l-4.147-4.147A5.5 5.5 0 1 1 8.5 3Zm0 1.5a4 4 0 1 0 0 8a4 4 0 0 0 0-8Z' fill='currentColor'/></svg>Filter  <span class='count'> </span></button>
+                </div>
+                <!-- Hasil -->
+                <div id='result'/>
+                
+<script>/*<![CDATA[*/
+var num = 15;
+var newtab = false;
+$('.submit').click(function(){
+var validator = document.getElementsByClassName('genre');
+var o = [];
+for(var i=0;i<validator.length;i++){
+   if(validator[i].checked){
+    o.push(validator[i].value)
+	}
+}
+window.open(location.protocol+ '//' + location.hostname + '/search/label/' + o.join('+') + '?&max-results=' + num, newtab == true ? '_blank' : '_self');
+});
+/*]]>*/</script>
+                
+              </div>
+            </section>
+</b:includable>
+                            <b:includable id='searchForm'>
+  <form expr:action='data:blog.searchUrl'>
+    <b:attr cond='not data:view.isPreview' name='target' value='_top'/>
+    <b:include name='urlParamsAsFormInput'/>
+    <div class='searchf filter'>
+      <input autocomplete='off' expr:aria-label='data:messages.searchThisBlog' expr:placeholder='data:messages.searchThisBlog' expr:value='data:view.isSearch ? data:view.search.query.escaped : &quot;&quot;' name='q'/>
+    </div>
+    <b:include name='searchSubmit'/>
+  </form>
+</b:includable>
+                            <b:includable id='searchSubmit'>
+  
+</b:includable>
+                          </b:widget>
                           <b:widget cond='!data:view.isHomepage' id='Blog1' locked='true' title='Postingan Blog' type='Blog' version='2' visible='true'>
                             <b:widget-settings>
                               <b:widget-setting name='showDateHeader'>false</b:widget-setting>
@@ -2737,13 +3046,13 @@ https://cararegistrasi.com/zeistmanga
                               </b:loop>
                             </b:includable>
                             <b:includable id='chapNextPrev'>
-                                <b:loop values='data:post.labels' var='label'>
-                                  <b:if cond='data:label.name not in [&quot;Chapter&quot;, &quot;Project&quot;]'>
-                                    <div id='nPL'>
-                                      <script>nPL.run(&#39;<data:label.name/>&#39;)</script>
-                                    </div>
-                                  </b:if>
-                                </b:loop>
+                              <b:with value='[&quot;Chapter&quot;, &quot;NovelChapter&quot;, &quot;MangaChapter&quot;]' var='checkLabel'>
+                                <b:if cond='data:post.labels any (i =&gt; i.name in data:checkLabel)'>
+                                  <b:loop values='data:post.labels filter (i =&gt; i.name not in data:checkLabel)' var='l'>
+                                    <div expr:data-label='data:l.name' id='nextPrevJS'/>
+                                  </b:loop>
+                                </b:if>
+                              </b:with>
                             </b:includable>
                             <b:includable id='chapNextPrev-bottom'>
                                 <b:loop values='data:post.labels' var='label'>
@@ -6230,6 +6539,14 @@ var uri = window.location.toString();if (uri.indexOf("?m=1","?m=1") > 0) {var cl
     
     <b:if cond='data:view.isPost'>
       <script>/*<![CDATA[*/
+      const npX={arr:new Array,
+  config:{
+    max:150,
+    start:1,
+    labelMain:"Series"
+  },sort:e=>e.sort((e,t)=>e.title.localeCompare(t.title,void 0,{numeric:!0})),compile:function(){let e=this.sort(this.arr).reverse(),t=this.config,a=(window||document).location.pathname,r=$('<select onchange="this.options[this.selectedIndex].value&&window.open(this.options[this.selectedIndex].value, \'_self\')" name="npx-list"></select>'),n="",i="",l="";$.each(e,(o,s)=>{s.cat.some(e=>t.labelMain==e)?n=$(`<a rel="home" href="${s.url}">${t.home||"Home"}</a>`):(r.append($(`<option ${s.url.includes(a)?'selected="selected"':""} value="${s.url}">${s.title}</option>`)),s.url.includes(a)&&(e[o+1]&&(i=e[o+1].cat.some(e=>t.labelMain==e)?"":$(`<a rel="prev" href="${e[o+1].url}">${t.prev||"Prev"}</a>`)),e[o-1]&&(l=e[o-1].cat.some(e=>t.labelMain==e)?"":$(`<a rel="next" href="${e[o-1].url}">${t.next||"Next"}</a>`))))});let o=$('<div class="nav-right"></div>');o.html(i).append(n).append(l),$("#nextPrevJS").html(r).append(o)},jqCheck:()=>"function"==typeof jQuery,xhr:function(){const e=this,t=e.config;$.ajax({type:"get",url:`${t.site||""}/feeds/posts/summary/-/${t.cat}`,data:{alt:"json","start-index":t.start,"max-results":t.max},dataType:"jsonp",success:a=>{"entry"in a.feed?($.each(a.feed.entry,(t,a)=>{e.arr.push({title:a.title.$t,url:a.link.find(e=>"alternate"==e.rel).href,cat:a.category.map(e=>e.term)})}),a.feed.entry.length>=t.max?(e.config.start+=e.config.max,e.xhr()):e.compile()):0!=e.arr.length&&e.compile()},error:()=>{$("#nextPrevJS").html(`<p>${t.textError||"Error"}</p>`)}})},run:function(){return this.jqCheck()?0==$("#nextPrevJS").length?"element tidak ada":(this.config.cat=$("#nextPrevJS").data("label")||!1,0==this.config.cat?"Category Tidak ada":void this.xhr()):"jquery tidak ada"}};npX.run();
+/*]]>*/</script>      
+      <script>/*<![CDATA[*/
 document.addEventListener('DOMContentLoaded', function() {
     var synopsis = document.getElementById('synopsis');
 
@@ -6364,6 +6681,30 @@ if(list.length<limitBookmark){
     <script>//<![CDATA[
     class Pagination{constructor(e){this._config=e||{}}click(e,a){let t=e.hash.split("page-")[1],r=Array.isArray(a)?a.length:a;this.createPage(r,Number(t),a)}createElement(e,a,t,r){let n=document.createElement("page-numbers current"==a?"span":"a");return n.className=a,n.href=`#${e}`,"page-numbers current"!=a&&n.addEventListener("click",e=>{e.preventDefault(),this.click(n,t)}),n.innerText=r||e.split("page-")[1],n}createPage(e,a,t){let r,n,i,l=document.createElement("div"),p=a-1,s=a+1;if(t=t||e,l.className="pagination",e>=2){if(a>1&&(n=e<=2?"prev-left":"prev page-numbers",i=`page-${a-1}`,l.appendChild(this.createElement(i,n,t,"« Sebelumnya"))),e>2)if(e<=6)for(let n=1;n<=e;n++)r=a==n?"page-numbers current":"page-numbers",i=`page-${n}`,l.appendChild(this.createElement(i,r,t));else{a>2&&(i="page-1",l.appendChild(this.createElement(i,"page-numbers",t)),a>3&&a!=e&&a!=e-1&&(i=`page-${a-2}`,l.appendChild(this.createElement(i,"page-numbers",t)))),1===a?s+=2:2===a&&(s+=1),a===e?p-=2:a===e-1&&(p-=1);for(let n=p;n<=s;n++)0===n&&(n+=1),n>e||(r=a==n?"page-numbers current":"page-numbers",(a!=e||a==e&&n!=e-3)&&(i=`page-${n}`,l.appendChild(this.createElement(i,r,t))));a<e-1&&(a<e-2&&1!=a&&2!=a&&(i=`page-${a+2}`,l.appendChild(this.createElement(i,"page-numbers",t))),i=`page-${e}`,l.appendChild(this.createElement(i,"page-numbers",t)))}a<e&&(n=e<=2?"next-r":"next page-numbers",i=`page-${a+1}`,l.appendChild(this.createElement(i,n,t,"Berikutnya »")))}return this._config.callback&&this._config.callback(l,a,t),{currentPage:a,mainElement:l}}arrayToPage(e,a,t){let r=Array.isArray(e)?e.length:e,n=Array(Math.ceil(r/a)).fill(0).map((t,r)=>({id:`page-${r+1}`,items:Array.isArray(e)?e.slice(r*a,Math.min(e.length,(r+1)*a)):[]}));return t?this.createPage(n.length,1,n):n}}
     //]]></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js'/>
+<script type='text/javascript'>
+/*<![CDATA[*/
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+/*]]>*/
+</script>
     &lt;!--</body>--&gt;&lt;/body&gt;
 </html>
