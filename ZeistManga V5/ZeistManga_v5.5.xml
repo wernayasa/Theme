@@ -110,7 +110,7 @@
 */
 /*!************************************************
 * Name		: ZeistManga
-* Version	: 5.5.3
+* Version	: 5.5.4
 * Revisi	: 2024
 * Website	: emissionhex.blogspot.com
 **************************************************/
@@ -6706,5 +6706,6 @@ const swiper = new Swiper('.swiper', {
 });
 /*]]>*/
 </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js'/>
     &lt;!--</body>--&gt;&lt;/body&gt;
 </html>
