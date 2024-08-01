@@ -1,0 +1,383 @@
+<style>
+  #sitemap5 {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.judul {
+  text-align: center;
+  margin-top: 0.375rem;
+  margin-bottom: 0.375rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+    overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.nav {
+  margin-bottom: 10px;
+}
+
+.nav ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+}
+
+.nav ol li,.isi .abjad span:not(#top) {
+  display: inline-block;
+  cursor: pointer;
+  line-height: 35px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+  border-radius: .5rem;
+  height: 35px;
+  width: 35px;
+  text-align: center;
+}
+
+.isi {
+  margin-bottom: 20px;
+}
+
+.isi .abjad {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+}
+#top {
+  cursor: pointer;
+}
+.isi ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(140px,1fr));
+  gap: 1rem;
+}
+
+.isi li {
+  margin-bottom: 10px;
+}
+
+.isi li a {
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+}
+.isi li a {
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  border-radius: 0.75rem;
+  width: 100%;
+  overflow: hidden;
+}
+  
+.isi li a img {
+  display: block;
+  object-fit: cover;
+  margin-bottom: 5px;
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+  .pb {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 135%;
+}
+#top::after {
+  content: '';
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="35" height="35" viewBox="0 0 24 24"%3E%3Cpath fill="%23626262" d="M11.293 7.293a1 1 0 0 1 1.414 0l6 6a1 1 0 0 1-1.414 1.414L12 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414l6-6z"%2F%3E%3C%2Fsvg%3E');
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+}
+.tanggal,.genre-prioritas,.sinopsis,.label-prioritas {
+  display: none;
+}
+  @media (max-width: 768px){
+.isi ol {
+  grid-template-columns: repeat(auto-fill,minmax(130px,1fr));
+  gap: 0.35rem;
+}
+  }
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: loaderAnimeList 1s linear infinite;
+  margin: 20px auto;
+}
+
+  </style>
+<div id="sitemap5" class="not-prose">
+</div>
+
+<script>
+  //<![CDATA[
+var start = 1,
+  max = 150,
+  sitemap5Arr = [],
+  grup = [],
+  key = [],
+  abjad = "",
+  print = "",
+  nav = "";
+
+// URL Thumbnail Kustom
+var defaultThumbnailUrl = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiuGMWFxtbNrS3Id4pJkIvd7H4scIs3FjsMKfihpr1C1rEoYDGO5Voo2jPV23n2KfYxY3AjO1IqSUgSwZr0fylYD8FxPVCCJlyw917Y8ycxZ4wglreXJPn8DvYX3ox_ufxj7CdGlOgecg3uU3hftIEUijOOnCM7pTtVYS0J4mu9HcEJV0eo8QRljMc7Ow/s1440/20230614_073506.png";
+
+function runSitemap5() {
+  document.getElementById("sitemap5").innerHTML =
+    '<div class="loader"></div>';
+
+  var t = document.createElement("script");
+  t.src =
+    "/feeds/posts/summary?alt=json&callback=sitemap5&start-index=" +
+    start +
+    "&max-results=" +
+    max;
+  document.body.appendChild(t);
+}
+
+function sitemap5(t) {
+  var a = document.getElementById("sitemap5");
+  if (a) {
+    a.innerHTML = "";
+    var r = t.feed;
+    if (r.entry.length > 0) {
+      for (var e = 0; e < r.entry.length; e++) {
+        var l = r.entry[e],
+          i = l.title.$t,
+          n = 0,
+          thumbnailUrl = "",
+          tanggal = "",
+          genrePrioritas = [],
+          genreBiasa = [],
+          sinopsis = "",
+          labels = [];
+
+        // Label Text
+        if (l.category) {
+          for (var c = 0; c < l.category.length; c++) {
+            labels.push(l.category[c].term);
+          }
+        }
+
+     // Label Series Post
+        if (!labels.includes("Series")) {
+          continue;
+        }
+
+        // Thumbnail resolusi 
+        if (l.media$thumbnail) {
+          thumbnailUrl = l.media$thumbnail.url.replace(/\/s\d+(-c)?\//, "/w175-h235/");
+        } else {
+          thumbnailUrl = defaultThumbnailUrl;
+        }
+
+        // Tanggal (format: 12/maret/2023)
+        if (l.published.$t) {
+          var date = new Date(l.published.$t);
+          var options = { day: "numeric", month: "long", year: "numeric" };
+          tanggal = date.toLocaleDateString("id-ID", options);
+        }
+
+        // Genre Prioritas
+        if (l.category) {
+          for (var c = 0; c < l.category.length; c++) {
+            if (
+              genrePrioritas.length < 3 &&
+              l.category[c].term &&
+              !genrePrioritas.includes(l.category[c].term)
+            ) {
+              genrePrioritas.push(l.category[c].term);
+            }
+          }
+        }
+
+        // Genre Biasa
+        if (l.category) {
+          for (var c = 0; c < l.category.length; c++) {
+            if (
+              genreBiasa.length < 3 &&
+              l.category[c].term &&
+              !genrePrioritas.includes(l.category[c].term)
+            ) {
+              genreBiasa.push(l.category[c].term);
+            }
+          }
+        }
+
+        // Sinopsis Artikel (gak bekerja)
+        if (l.content && l.content.$t) {
+          var parser = new DOMParser();
+          var htmlDoc = parser.parseFromString(l.content.$t, "text/html");
+          var sinopsisElem = htmlDoc.querySelector("div.bc-fff.s1.r2.p-13 p");
+          if (sinopsisElem) {
+            sinopsis = sinopsisElem.innerHTML;
+          }
+        }
+
+        for (n = 0; n < l.link.length; n++) {
+          if ("alternate" == l.link[n].rel) {
+            var s = l.link[n].href;
+            s &&
+              s.length > 0 &&
+              i &&
+              i.length > 0 &&
+              sitemap5Arr.push({
+                url: s,
+                judul: i,
+                thumbnail: thumbnailUrl,
+                tanggal: tanggal,
+                genrePrioritas: genrePrioritas,
+                genreBiasa: genreBiasa,
+                sinopsis: sinopsis,
+              });
+            break;
+          }
+        }
+      }
+
+      if (r.entry.length >= max) {
+        start += max;
+        runSitemap5();
+      } else {
+        for (var u = sitemap5Arr, o = 0; o < u.length; o++) {
+          var d = u[o].judul.charAt(0).toLowerCase();
+          if (-1 == abjad.indexOf(d)) {
+            abjad += d;
+            grup[d] = [
+              {
+                url: u[o].url,
+                judul: u[o].judul,
+                thumbnail: u[o].thumbnail,
+                tanggal: u[o].tanggal,
+                genrePrioritas: u[o].genrePrioritas,
+                genreBiasa: u[o].genreBiasa,
+                sinopsis: u[o].sinopsis,
+              },
+            ];
+          } else {
+            grup[d].push({
+              url: u[o].url,
+              judul: u[o].judul,
+              thumbnail: u[o].thumbnail,
+              tanggal: u[o].tanggal,
+              genrePrioritas: u[o].genrePrioritas,
+              genreBiasa: u[o].genreBiasa,
+              sinopsis: u[o].sinopsis,
+            });
+          }
+        }
+
+        for (var p in grup) key.push(p);
+        for (var u = key.sort(), c = 0; c < u.length; c++) {
+          print +=
+            '<div class="abjad"><span data-value="' +
+            u[c] +
+            '">' +
+            u[c] +
+            "</span><span id='top' title='Back to Top'></span></div><ol>";
+          for (var v = 0, f = grup[u[c]]; v < f.length; v++) {
+            var m = f.sort(function (t, a) {
+              return t.judul > a.judul ? 1 : -1;
+            });
+            print += "<li>";
+            print += '<a href="' + m[v].url + '" title="' + m[v].judul + '">';
+            print +=
+              '<div class="pb"><img src="' +
+              m[v].thumbnail +
+              '" alt="' +
+              m[v].judul +
+              '"></div>' +
+              '<h4 class="judul">' +
+              m[v].judul +
+              "</h4>" +
+              '<time class="tanggal">' +
+              m[v].tanggal +
+              "</time>";
+
+            if (m[v].genrePrioritas.length > 0) {
+              print +=
+                '<span class="genre-prioritas">' +
+                m[v].genrePrioritas.join(", ") +
+                "</span>";
+            }
+
+            print +=
+              '<span class="sinopsis">' +
+              m[v].sinopsis +
+              "</span>" +
+              '<span class="label-prioritas"></span>' +
+              "</a>";
+            print += "</li>";
+          }
+          print += "</ol>";
+          nav += "<li>" + u[c] + "</li>";
+        }
+        a.innerHTML =
+          '<div class="judul">Total Post: ' +
+          sitemap5Arr.length +
+          '</div><div class="nav"><ol>' +
+          nav +
+          '</ol></div><div class="isi">' +
+          print +
+          "</div>";
+        scrollSitemap5();
+      }
+    }
+  }
+}
+
+function scrollSitemap5() {
+  document.querySelectorAll("#sitemap5 .nav ol li").forEach(function (t) {
+    t.addEventListener("click", function () {
+      var t =
+        '#sitemap5 .isi .abjad [data-value="' + this.innerHTML + '"]';
+      document
+        .querySelector(t)
+        .parentNode.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+
+  document
+    .querySelectorAll("#sitemap5 .isi .abjad #top")
+    .forEach(function (t) {
+      t.addEventListener("click", function () {
+        document
+          .querySelector("#sitemap5 .nav")
+          .scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+}
+
+runSitemap5();
+
+  //]]>
+</script>
