@@ -1586,7 +1586,7 @@ mTP.Select = ["Action", "Adventure", "Comedy", "Drama", "Ecchi", "Fantasy", "Gam
     document.documentElement.classList.add(&#39;sfw&#39;)
   }
 </script>  
-<script src='//pl22473689.profitablegatecpm.com/bb/a8/c2/bba8c2aa6df932fb8f72a612c23d84ec.js' type='text/javascript'/>
+
   <b:if cond='data:view.isPost'>
 <script>/*<![CDATA[*/
   if (localStorage.getItem("ageVerified")) {
