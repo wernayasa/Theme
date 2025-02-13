@@ -1031,55 +1031,54 @@ i.icon-star.silver:before,i.icon-star.silver:before{content:&#39;&#39;;width:17p
 [type="button"],[type="reset"],[type="submit"],button{-webkit-appearance:button;background-color:transparent;background-image:none;}
 .w-3{width:.75rem;}
 .h-3{height:.75rem;}
-.space-x-3 >:not([hidden]) ~:not([hidden]){--tw-space-x-reverse:0;margin-left:calc(.75rem*(1 - var(--tw-space-x-reverse)));margin-right:calc(.75rem*var(--tw-space-x-reverse));}
-.swiper-container{margin-left:auto;margin-right:auto;position:relative;overflow:hidden;list-style:none;padding-bottom:350px;z-index:1;}
-.mainslider{position:relative;overflow:hidden;cursor:grab;border-radius:$(border.radius);}
-.mainslider:before{position:absolute;top:0;left:0;z-index:2;display:block;width:100%;height:100%;background:rgb(0 0 0 / 18%);content:"";}
-.mainslider .limit{position:relative;background:#222;overflow:hidden;height:280px;}
-.mainslider .limit .bigbanner{background-position:50% 35%;background-repeat:no-repeat;background-size:cover;min-height:280px;}
-.mainslider .limit img{position:absolute;top:0;width:100%;height:auto;}
-.mainslider .limit:before{position:absolute;bottom:0;display:block;width:100%;height:25%;content:"";background-color:rgba(255,255,255,0);background-image:-webkit-gradient(linear,left top,left bottom,from(rgba(255,255,255,0)),to(#1e2129));background-image:-webkit-linear-gradient(top,rgb(255 255 255 / 0%),#1e2129);background-image:-moz-linear-gradient(top,rgba(255,255,255,0),#1e2129);background-image:-ms-linear-gradient(top,rgba(255,255,255,0),#1e2129);background-image:-o-linear-gradient(top,rgba(255,255,255,0),#1e2129);background-image:linear-gradient(top,rgba(255,255,255,0),#1e2129);filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='rgba(255,255,255,0)',endColorStr='#1e2129');z-index:3;}
-.mainslider .limit .sliderinfo{position:absolute;bottom:20%;z-index:2;width:100%;font-family:'Poppins',sans-serif;}
-.mainslider .limit .sliderinfo .sliderinfolimit{max-width:1200px;margin:0 auto;padding:0 15px;}
-.mainslider .limit .sliderinfo .sliderinfolimit span.name{color:#FFF;font-weight:400;font-size:25px;margin-bottom:10px;display:block;max-width:700px;line-height:normal;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.mainslider .limit .sliderinfo .sliderinfolimit .meta{margin-bottom:8px;box-shadow:none;}
-.mainslider .limit .sliderinfo .sliderinfolimit .desc{color:#FFF;max-width:520px;max-height:42px;overflow:hidden;line-height:19px;font-size:13px;font-weight:300;}
-.mainslider .limit .sliderinfo .sliderinfolimit .desc p{margin:0;}
-.big-slider .paging{position:absolute;z-index: 20;bottom:35px;height:16px;width:100%;}
-.big-slider .paging .centerpaging{max-width:1180px;margin:0 auto;position:relative;}
-.big-slider .paging .centerpaging .swiper-pagination{z-index:5;right:0;display: flex;justify-content: center;}
-.mainslider .limit .sliderinfo .sliderinfolimit span.name,.mainslider .limit .sliderinfo .sliderinfolimit .desc{text-shadow:0 1px 10px #000;}
-.slidernom3{;}
-.slidernom3 .mainslider .limit{height:350px;background:none;}
-.slidernom3 .mainslider .limit .bigbanner{min-height:350px;filter:blur(8px);}
-.slidernom3 .mainslider .limit:before{display:none;}
-.slidernom3 .mainslider .limit .sliderinfo .sliderinfolimit span.name{font-weight:600;font-size:26px;text-shadow:none;}
-.slidernom3 .mainslider .limit .sliderinfo .sliderinfolimit{max-width:48%;margin:0;margin-left:50px;}
-.slidernom3 .mainslider .limit .sliderinfo .sliderinfolimit .slidlc{font-size:18px;font-weight:600;margin-bottom:3px;color:#FFF;}
-.slidernom3 .paging{bottom:unset;bottom:20px;right:30px;}
-.slidernom3 .mainslider .limit .sliderinfo .sliderinfolimit .desc{margin-bottom:20px;font-size:14px;line-height:160%;max-height:65px;text-shadow:none;}
-.slidernom3 .mainslider .limit .sliderinfo{bottom:0;top:44%;-ms-transform:translateY(-50%);transform:translateY(-50%);z-index:4;}
-.slidernom3 .mainslider .limit .sliderinfo .sliderinfolimit .meta{color:#FFF;}
-.slidernom3 .mainslider .limit .sliderinfo .sliderinfolimit .meta>div{padding-right:20px;height:25px;overflow:hidden;}
-.slidernom3 .mainslider .limit .sliderinfo .sliderinfolimit .meta .metas-genres-values a{font-size:11px;display:inline-block;padding:2px 10px;border-radius:5px;color:#FFF;border:1px solid rgba(255,255,255,0.6);margin-bottom:4px;}
-.slidernom3 .mainslider .limit .sliderinfo .sliderinfolimit .meta .metas-genres-values a:hover{background:#FFF;color:#333;}
-.slidernom3 .mainslider:before{background:#221630;opacity:.6;}
-.slidernom3 .mainslider .limit .sliderinfo .sliderinfolimit .start-reading{margin-top:15px;}
-.slidernom3 .mainslider .limit .sliderinfo .sliderinfolimit .start-reading span{display:inline-block;background:#ffd702;color:#111;font-weight:500;font-size:14px;line-height:35px;padding:0 20px;border-radius:4px;}
-.slidernom3 .mainslider .slidtrithumb{position:absolute;top:-58px;right:12%;z-index:9;width:390px;height:538px;overflow:hidden;transform:rotate(12deg);box-shadow:0 30px 30px rgba(0,0,0,.2);}
-@media only screen and (max-width:1096px){.slidernom3 .mainslider .limit .sliderinfo .sliderinfolimit{margin-left:25px;}.slidernom3 .mainslider .slidtrithumb{right:5%;}}
-@media only screen and (max-width:950px){.big-slider .paging{display:none;}.slidernom3 .mainslider .slidtrithumb{right:0;top:0;transform:none;width:250px;}.slidernom3 .mainslider .slidtrithumb img{min-height:350px;}}
-@media only screen and (max-width:880px){.slidernom3 .mainslider .limit .sliderinfo .sliderinfolimit .meta .metas-genres-values a{display:none;}.slidernom3 .mainslider .limit .sliderinfo .sliderinfolimit .meta .metas-genres-values a:nth-child(1),.slidernom3 .mainslider .limit .sliderinfo .sliderinfolimit .meta .metas-genres-values a:nth-child(2),.slidernom3 .mainslider .limit .sliderinfo .sliderinfolimit .meta .metas-genres-values a:nth-child(3){display:inline-block;margin-right:2px;}}
-@media only screen and (max-width:800px){.meta{margin-bottom:5px;}}
-@media only screen and (max-width:760px){.big-slider .paging{right:15px;bottom:15px;}}
-@media only screen and (max-width:750px){.slidernom3{border-radius:0;}.slidernom3 .mainslider .limit .sliderinfo .sliderinfolimit{padding:0 30px;}.slidernom3 .mainslider .limit .sliderinfo .sliderinfolimit .meta{;}.slidernom3 .mainslider .limit .sliderinfo .sliderinfolimit .meta .metas-slider-genres{display:none;}.slidernom3 .mainslider .limit{height:280px;}.slidernom3 .mainslider .limit .sliderinfo .sliderinfolimit span.name{font-size:20px;}.slidernom3 .mainslider .slidtrithumb img{min-height:215px;}.slidernom3 .mainslider .slidtrithumb{width:155px;top:33px;right:35px;height:215px;}.slidernom3 .mainslider .limit .sliderinfo .sliderinfolimit .slidlc{font-size:15px;}}
-@media only screen and (max-width:715px){.mainslider .limit .sliderinfo .sliderinfolimit span.name{font-size:17px;margin-bottom:5px;font-weight:400;}.mainslider .limit .sliderinfo .sliderinfolimit .desc{display:none;}.mainslider .limit .sliderinfo{bottom:10%;}.mainslider .limit{height:180px;}.mainslider .limit .sliderinfo .sliderinfolimit{text-shadow:0 2px 4px #000;}.slidernom3 .mainslider .limit .sliderinfo .sliderinfolimit{text-shadow:none;}.slidernom3 .mainslider .limit .sliderinfo .sliderinfolimit .desc{display:block;}}
-@media only screen and (max-width:650px){.slidernom3 .mainslider .slidtrithumb{right:unset;left:20px;width:120px;height:170px;}.slidernom3 .mainslider .slidtrithumb img{min-height:auto;}.slidernom3 .mainslider .limit .sliderinfo .sliderinfolimit{max-width:unset;margin-left:135px;}.slidlc{;}.slidernom3 .mainslider .limit .sliderinfo .sliderinfolimit .slidlc{display:none;}.slidernom3 .mainslider .limit .sliderinfo{;}.slidernom3 .mainslider .limit{height:245px;}}
-@media only screen and (max-width:500px){.slidernom3 .mainslider .slidtrithumb{width:70px;height:95px;border-radius:10px;top:38px;}.slidernom3 .mainslider .limit .sliderinfo .sliderinfolimit{margin-left:80px;}.slidernom3 .mainslider .limit .sliderinfo .sliderinfolimit .desc{max-height:48px;}.slidernom3 .mainslider .limit .sliderinfo .sliderinfolimit span.name{font-size:18px;}.slidernom3 .mainslider .limit{height:200px;}.slidernom3 .mainslider .slidtrithumb img{min-height:95px;}}
-.paging .centerpaging .swiper-pagination span.swiper-pagination-bullet{margin:0 4px;width:10px;height:10px;background:#fff;}
-.swiper-pagination-clickable .swiper-pagination-bullet{cursor:pointer;}
-.swiper-pagination-bullet{width:8px;height:8px;display:inline-block;border-radius:100%;background:#000;}
-.paging .centerpaging .swiper-pagination span.swiper-pagination-bullet.bg-white{background:#ffc107}
+
+#HTML3{max-width:1200px;margin: 30px auto auto}
+  .slider_Manga_Reader{}
+  .slider_Manga_Reader .box_item{position:relative;overflow:hidden;background:#20152d;padding-bottom:35%}
+  .slider_Manga_Reader .box_item .bg_item{position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;opacity:.4}
+  .slider_Manga_Reader .box_item .bg_item img{position:absolute;object-fit:cover;width:120%;height:120%;top:-10%;left:-10%;opacity:1;filter:blur(8px)}
+  .slider_Manga_Reader .box_item .poster_item{position:absolute;top:-130px;left:650px;width:400px;transform:scale(1.2)}
+  .swiper-fade .swiper-slide-active .poster_item{top:-100px;transform:scale(1)}
+  .slider_Manga_Reader .box_item .poster_item a{display:inline-block;transform:rotate(15deg);border:20px solid #fff;box-shadow:0 30px 30px rgba(0,0,0,.2);width:100%;padding-bottom:148%;position:relative;overflow:hidden;background:#eee}
+  .slider_Manga_Reader .box_item .poster_item img{position:absolute;width:100%;height:100%;object-fit:cover;top:0;left:0;right:0;bottom:0}
+  .slider_Manga_Reader .box_item .content_item{max-width:600px;width:100%;position:absolute;top:50%;transform:translateY(-50%);left:30px;z-index:3;color:#fff;padding:0 30px}
+  .slider_Manga_Reader .box_item .content_item .content_item_chapter{font-size:18px;line-height:1.3em;font-weight:600;margin-bottom:5px}
+  .slider_Manga_Reader .box_item .content_item .content_item_title{font-size:32px;line-height:1.3;font-weight:600;margin-bottom:15px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .slider_Manga_Reader .box_item .content_item .content_item_title a{color:#fff}
+  .slider_Manga_Reader .box_item .content_item .content_item_details{font-size:1em;display:block;font-weight:400;margin-bottom:30px}
+  .slider_Manga_Reader .box_item .content_item .content_item_details > *{margin-bottom:1em;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .slider_Manga_Reader .box_item .content_item .content_item_details .content_item_details_genre span{display:inline-block;margin:0 3px 6px 0;border:1px solid rgba(255,255,255,.5);padding:.3rem .5rem;line-height:1;border-radius:.2rem;font-size:.8em}
+  .slider_Manga_Reader .box_item .content_item .content_item_buttons > *{display:inline-block;background:#fff;color:#111;font-weight:500;font-size:14px;line-height:40px;padding:0 20px;border-radius:4px}
+  .slider_Manga_Reader .box_item .content_item .content_item_buttons .content_item_buttons_read{background:#ffd702}
+  .boox_bt{position:absolute;bottom:40px;z-index:1;right:40px}
+  .swiper-button{display:flex;align-items:center;justify-content:center;background:#fff;color:#111;width:40px;height:40px;line-height:40px;border-radius:50%;font-size:16px;text-align:center;margin:0 5px;float:right;cursor:pointer}
+  .swiper-button svg{display:block;width:20px;height:20px}
+
+@media only screen and (max-width: 900px) {
+  .slider_Manga_Reader .box_item .content_item .content_item_chapter,.slider_Manga_Reader .box_item .content_item .content_item_details .content_item_details_genre{display:none}
+  .slider_Manga_Reader .box_item .content_item{max-width:460px}
+  .slider_Manga_Reader .box_item .poster_item{left:460px;transform:scale(1);top:-130px}
+  .swiper-fade .swiper-slide-active .poster_item{transform:scale(1);top:-130px}
+  .boox_bt{display:none}
+}
+@media only screen and (max-width: 768px) {
+  .slider_Manga_Reader .box_item .poster_item{left:400px}
+  .slider_Manga_Reader .box_item .content_item{max-width:400px}
+  .slider_Manga_Reader .box_item .content_item .content_item_details{display:none}
+}
+@media only screen and (max-width: 540px) {
+  .slider_Manga_Reader .box_item{padding-bottom:50%}
+  .slider_Manga_Reader .box_item .content_item .content_item_title{font-size:18px;margin-bottom:.75rem}
+  .slider_Manga_Reader .box_item .content_item .content_item_buttons > *{margin-top:5px;min-width:83px;line-height:30px;padding:0 10px;font-size:12px;text-align:center}
+  .slider_Manga_Reader .box_item .poster_item a{border:10px solid #fff}
+  .slider_Manga_Reader .box_item .content_item{max-width:250px;left:0}
+  .slider_Manga_Reader .box_item .poster_item{width:210px;right:auto;left:250px;top:-35px!important;transform:scale(1)}
+  .swiper-fade .swiper-slide-active .poster_item{top:-35px!important;transform:scale(1)}
+}
+@media only screen and (max-width: 320px) {
+  .slider_Manga_Reader .box_item .poster_item{left:160px}
+  .slider_Manga_Reader .box_item .content_item{max-width:200px}
+}
 
 #nPL{display:flex;justify-content:space-between;margin-bottom:20px;}
 #nPL,#nPL2{padding:5px;direction: ltr;}
@@ -1311,14 +1310,14 @@ urlactivepage=location.href,home_page="/";function looppagecurrentg(e){var a="";
         <b:includable id='inlineAd2'>
           <div class='ads'>
 <div class='widget-content'>
-<img src='https://1.bp.blogspot.com/-FmfAILeAUs4/YQJE9dL6VhI/AAAAAAAAHXA/qm9QN_rJxwsG84UY9LYcD4Y58XTvQcwNQCLcBGAsYHQ/s720/ads.png'/>
+<img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhFOykBjCVPvtAyUkopdGveCAq4A-Ep5DpKXtBo5IUZudt5IVtgw3eQufGXvRuHR58lZhYT2T8D-nEeZjd2Bcd0iuEKUVENZ9dhZY6INfpxc2uBQ3CcFOKVQdtUF5yB6-7B2VCdcA5Yk0q4/s720/ads.png'/>
 </div>
 </div>
         </b:includable>
         <b:includable id='inlineAd3'>
           <div class='ads'>
 <div class='widget-content'>
-<img src='https://1.bp.blogspot.com/-hLi6yeFLYTs/YQJT7C6A78I/AAAAAAAAHXY/49cOpBjTiV06NbAvtSMi2Ywezz2kE-T6gCLcBGAsYHQ/s400/ads-p.png'/>
+<img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgzjJWTATsvFcarkpbc9TS0O-CRQLP67V3TJKYuWujMau85wGpqy0DSqzWkyBJtZ6GcMJ9kt3VrKEiV5mmLd2FQrLeSxqfaMbQvE-GS30RLr07k4l2BR0uKTpK6SlCfaHlzFK9KSYJx_2Vp/s400/ads-p.png'/>
 </div>
 </div>
         </b:includable>
@@ -1401,7 +1400,7 @@ urlactivepage=location.href,home_page="/";function looppagecurrentg(e){var a="";
     <b:if cond='data:view.isMultipleItems'>
       <script type='text/javascript'>
         //<![CDATA[
-function rcentbytag(e){document.write('<div class="chap-by-tag full">');for(var t=0;t<numposts;t++){var n=e.feed.entry[t];var r=n.title.$t;var i;if(t==e.feed.entry.length)break;for(var o=0;o<n.link.length;o++){if(n.link[o].rel=="replies"&&n.link[o].type=="text/html"){var u=n.link[o].title;var f=n.link[o].href}if(n.link[o].rel=="alternate"){i=n.link[o].href;break}}var l;try{l=n.media$thumbnail.url}catch(h){s=n.content.$t;a=s.indexOf("<img");b=s.indexOf('src="',a);c=s.indexOf('"',b+5);d=s.substr(b+5,c-b-5);if(a!=-1&&b!=-1&&c!=-1&&d!=""){l=d}else l="http://2.bp.blogspot.com/-giova1ZCh-A/Uzq6L8QTJNI/AAAAAAAAAJc/USXictTq_xs/s70-c/KM+Icon.png"}var p=n.published.$t;var v=p.substring(0,4);var m=p.substring(5,7);var g=p.substring(8,10);var y=new Array;y[1]="Januari";y[2]="Februari";y[3]="Maret";y[4]="April";y[5]="Mei";y[6]="Juni";y[7]="Juli";y[8]="Agustus";y[9]="September";y[10]="Oktober";y[11]="November";y[12]="Desember";document.write('<div class="flex aic jcsb y6x0p">');if(showpostthumbnails==true)document.write('<a href="'+i+'"  title="'+r+'"><img class="rct-thumb" alt="'+r+'" src="'+l+'"/></a>');document.write('<strong><a href="'+i+'" title="'+r+'" rel="nofollow">'+r+'</a></strong>');var x="";var T=0;if(showpostdate==true){x='<time class="showdates">'+x+g+" "+y[parseInt(m,10)]+" </time>";T=1}document.write(x);document.write("</div>");if(t!=numposts-1)document.write("")}document.write("</div>")}
+function rcentbytag(e){document.write('<div class="chap-by-tag full">');for(var t=0;t<numposts;t++){var n=e.feed.entry[t];var r=n.title.$t;var i;if(t==e.feed.entry.length)break;for(var o=0;o<n.link.length;o++){if(n.link[o].rel=="replies"&&n.link[o].type=="text/html"){var u=n.link[o].title;var f=n.link[o].href}if(n.link[o].rel=="alternate"){i=n.link[o].href;break}}var l;try{l=n.media$thumbnail.url}catch(h){s=n.content.$t;a=s.indexOf("<img");b=s.indexOf('src="',a);c=s.indexOf('"',b+5);d=s.substr(b+5,c-b-5);if(a!=-1&&b!=-1&&c!=-1&&d!=""){l=d}else l="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh9a8cRZ7klcM2djGqpxz8lASaoE00-JqlmXTLn_HRL7csgySudNQD4cr7gut0N48b4Kz2LmmjhNfbGL2Q-fbyc0x32JobnauEn9kBXhqHMqgA5tDu0LQTYo0Kym23tBUwGVV4qdmhhLWHs/s70-c/KM+Icon.png"}var p=n.published.$t;var v=p.substring(0,4);var m=p.substring(5,7);var g=p.substring(8,10);var y=new Array;y[1]="Januari";y[2]="Februari";y[3]="Maret";y[4]="April";y[5]="Mei";y[6]="Juni";y[7]="Juli";y[8]="Agustus";y[9]="September";y[10]="Oktober";y[11]="November";y[12]="Desember";document.write('<div class="flex aic jcsb y6x0p">');if(showpostthumbnails==true)document.write('<a href="'+i+'"  title="'+r+'"><img class="rct-thumb" alt="'+r+'" src="'+l+'"/></a>');document.write('<strong><a href="'+i+'" title="'+r+'" rel="nofollow">'+r+'</a></strong>');var x="";var T=0;if(showpostdate==true){x='<time class="showdates">'+x+g+" "+y[parseInt(m,10)]+" </time>";T=1}document.write(x);document.write("</div>");if(t!=numposts-1)document.write("")}document.write("</div>")}
 //]]> </script>
 
     </b:if>
@@ -1527,7 +1526,7 @@ function timeAgo(o){var t=(new Date).getTime()-o.getTime(),e=Math.floor(t/1e3),r
 </script>
       <script async='async'>
   //<![CDATA[
-  var timeString=function(t){if(/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/.test(t)){var e=t,i=e.substring(0,4),n=e.substring(5,7),r=e.substring(8,10),o=new Array;return o[1]="Jan",o[2]="Feb",o[3]="Mar",o[4]="Apr",o[5]="May",o[6]="Jun",o[7]="Jul",o[8]="Aug",o[9]="Sep",o[10]="Oct",o[11]="Nov",o[12]="Dec",r+" "+o[parseInt(n,10)]+" "+i}return!1},imageString=function(t){var e=t.indexOf("<img"),i=t.indexOf('src="',e),n=t.indexOf('"',i+5),r=t.substr(i+5,n-i-5);return-1!=e&&-1!=i&&-1!=n&&""!=r?r:"https://1.bp.blogspot.com/-BYDJ1dpFEhE/X9QnAUfeORI/AAAAAAAAHxw/OjfaqiPHjhAmCgJts39XIg7o4KR-8YtdACNcBGAsYHQ/w300-h225-p-k-no-nu/dagruel-no-image.png"},mangaPost={mainItemArr:new Array,subItemArr:new Array,compile:function(t){var e=t.feed.entry;if(!e)return!1;var i=document.getElementById("myManga");if(!i)return!1;if(i.dataset.created="Dagruel",e.forEach(function({category:t,content:e,link:i,title:n,published:r,media$thumbnail:o}){var a=n.$t,s=t.map(function(t){return t.term}),u=i.find(function(t){if("alternate"===t.rel)return t}).href,c="function"==typeof timeAgo?timeAgo(new Date(r.$t)):timeString(r.$t),l=e.$t&&e.$t.length>0?e.$t:"Nothing",m=o?o.url.replace("s72","w175-h235"):imageString(l);s=s.filter(function(t){if("Project"!==t)return t}),mangaPost.mainItem.filter(function(t){s.join(", ").includes(t)&&mangaPost.mainItemArr.push({title:a,link:u,image:m,category:s})}),mangaPost.subItem.filter(function(t){s.join(", ").includes(t)&&mangaPost.subItemArr.push({titleSub:a,linkSub:u,publishedSub:c,categorySub:s})})}),mangaPost.mainItemArr.length>0){var n="";mangaPost.mainItemArr.forEach(function({title:t,link:e,image:i,category:r}){var o="";
+  var timeString=function(t){if(/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/.test(t)){var e=t,i=e.substring(0,4),n=e.substring(5,7),r=e.substring(8,10),o=new Array;return o[1]="Jan",o[2]="Feb",o[3]="Mar",o[4]="Apr",o[5]="May",o[6]="Jun",o[7]="Jul",o[8]="Aug",o[9]="Sep",o[10]="Oct",o[11]="Nov",o[12]="Dec",r+" "+o[parseInt(n,10)]+" "+i}return!1},imageString=function(t){var e=t.indexOf("<img"),i=t.indexOf('src="',e),n=t.indexOf('"',i+5),r=t.substr(i+5,n-i-5);return-1!=e&&-1!=i&&-1!=n&&""!=r?r:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_4a26jcHKjuQXBHDg2eRRHdmSIaUY_CHeUgE8bL3DmToYnP15f-M6dPC1L1JnxsBa9v9fTkau_kMWzWQF7P7Ok51LBll3YzlxHU3FjVXGuWSRIodZt_FEjdCAOhhHdhTDBbzgE4jiAdky/w300-h225-p-k-no-nu/dagruel-no-image.png"},mangaPost={mainItemArr:new Array,subItemArr:new Array,compile:function(t){var e=t.feed.entry;if(!e)return!1;var i=document.getElementById("myManga");if(!i)return!1;if(i.dataset.created="Dagruel",e.forEach(function({category:t,content:e,link:i,title:n,published:r,media$thumbnail:o}){var a=n.$t,s=t.map(function(t){return t.term}),u=i.find(function(t){if("alternate"===t.rel)return t}).href,c="function"==typeof timeAgo?timeAgo(new Date(r.$t)):timeString(r.$t),l=e.$t&&e.$t.length>0?e.$t:"Nothing",m=o?o.url.replace("s72","w175-h235"):imageString(l);s=s.filter(function(t){if("Project"!==t)return t}),mangaPost.mainItem.filter(function(t){s.join(", ").includes(t)&&mangaPost.mainItemArr.push({title:a,link:u,image:m,category:s})}),mangaPost.subItem.filter(function(t){s.join(", ").includes(t)&&mangaPost.subItemArr.push({titleSub:a,linkSub:u,publishedSub:c,categorySub:s})})}),mangaPost.mainItemArr.length>0){var n="";mangaPost.mainItemArr.forEach(function({title:t,link:e,image:i,category:r}){var o="";
 var lang = "";
 var label = r.find(i => "Hot, New".includes(i));
 if ("Hot" == label) {
@@ -1536,13 +1535,16 @@ if ("Hot" == label) {
   lang = "<span class='new absolute r-5 t-3'></span>";
 } else lang = "";
 var typ = "";
-var label2 = r.find(i => "Manga, Manhua, Manhwa".includes(i));
+var label2 = r.find(i => "Manga, Manhua, Manhwa, Komik Indonesia".includes(i));
+
 if ("Manga" == label2) {
   typ = "<span class='absolute po manga'>Manga</span>";
 } else if ("Manhua" == label2) {
   typ = "<span class='absolute po manhua'>Manhua</span>";
 } else if ("Manhwa" == label2) {
   typ = "<span class='absolute po manhwa'>Manhwa</span>";
+} else if ("Komik Indonesia" == label2) {
+  typ = "<span class='absolute po komik-indonesia'>Komik Indonesia</span>";
 } else typ = "";
 console.log(`${label} & ${lang}`);
 mangaPost.subItemArr.length>0&&mangaPost.subItemArr.forEach(function({titleSub:t,linkSub:e,publishedSub:i,categorySub:n}){var a=t;mangaPost.settingTitle.forEach(function({name:e,news:i}){a.includes(e)&&(a=i+" "+t.split(e)[1].replace(/[^0-9\.-]+/g,""))}),n.filter(function(n){r.join(", ").includes(n)&&(o+='<li class="char"><div class="chpName"><a href="'+e+'" title="'+t+'">'+a+'</a></div><time class="chpDate">'+i+"</time></li>")})}),n+='<div class="bookItem bb-1pxsf"><a href="'+e+'" title="'+t+'"><div class="snippet-thumbnail"><img loading="lazy" src="' + i + '"/>'+lang+typ+'</div></a><div class="data"><h2><a href="'+e+'" title="'+t+'">'+t+'</a></h2><ul class="subItem">'+o+"</ul></div></div>"}),i.innerHTML=n}},run:function(t,e){var i=document.createElement("script");i.src="/feeds/posts/default/-/"+t+"?orderby=published&alt=json-in-script&max-results="+e+"&callback=mangaPost.compile",document.body.appendChild(i)}};
@@ -1577,7 +1579,7 @@ mangaPost.subItemArr.length>0&&mangaPost.subItemArr.forEach(function({titleSub:t
       i = t.indexOf('src="', e),
       n = t.indexOf('"', i + 5),
       r = t.substr(i + 5, n - i - 5);
-    return -1 != e && -1 != i && -1 != n && "" != r ? r : "https://1.bp.blogspot.com/-BYDJ1dpFEhE/X9QnAUfeORI/AAAAAAAAHxw/OjfaqiPHjhAmCgJts39XIg7o4KR-8YtdACNcBGAsYHQ/w300-h225-p-k-no-nu/dagruel-no-image.png"
+    return -1 != e && -1 != i && -1 != n && "" != r ? r : "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_4a26jcHKjuQXBHDg2eRRHdmSIaUY_CHeUgE8bL3DmToYnP15f-M6dPC1L1JnxsBa9v9fTkau_kMWzWQF7P7Ok51LBll3YzlxHU3FjVXGuWSRIodZt_FEjdCAOhhHdhTDBbzgE4jiAdky/w300-h225-p-k-no-nu/dagruel-no-image.png"
   },
   update = {
     mainItemArr: new Array,
@@ -1693,17 +1695,123 @@ console.log(`${label} & ${lang}`);
   //]]>
 </script>
       <script type='text/javascript'>/*<![CDATA[*/
-const mTP={shuffleArray:t=>{var e,i,n=t.length;if(0===n)return!1;for(;--n;)e=Math.floor(Math.random()*(n+1)),i=t[n],t[n]=t[e],t[e]=i;return t},run:(t,e,i=10,n=5)=>{if(0==t("#mTP_Slider").length)return console.log("Tag mTP_Slider tidak ada");mTP.maxCat=n,mTP.max=i,window.matchMedia("(max-width: 600px)").matches&&(mTP.maxCat=3),window.matchMedia("(max-width: 480px)").matches&&(mTP.maxCat=2);const a=0==e?"":`/-/${e}`;t.ajax({url:`/feeds/posts/default${a}?alt=json-in-script&max-results=150`,type:"get",dataType:"jsonp",success:function(e){mTP.compile(t,e)},error:function(t){console.log(t)}})},compile:(t,e)=>{if("entry"in e.feed){const n=mTP.shuffleArray(e.feed.entry);mTP.filter=mTP.shuffleArray(e.feed.category.map(t=>t.term).filter(t=>{if(mTP.Select.includes(t))return t})).slice(0,mTP.maxCat),mTP.obj={},t.each(mTP.filter,function(e,i){n.filter(e=>{const n=e.category.map(t=>t.term);if(n.includes(i)){const a=mTP.obj[i];a?a.length<mTP.max&&a.push({title:e.title.$t,cat:n,link:e.link.find(t=>"alternate"==t.rel).href,image:"media$thumbnail"in e?e.media$thumbnail.url.match(/\/s[0-9]{2}-(w[0-9]+-)?c/)?e.media$thumbnail.url.replace(/\/s[0-9]{2}-(w[0-9]+-)?c/,`/${mTP.iSize}-p-k-no-nu`):e.media$thumbnail.url.replace(/\=s[0-9]{2}-(w[0-9]+-)?c/,`=${mTP.iSize}-p-k-no-nu`):"content"in e?t(e.content.$t).find("img").attr("src"):mTP.noImage}):mTP.obj[i]=[{title:e.title.$t,cat:n,link:e.link.find(t=>"alternate"==t.rel).href,image:"media$thumbnail"in e?e.media$thumbnail.url.match(/\/s[0-9]{2}-(w[0-9]+-)?c/)?e.media$thumbnail.url.replace(/\/s[0-9]{2}-(w[0-9]+-)?c/,`/${mTP.iSize}-p-k-no-nu`):e.media$thumbnail.url.replace(/\=s[0-9]{2}-(w[0-9]+-)?c/,`=${mTP.iSize}-p-k-no-nu`):"content"in e?t(e.content.$t).find("img").attr("src"):mTP.noImage}]}})});const a=t('<div class="series-gen"><div class="head"><div class="r-title"></div><ul class="nav-tabs tabs tab r2"></ul></div><div class="listupd"></div></div>'),l=Object.keys(mTP.obj).sort().reduce((t,e)=>(t[e]=mTP.obj[e],t),{});for(var i in l){const e=i.replace(/\W/g,"");a.find(".nav-tabs").append(`<li><span data-id="series-${e}">${i}</span></li>`),a.find(".listupd").append(`<div id="series-${e}" class="customAF scroll"><div class="inner scrolling"></div>${mTP.btnPrev}${mTP.btnNext}</div>`),t.each(mTP.obj[i],function(){a.find(`#series-${e} .inner`).append(`<article class="customAgata">\n          <a href="${this.link}" title="${this.title}">\n            <div class="images">\n              <figure>\n                <img src="${this.image}" alt="${this.title}">\n              </figure>\n            </div>\n            <h2 class="entry-title">${this.title}</h2>\n          </a>\n        </article>`)})}t("#mTP_Slider").html(a),t(".nav-tabs li").click(function(){const e=t(this).find("span").attr("data-id");t(".customAF.scroll, .nav-tabs li").each(function(){t(this).attr("id")==e||t(this).find("span").attr("data-id")==e?t(this).addClass("active"):t(this).removeClass("active")})}),t(".nav-tabs li").first().click()}},sN:t=>{let e=t.parentElement.querySelector(".inner.scrolling"),i=e.clientWidth;e.scrollLeft+=i},sB:t=>{let e=t.parentElement.querySelector(".inner.scrolling"),i=e.clientWidth;e.scrollLeft-=i},btnNext:'<button onclick="mTP.sN(this)" class="scrollButton right"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"><path d="M15.713 12l-6.01-6.01l-1.415 1.414l4.6 4.6l-4.6 4.593l1.414 1.414L15.713 12z" fill="currentColor"/></g></svg></button>',btnPrev:'<button onclick="mTP.sB(this)" class="scrollButton left"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"><path d="M8.288 12l6.01 6.01l1.414-1.414l-4.6-4.6l4.6-4.6l-1.414-1.406L8.288 12z" fill="currentColor"/></g></svg></button>',iSize:"w207-h300",noImage:"https://1.bp.blogspot.com/-BYDJ1dpFEhE/X9QnAUfeORI/AAAAAAAAHxw/OjfaqiPHjhAmCgJts39XIg7o4KR-8YtdACNcBGAsYHQ/w300-h225-p-k-no-nu/dagruel-no-image.png"};
+const mTP={shuffleArray:t=>{var e,i,n=t.length;if(0===n)return!1;for(;--n;)e=Math.floor(Math.random()*(n+1)),i=t[n],t[n]=t[e],t[e]=i;return t},run:(t,e,i=10,n=5)=>{if(0==t("#mTP_Slider").length)return console.log("Tag mTP_Slider tidak ada");mTP.maxCat=n,mTP.max=i,window.matchMedia("(max-width: 600px)").matches&&(mTP.maxCat=3),window.matchMedia("(max-width: 480px)").matches&&(mTP.maxCat=2);const a=0==e?"":`/-/${e}`;t.ajax({url:`/feeds/posts/default${a}?alt=json-in-script&max-results=150`,type:"get",dataType:"jsonp",success:function(e){mTP.compile(t,e)},error:function(t){console.log(t)}})},compile:(t,e)=>{if("entry"in e.feed){const n=mTP.shuffleArray(e.feed.entry);mTP.filter=mTP.shuffleArray(e.feed.category.map(t=>t.term).filter(t=>{if(mTP.Select.includes(t))return t})).slice(0,mTP.maxCat),mTP.obj={},t.each(mTP.filter,function(e,i){n.filter(e=>{const n=e.category.map(t=>t.term);if(n.includes(i)){const a=mTP.obj[i];a?a.length<mTP.max&&a.push({title:e.title.$t,cat:n,link:e.link.find(t=>"alternate"==t.rel).href,image:"media$thumbnail"in e?e.media$thumbnail.url.match(/\/s[0-9]{2}-(w[0-9]+-)?c/)?e.media$thumbnail.url.replace(/\/s[0-9]{2}-(w[0-9]+-)?c/,`/${mTP.iSize}-p-k-no-nu`):e.media$thumbnail.url.replace(/\=s[0-9]{2}-(w[0-9]+-)?c/,`=${mTP.iSize}-p-k-no-nu`):"content"in e?t(e.content.$t).find("img").attr("src"):mTP.noImage}):mTP.obj[i]=[{title:e.title.$t,cat:n,link:e.link.find(t=>"alternate"==t.rel).href,image:"media$thumbnail"in e?e.media$thumbnail.url.match(/\/s[0-9]{2}-(w[0-9]+-)?c/)?e.media$thumbnail.url.replace(/\/s[0-9]{2}-(w[0-9]+-)?c/,`/${mTP.iSize}-p-k-no-nu`):e.media$thumbnail.url.replace(/\=s[0-9]{2}-(w[0-9]+-)?c/,`=${mTP.iSize}-p-k-no-nu`):"content"in e?t(e.content.$t).find("img").attr("src"):mTP.noImage}]}})});const a=t('<div class="series-gen"><div class="head"><div class="r-title"></div><ul class="nav-tabs tabs tab r2"></ul></div><div class="listupd"></div></div>'),l=Object.keys(mTP.obj).sort().reduce((t,e)=>(t[e]=mTP.obj[e],t),{});for(var i in l){const e=i.replace(/\W/g,"");a.find(".nav-tabs").append(`<li><span data-id="series-${e}">${i}</span></li>`),a.find(".listupd").append(`<div id="series-${e}" class="customAF scroll"><div class="inner scrolling"></div>${mTP.btnPrev}${mTP.btnNext}</div>`),t.each(mTP.obj[i],function(){a.find(`#series-${e} .inner`).append(`<article class="customAgata">\n          <a href="${this.link}" title="${this.title}">\n            <div class="images">\n              <figure>\n                <img src="${this.image}" alt="${this.title}">\n              </figure>\n            </div>\n            <h2 class="entry-title">${this.title}</h2>\n          </a>\n        </article>`)})}t("#mTP_Slider").html(a),t(".nav-tabs li").click(function(){const e=t(this).find("span").attr("data-id");t(".customAF.scroll, .nav-tabs li").each(function(){t(this).attr("id")==e||t(this).find("span").attr("data-id")==e?t(this).addClass("active"):t(this).removeClass("active")})}),t(".nav-tabs li").first().click()}},sN:t=>{let e=t.parentElement.querySelector(".inner.scrolling"),i=e.clientWidth;e.scrollLeft+=i},sB:t=>{let e=t.parentElement.querySelector(".inner.scrolling"),i=e.clientWidth;e.scrollLeft-=i},btnNext:'<button onclick="mTP.sN(this)" class="scrollButton right"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"><path d="M15.713 12l-6.01-6.01l-1.415 1.414l4.6 4.6l-4.6 4.593l1.414 1.414L15.713 12z" fill="currentColor"/></g></svg></button>',btnPrev:'<button onclick="mTP.sB(this)" class="scrollButton left"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"><path d="M8.288 12l6.01 6.01l1.414-1.414l-4.6-4.6l4.6-4.6l-1.414-1.406L8.288 12z" fill="currentColor"/></g></svg></button>',iSize:"w207-h300",noImage:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_4a26jcHKjuQXBHDg2eRRHdmSIaUY_CHeUgE8bL3DmToYnP15f-M6dPC1L1JnxsBa9v9fTkau_kMWzWQF7P7Ok51LBll3YzlxHU3FjVXGuWSRIodZt_FEjdCAOhhHdhTDBbzgE4jiAdky/w300-h225-p-k-no-nu/dagruel-no-image.png"};
 mTP.Select = ["Action", "Adventure", "Comedy", "Drama", "Ecchi", "Fantasy", "Game", "Harem", "Historical", "Isekai", "Horror", "Josei", "Magic", "Mecha", "Military", "Music", "Mystery", "Parody", "Police", "Psychological", "Romance", "Samurai", "School", "School Life", "Sci-Fi", "Seinen", "Shoujo", "Shoujo Ai", "Shounen", "Slice of Life", "Space", "Sports", "Super Power", "Supernatural", "Thriller", "Vampire", "Yuri"];
 /*]]>*/</script>
     </b:if>
-    <script type='text/javascript'>/*<![CDATA[*/
-  const clwd={arr:new Array,compile:function(){const t=this,e=this.arr.length;t.settings.title.some(e=>t.arr[0].title.includes(e.in))||t.arr.push(t.arr.shift());let n="<ul>",s='<div class="lastend">';jQuery.each(t.arr,function(i,a){let l=a.title;if(jQuery.each(t.settings.title,function(t,e){l.includes(e.in)&&(l=e.out+" "+l.split(e.in)[1].replace(/[^0-9\.-]+/g,""))}),i==e-2&&(s+=`<div class="inepcx" data-id="1"><a href="${a.link}"><span>Chapter Awal</span><span class="epcur epcurfirst">${l}</span></a></div>`),0==i&&(s+=`<div class="inepcx" data-id="2"><a href="${a.link}"> <span>Chapter Baru</span> <span class="epcur epcurlast">${l}</span></a></div>`),i!=e-1){let t=0==a.dLink?"":`<div class="dt"> <a href="${a.dLink}" rel="nofollow" class="dload" target="_blank"><i class="fas fa-cloud-download-alt"></i></a></div>`;n+=`<li><div class="chbox"><div class="eph-num"><a href="${a.link}"><span class="chapternum">${l}</span> <span class="chapterdate">${a.published}</span></a></div>${t}</div></li>`}}),s+="</div>",n+="</ul>",document.getElementById("clwd").innerHTML=`${s+n}`},get:function(t){const e=this;t.ajax({url:`/feeds/posts/default/-/${this.settings.cat}?alt=json-in-script&start-index=${this.settings.start}&max-results=${this.settings.max}`,type:"get",dataType:"jsonp",success:function(n){"entry"in n.feed?(n.feed.entry.forEach(n=>{e.arr.push({title:n.title.$t,link:n.link.find(t=>"alternate"==t.rel).href,dLink:"content"in n&&(0!=t(n.content.$t).find("#downBTN").length&&t(n.content.$t).find("#downBTN").attr("href")),published:"function"==typeof timeAgo?timeAgo(new Date(n.updated.$t)):e.timeStirng(n.updated.$t)})}),n.feed.entry.length>=e.settings.max?(e.settings.start+=e.settings.max,e.run(e.settings.cat)):e.compile()):0!=e.arr.length&&e.compile()},error:function(t){console.log(t)}})},run:function(t){this.settings.cat=t,"function"==typeof jQuery&&document.getElementById("clwd")?this.get(jQuery):console.log("Output Nothing")},settings:{max:150,start:1,title:[{in:"Episode",out:"Ep."},{in:"Chapter",out:"Ch."},{in:"Volume",out:"Vol."}],judul:"Chapter List"},timeStirng:function(t){if(/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/.test(t)){var e=t,n=e.substring(0,4),s=e.substring(5,7),i=e.substring(8,10),a=new Array;return a[1]="Jan",a[2]="Feb",a[3]="Mar",a[4]="Apr",a[5]="May",a[6]="Jun",a[7]="Jul",a[8]="Aug",a[9]="Sep",a[10]="Oct",a[11]="Nov",a[12]="Dec",i+" "+a[parseInt(s,10)]+" "+n}return!1}};
-/*]]>*/</script>
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'/>
-    <link href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css' rel='stylesheet'/>
+   <script type='text/javascript'>
+/*<![CDATA[*/
+const clwd = {
+  arr: [],
+  compile: function () {
+    let n = "<ul>",
+        s = '<div class="lastend">';
 
-<script src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js'/>
+    let firstChapter = this.arr[this.arr.length - 1]; 
+    let lastChapter = this.arr[0]; 
+
+    this.arr.forEach((a, i) => {
+      let l = a.title;
+
+      this.settings.title.forEach(e => {
+        if (l.includes(e.in)) {
+          l = e.out + " " + l.split(e.in)[1].replace(/[^0-9\.-]+/g, "");
+        }
+      });
+
+      if (a === firstChapter) {
+        s += `<div class="inepcx" data-id="1">
+                <a href="${a.link}">
+                  <span>Chapter Awal</span>
+                  <span class="epcur epcurfirst">${l}</span>
+                </a>
+              </div>`;
+      }
+
+      if (a === lastChapter) {
+        s += `<div class="inepcx" data-id="2">
+                <a href="${a.link}">
+                  <span>Chapter Baru</span>
+                  <span class="epcur epcurlast">${l}</span>
+                </a>
+              </div>`;
+      }
+
+      n += `<li>
+              <div class="chbox">
+                <div class="eph-num">
+                  <a href="${a.link}">
+                    <span class="chapternum">${l}</span>
+                  </a>
+                </div>
+              </div>
+            </li>`;
+    });
+
+    s += "</div>";
+    n += "</ul>";
+
+    document.getElementById("clwd").innerHTML = `${s}${n}`;
+  },
+
+  get: function () {
+    fetch(`/feeds/posts/default/-/${this.settings.cat}?alt=json&start-index=${this.settings.start}&max-results=${this.settings.max}`)
+      .then(response => response.json())
+      .then(data => {
+        if (data.feed && data.feed.entry) {
+          data.feed.entry.forEach(entry => {
+            let labels = entry.category ? entry.category.map(cat => cat.term) : [];
+
+            if (!labels.includes("Series")) {
+              this.arr.push({
+                title: entry.title.$t,
+                link: entry.link.find(t => t.rel === "alternate").href
+              });
+            }
+          });
+
+          if (data.feed.entry.length >= this.settings.max) {
+            this.settings.start += this.settings.max;
+            this.run(this.settings.cat);
+          } else {
+            this.compile();
+          }
+        } else if (this.arr.length > 0) {
+          this.compile();
+        }
+      })
+      .catch(error => console.log(error));
+  },
+
+  run: function (t) {
+    this.settings.cat = t;
+    if (document.getElementById("clwd")) {
+      this.get();
+    } else {
+      console.log("Output Nothing");
+    }
+  },
+
+  settings: {
+    max: 150,
+    start: 1,
+    title: [
+      { in: "Episode", out: "Ep." },
+      { in: "Chapter", out: "Ch." },
+      { in: "Volume", out: "Vol." }
+    ],
+    judul: "Chapter List"
+  }
+};
+/*]]>*/
+</script>
+
+
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'/>
+    <!-- Link Swiper's CSS -->
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css' rel='stylesheet'/>
+      <!-- Swiper JS -->
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js'/>
 
       <b:comment><script src='//code.iconify.design/1/1.0.6/iconify.min.js'/></b:comment>
     <style>
@@ -1763,7 +1871,7 @@ $(widget).remove();
                     <b:with value='[&quot;Score 0.5&quot;,&quot;Score 1.0&quot;,&quot;Score 1.5&quot;,&quot;Score 2.0&quot;,&quot;Score 2.5&quot;,&quot;Score 3.0&quot;,&quot;Score 3.5&quot;,&quot;Score 4.0&quot;,&quot;Score 4.5&quot;,&quot;Score 5.0&quot;,&quot;Score 5.5&quot;,&quot;Score 6.0&quot;,&quot;Score 6.5&quot;,&quot;Score 7.0&quot;,&quot;Score 7.5&quot;,&quot;Score 8.0&quot;,&quot;Score 8.5&quot;,&quot;Score 9.0&quot;,&quot;Score 9.5&quot;,&quot;Score 10.0&quot;]' var='Score'>
                       <header class='bg-main'>
                         <b:section class='max-w mra mla grid gtc-header aic gg-30' growth='vertical' id='header' maxwidgets='3' showaddelement='true'>
-                          <b:widget id='Header1' locked='true' title='Zeistmanga (Header)' type='Header' version='2' visible='true'>
+                          <b:widget id='Header1' locked='true' title='ZeistManga V5 (Header)' type='Header' version='2' visible='true'>
                             <b:widget-settings>
                               <b:widget-setting name='displayUrl'/>
                               <b:widget-setting name='displayHeight'>0</b:widget-setting>
@@ -1857,7 +1965,7 @@ $(widget).remove();
                                 <b:class cond='data:overflow' name='overflowable-item'/>
                                 <b:class cond='data:link.isCurrentPage' name='selected'/>
 
-                                <a class='block px-5 lh-37 c-fff fs-14' expr:data='data:link.title' expr:href='data:link.href'><data:link.title/></a>
+                                <a class='block px-5 lh-60 c-fff fs-14' expr:data='data:link.title' expr:href='data:link.href'><data:link.title/></a>
                               </li>
                               
                               
@@ -1869,7 +1977,7 @@ $(widget).remove();
                                   <b:include name='pageLink'/>
                                 </b:loop>                       
                                 <li class='dropdown mx-5'>
-                                <label class='block px-5 lh-37 c-fff fs-14' data='Other' for='dropmenu'>Daftar Komik<svg aria-hidden='true' class='h-14' height='1em' preserveAspectRatio='xMidYMid meet' role='img' viewBox='0 0 16 16' width='1em' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g fill='currentColor'><path d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></g></svg></label>
+                                <label class='block px-5 lh-60 c-fff fs-14' data='Other' for='dropmenu'>Daftar Komik<svg aria-hidden='true' class='h-14' height='1em' preserveAspectRatio='xMidYMid meet' role='img' viewBox='0 0 16 16' width='1em' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g fill='currentColor'><path d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></g></svg></label>
                                 <input class='dropMenu hidden' id='dropmenu' name='dropDown' type='checkbox'/>
                                 <ul class='pl-0 lsn bg-171 c-999-a p-y7x15-a block-a'>
                                   <li><a expr:href='data:blog.homepageUrl + &quot;search/label/Manga?&amp;max-results=20&quot;'>Manga</a></li>
@@ -1879,7 +1987,7 @@ $(widget).remove();
                                 </ul>
                               </li>
                                 <li class='mx-5'>
-                                <a class='block px-5 lh-37 c-fff fs-14' data='bookmark' href='/p/bookmark.html'>Bookmark</a>
+                                <a class='block px-5 lh-60 c-fff fs-14' data='bookmark' href='/p/bookmark.html'>Bookmark</a>
                               </li>
                               </ul>
                             </b:includable>
@@ -1945,147 +2053,128 @@ https://cararegistrasi.com/zeistmanga
                       <b:section class='mb-15' cond='data:view.isHomepage' id='hero' maxwidgets='2' showaddelement='true'>
                         <b:widget id='HTML3' locked='true' title='Slider v2 Manual' type='HTML' version='2' visible='true'>
                           <b:widget-settings>
-                            <b:widget-setting name='content'><![CDATA[<div class="big-slider swiper swiper-container slidernom3" id="default-carousel" data-carousel="slide">
-  <div class="swiper-wrapper">
-     <div class="swiper-slide ">
-        <div class="mainslider">
-           <div class="limit">
-              <div class="sliderinfo">
-                 <div class="sliderinfolimit">
-                    <div class="slidlc">
-                       Chapter: 82						
-                    </div>
-                    <a href="https://manhwaindo.id/series/the-way-that-knight-lives-as-a-lady/">
-                       <span class="name">The Way That Knight Lives As a Lady</span>
-                       <div class="desc">
-                          <p>Pedang teman terdekat dan ajudan tepercaya menusuk tubuhku …Ketika saya membuka mata saya lagi, saya telah menjadi seorang wanita bangsawan dari kerajaan musuh. Dalam tubuh orang asing yang tidak dikenal…</p>
-                       </div>
-                    </a>
-                    <div class="meta">
-                       <div class="metas-slider-genres"><span class="metas-genres-values"><a href="https://manhwaindo.id/genres/fantasy/" rel="tag">Fantasy</a> <a href="https://manhwaindo.id/genres/historical/" rel="tag">Historical</a> <a href="https://manhwaindo.id/genres/manhwa/" rel="tag">Manhwa</a> <a href="https://manhwaindo.id/genres/romance/" rel="tag">Romance</a> <a href="https://manhwaindo.id/genres/shoujo/" rel="tag">Shoujo</a></span></div>
-                    </div>
-                    <div class="start-reading">
-                       <a href="https://manhwaindo.id/series/the-way-that-knight-lives-as-a-lady/">
-                       <span>Mulai Baca <i class="fas fa-long-arrow-alt-right"></i></span>
-                       </a>
-                    </div>
-                 </div>
-              </div>
-              <div class="slidtrithumb">
-                 <img post-id="25612" fifu-featured="1" width="714" height="813" src="https://jp.manhwaindo.id/storage/drive/luYY5ZuTTfRw5CcWajjBAeBe5EeqTr/jHZHuzSNr0KaxdNrSwqGNiq1Jv0GR4.jpg" class="attachment-full size-full wp-post-image entered lazyloaded" alt="The Way That Knight Lives As a Lady" title="The Way That Knight Lives As a Lady" decoding="async" fetchpriority="high" data-lazy-src="https://img.manhwaindo.com/id/cover/The-Way-That-Knight-Lives-As-a-Lady.jpg" data-ll-status="loaded" />
-                 <noscript><img post-id="25612" fifu-featured="1" width="714" height="813" src="https://img.manhwaindo.com/id/cover/The-Way-That-Knight-Lives-As-a-Lady.jpg" class="attachment-full size-full wp-post-image" alt="The Way That Knight Lives As a Lady" title="The Way That Knight Lives As a Lady" title="The Way That Knight Lives As a Lady" decoding="async" fetchpriority="high" /></noscript>
-              </div>
-              <div data-bg="https://jp.manhwaindo.id/storage/drive/luYY5ZuTTfRw5CcWajjBAeBe5EeqTr/jHZHuzSNr0KaxdNrSwqGNiq1Jv0GR4.jpg" class="bigbanner rocket-lazyload entered lazyloaded" style="background-image: url(&quot;https://pic1.mangapicgallery.com/r/album/98/md_/454042_32478529.jpg&quot;);" data-ll-status="loaded"></div>
-           </div>
+                            <b:widget-setting name='content'><![CDATA[<div class="swiper slider_Manga_Reader swiper-fade swiper-initialized swiper-horizontal swiper-watch-progress swiper-backface-hidden">
+  <div class="swiper-wrapper" id="swiper-wrapper-2e1b7fb7710fad0f4" aria-live="polite" style="transition-duration: 0ms; transition-delay: 0ms;"><div class="swiper-slide swiper-slide-visible swiper-slide-fully-visible swiper-slide-active" style="width: 1168px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;" role="group" aria-label="3 / 4" data-swiper-slide-index="2">
+      <div class="box_item">
+        <a href="#" class="bg_item">
+          <img alt="#" height="787" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUtvg9e04FP3dZlg9xUuC3NofgGeY8U-YGuuubymmxMSg64WEerDnBapf1BvynnkA3Ev5RroUNUShw-GXcb9oNUIU_unx0hbXzRCfBBpSThx3xG_YnzG6lCa7kx1efNsXLf_ci5PeXFXPdQvj18FQ4rNiS0j7Fesce5Ml1aZe-_g1s8rj6grUqvMevxRQ/s1600-rw/71157caa0d251504b2999f9ceb45fc33.jpg" width="500" />
+        </a>
+        <div class="poster_item">
+          <a href="#">
+            <img alt="#" height="787" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUtvg9e04FP3dZlg9xUuC3NofgGeY8U-YGuuubymmxMSg64WEerDnBapf1BvynnkA3Ev5RroUNUShw-GXcb9oNUIU_unx0hbXzRCfBBpSThx3xG_YnzG6lCa7kx1efNsXLf_ci5PeXFXPdQvj18FQ4rNiS0j7Fesce5Ml1aZe-_g1s8rj6grUqvMevxRQ/s1600-rw/71157caa0d251504b2999f9ceb45fc33.jpg" width="500" />
+          </a>
         </div>
-     </div>
-     <div class="swiper-slide ">
-        <div class="mainslider">
-           <div class="limit">
-              <div class="sliderinfo">
-                 <div class="sliderinfolimit">
-                    <div class="slidlc">
-                       Chapter: 1106						
-                    </div>
-                    <a href="https://manhwaindo.id/series/one-piece/">
-                       <span class="name">One Piece</span>
-                       <div class="desc">
-                          <p>bercerita tentang sekelompok bajak laut yang dipimpin oleh Monkey D. Luffy yang pergi mencari harta karun legendaris bernama One Piece. Luffy menjadi manusia karet yang memiliki kekuatan memanjangkan tubuhnya setelah…</p>
-                       </div>
-                    </a>
-                    <div class="meta">
-                       <div class="metas-slider-genres"><span class="metas-genres-values"><a href="https://manhwaindo.id/genres/action/" rel="tag">Action</a> <a href="https://manhwaindo.id/genres/adventure/" rel="tag">Adventure</a> <a href="https://manhwaindo.id/genres/comedy/" rel="tag">Comedy</a> <a href="https://manhwaindo.id/genres/drama/" rel="tag">Drama</a> <a href="https://manhwaindo.id/genres/fantasy/" rel="tag">Fantasy</a> <a href="https://manhwaindo.id/genres/shounen/" rel="tag">Shounen</a> <a href="https://manhwaindo.id/genres/supernatural/" rel="tag">Supernatural</a></span></div>
-                    </div>
-                    <div class="start-reading">
-                       <a href="https://manhwaindo.id/series/one-piece/">
-                       <span>Mulai Baca <i class="fas fa-long-arrow-alt-right"></i></span>
-                       </a>
-                    </div>
-                 </div>
-              </div>
-              <div class="slidtrithumb">
-                 <img post-id="70648" fifu-featured="1" width="397" height="619" src="https://img.manhwaindo.id/id/cover/one-piece-cv.jpg" class="attachment-full size-full wp-post-image" alt="One Piece" title="One Piece" decoding="async" data-lazy-src="https://img.manhwaindo.id/id/cover/one-piece-cv.jpg" />
-                 <noscript><img post-id="70648" fifu-featured="1" width="397" height="619" src="https://img.manhwaindo.id/id/cover/one-piece-cv.jpg" class="attachment-full size-full wp-post-image" alt="One Piece" title="One Piece" title="One Piece" decoding="async" /></noscript>
-              </div>
-              <div data-bg="https://img.manhwaindo.id/id/cover/one-piece-cv.jpg" class="bigbanner img-blur rocket-lazyload entered lazyloaded" style="background-image: url(&quot;https://img.manhwaindo.id/id/cover/one-piece-cv.jpg&quot;);" post-id="70648" data-ll-status="loaded"></div>
-           </div>
+        <div class="content_item">
+          <div class="content_item_chapter">Chapter: 103 [EN]</div>
+          <div class="content_item_title">
+            <a title="Dragon Ball Super" href="#">Komi Can't Communicate</a>
+          </div>
+          <div class="content_item_details">
+            <div class="content_item_details_des">It's Shouko Komi's first day at the prestigious Itan Private High School, and she has already risen to the status of the school's Madonna. With long black hair and a tall, graceful appearance, she...</div>
+            <div class="content_item_details_genre">
+              <span>Action</span><span>Comedy</span><span>Martial Arts</span><span>Shounen</span><span>Super Power</span>
+            </div>
+          </div>
+          <div class="content_item_buttons">
+            <a href="#" class="content_item_buttons_read">Read Now</a>
+            <a href="#" class="content_item_buttons_view">View Info</a>
+          </div>
         </div>
-     </div>
-     <div class="swiper-slide ">
-        <div class="mainslider">
-           <div class="limit">
-              <div class="sliderinfo">
-                 <div class="sliderinfolimit">
-                    <div class="slidlc">
-                       Chapter: 369						
-                    </div>
-                    <a href="https://manhwaindo.id/series/black-clover/">
-                       <span class="name">Black Clover</span>
-                       <div class="desc">
-                          <p>Asta dan Yuno ditinggalkan bersama di gereja yang sama, dan tidak terpisahkan sejak saat itu. Sebagai anak-anak, mereka berjanji bahwa mereka akan bersaing satu sama lain untuk melihat siapa yang…</p>
-                       </div>
-                    </a>
-                    <div class="meta">
-                       <div class="metas-slider-genres"><span class="metas-genres-values"><a href="https://manhwaindo.id/genres/action/" rel="tag">Action</a> <a href="https://manhwaindo.id/genres/adventure/" rel="tag">Adventure</a> <a href="https://manhwaindo.id/genres/comedy/" rel="tag">Comedy</a> <a href="https://manhwaindo.id/genres/drama/" rel="tag">Drama</a> <a href="https://manhwaindo.id/genres/fantasy/" rel="tag">Fantasy</a> <a href="https://manhwaindo.id/genres/shounen/" rel="tag">Shounen</a> <a href="https://manhwaindo.id/genres/supernatural/" rel="tag">Supernatural</a></span></div>
-                    </div>
-                    <div class="start-reading">
-                       <a href="https://manhwaindo.id/series/black-clover/">
-                       <span>Mulai Baca <i class="fas fa-long-arrow-alt-right"></i></span>
-                       </a>
-                    </div>
-                 </div>
-              </div>
-              <div class="slidtrithumb">
-                 <img post-id="15799" fifu-featured="1" width="223" height="350" src="https://kiryuu.id/wp-content/uploads/2021/03/23-587365-WMDAnwJR.jpg" class="attachment-full size-full wp-post-image" alt="Black Clover" title="Black Clover" decoding="async" data-lazy-src="https:///kambingjantan.cc/storage/drive/GO2JpikbYiJx1LVGxe9DHbabJ53Cnn/TMvYgXr18K0sd11ebWFXMOikim9zsS.jpg" />
-                 <noscript><img post-id="15799" fifu-featured="1" width="223" height="350" src="https:///kambingjantan.cc/storage/drive/GO2JpikbYiJx1LVGxe9DHbabJ53Cnn/TMvYgXr18K0sd11ebWFXMOikim9zsS.jpg" class="attachment-full size-full wp-post-image" alt="Black Clover" title="Black Clover" title="Black Clover" decoding="async" /></noscript>
-              </div>
-              <div data-bg="https://kiryuu.id/wp-content/uploads/2021/03/maxresdefault-1-453780-czlDbHNl.jpg" class="bigbanner rocket-lazyload" style='background-image: url("https://kiryuu.id/wp-content/uploads/2021/03/maxresdefault-1-453780-czlDbHNl.jpg");'></div>
-           </div>
+      </div>
+    </div><div class="swiper-slide swiper-slide-next" style="width: 1168px; opacity: 0; transform: translate3d(-1168px, 0px, 0px); transition-duration: 0ms;" role="group" aria-label="4 / 4" data-swiper-slide-index="3">
+      <div class="box_item">
+        <a href="#" class="bg_item">
+          <img alt="#" height="787" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgLmaduYckqYGZV8y6dGLWuL4frf4xflt_NkY9StTg_GWbFg960vAesFoysAlzpLOuqIXyQ_1CLAr-48QxGetPm4c1_F-X1byaM70VfKq7AQfp5S17704-OgAuox2SRj6rs3fIa0HVZQncZ06_cQj-7lP0eDiMeOnx5e2BfG-1MY599UNLjTMKjjN2ysOk/s1600-rw/77ef441119b58b0e7549337543083dbe.jpg" width="500" />
+        </a>
+        <div class="poster_item">
+          <a href="#">
+            <img alt="#" height="787" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgLmaduYckqYGZV8y6dGLWuL4frf4xflt_NkY9StTg_GWbFg960vAesFoysAlzpLOuqIXyQ_1CLAr-48QxGetPm4c1_F-X1byaM70VfKq7AQfp5S17704-OgAuox2SRj6rs3fIa0HVZQncZ06_cQj-7lP0eDiMeOnx5e2BfG-1MY599UNLjTMKjjN2ysOk/s1600-rw/77ef441119b58b0e7549337543083dbe.jpg" width="500" />
+          </a>
         </div>
-     </div>
-     <div class="swiper-slide ">
-        <div class="mainslider">
-           <div class="limit">
-              <div class="sliderinfo">
-                 <div class="sliderinfolimit">
-                    <div class="slidlc">
-                       Chapter: 484						
-                    </div>
-                    <a href="https://manhwaindo.id/series/wind-breaker-id/">
-                       <span class="name">Wind Breaker ID</span>
-                       <div class="desc">
-                          <p>Jay adalah murid yang sempurna. Dia mendapat nilai A dan dia adalah ketua organisasi mahasiswa. Tapi setelah dipaksa untuk bergabung dengan tim bersepeda sekolah, Kru Hummingbird, ia menemukan dunia baru…</p>
-                       </div>
-                    </a>
-                    <div class="meta">
-                       <div class="metas-slider-genres"><span class="metas-genres-values"><a href="https://manhwaindo.id/genres/action/" rel="tag">Action</a> <a href="https://manhwaindo.id/genres/drama/" rel="tag">Drama</a> <a href="https://manhwaindo.id/genres/manhwa/" rel="tag">Manhwa</a> <a href="https://manhwaindo.id/genres/shounen/" rel="tag">Shounen</a> <a href="https://manhwaindo.id/genres/sports/" rel="tag">Sports</a></span></div>
-                    </div>
-                    <div class="start-reading">
-                       <a href="https://manhwaindo.id/series/wind-breaker-id/">
-                       <span>Mulai Baca <i class="fas fa-long-arrow-alt-right"></i></span>
-                       </a>
-                    </div>
-                 </div>
-              </div>
-              <div class="slidtrithumb">
-                 <img post-id="99541" fifu-featured="1" width="160" height="230" src="https://manhwaindo.id/wp-content/uploads/manga-images/wind-breaker/thumbnail.jpg" class="attachment-full size-full wp-post-image" alt="Wind Breaker" title="Wind Breaker" decoding="async" data-lazy-src="https://manhwaindo.id/wp-content/uploads/manga-images/wind-breaker/thumbnail.jpg" />
-                 <noscript><img post-id="99541" fifu-featured="1" width="160" height="230" src="https://manhwaindo.id/wp-content/uploads/manga-images/wind-breaker/thumbnail.jpg" class="attachment-full size-full wp-post-image" alt="Wind Breaker" title="Wind Breaker" title="Wind Breaker ID" decoding="async" /></noscript>
-              </div>
-              <div data-bg="https://manhwaindo.id/wp-content/uploads/manga-images/wind-breaker/thumbnail.jpg" class="bigbanner img-blur rocket-lazyload" style='background-image: url("https://manhwaindo.id/wp-content/uploads/manga-images/wind-breaker/thumbnail.jpg");' post-id="99541"></div>
-           </div>
+        <div class="content_item">
+          <div class="content_item_chapter">Chapter: 103 [EN]</div>
+          <div class="content_item_title">
+            <a title="Dragon Ball Super" href="#">One-Punch Man</a>
+          </div>
+          <div class="content_item_details">
+            <div class="content_item_details_des">After rigorously training for three years, the ordinary Saitama has gained immense strength which allows him to take out anyone and anything with just one punch. He decides to put his new skill to...</div>
+            <div class="content_item_details_genre">
+              <span>Action</span><span>Comedy</span><span>Martial Arts</span><span>Shounen</span><span>Super Power</span>
+            </div>
+          </div>
+          <div class="content_item_buttons">
+            <a href="#" class="content_item_buttons_read">Read Now</a>
+            <a href="#" class="content_item_buttons_view">View Info</a>
+          </div>
         </div>
-     </div>
-  </div> 
- <!-- If we need pagination -->
- <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <!-- Slides -->
+    <div class="swiper-slide" style="width: 1168px; opacity: 0; transform: translate3d(-2336px, 0px, 0px); transition-duration: 0ms;" role="group" aria-label="1 / 4" data-swiper-slide-index="0">
+      <div class="box_item">
+        <a href="#" class="bg_item">
+          <img alt="#" height="787" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiZHmViUObjAwPGznyGMzUe6FUnm5Q7ZFP4Q1D_JN74NDEZkxeRyX0zyn0My_6IqgWmM_w7epYcRoyPVRFv6aDiBraMFjiliYniyGjVF9Kv6_oieaYII9WZLSkWZKyyROmvVE0-l1tQeirATNTbIrbDqb49Ve4l4bPRxGHlYob1jlCShmdJb0ha9Y7WGg8/s1600-rw/0044656ee05ca233329d179ac98801a9.jpg" width="500" />
+        </a>
+        <div class="poster_item">
+          <a href="#">
+            <img alt="#" height="787" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiZHmViUObjAwPGznyGMzUe6FUnm5Q7ZFP4Q1D_JN74NDEZkxeRyX0zyn0My_6IqgWmM_w7epYcRoyPVRFv6aDiBraMFjiliYniyGjVF9Kv6_oieaYII9WZLSkWZKyyROmvVE0-l1tQeirATNTbIrbDqb49Ve4l4bPRxGHlYob1jlCShmdJb0ha9Y7WGg8/s1600-rw/0044656ee05ca233329d179ac98801a9.jpg" width="500" />
+          </a>
+        </div>
+        <div class="content_item">
+          <div class="content_item_chapter">Chapter: 103 [EN]</div>
+          <div class="content_item_title">
+            <a title="Dragon Ball Super" href="#">Dragon Ball Super</a>
+          </div>
+          <div class="content_item_details">
+            <div class="content_item_details_des">Reuniting the franchise's iconic characters, follows the aftermath of Goku's fierce battle with Majin Buu as he attempts to maintain earth's fragile peace.  (Source: AniDB)</div>
+            <div class="content_item_details_genre">
+              <span>Action</span><span>Comedy</span><span>Martial Arts</span><span>Shounen</span><span>Super Power</span>
+            </div>
+          </div>
+          <div class="content_item_buttons">
+            <a href="#" class="content_item_buttons_read">Read Now</a>
+            <a href="#" class="content_item_buttons_view">View Info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-slide" style="width: 1168px; opacity: 0; transform: translate3d(-3504px, 0px, 0px); transition-duration: 0ms;" role="group" aria-label="2 / 4" data-swiper-slide-index="1">
+      <div class="box_item">
+        <a href="#" class="bg_item">
+          <img alt="#" height="787" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5tSdDGT_qmq4WKiq_xq6lIGe1IILBpt6t-ltsv1NifheNtNiT3p9VZ0So1DDm5YHIgzC32UtYXgJ0CwLTVxw42sDr6iv33ICdcMpDv3nsXU-pP5KBgfAHqMTQREddM4na3XJ0m7E0zmih8g1-__wfv1y5QyWe4SPzQEEVRrpMk8TRUBDdSNe3kPLk3lY/s1600-rw/2b81acfc5ad30cc046274d672bd643eb.jpg" width="500" />
+        </a>
+        <div class="poster_item">
+          <a href="#">
+            <img alt="#" height="787" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5tSdDGT_qmq4WKiq_xq6lIGe1IILBpt6t-ltsv1NifheNtNiT3p9VZ0So1DDm5YHIgzC32UtYXgJ0CwLTVxw42sDr6iv33ICdcMpDv3nsXU-pP5KBgfAHqMTQREddM4na3XJ0m7E0zmih8g1-__wfv1y5QyWe4SPzQEEVRrpMk8TRUBDdSNe3kPLk3lY/s1600-rw/2b81acfc5ad30cc046274d672bd643eb.jpg" width="500" />
+          </a>
+        </div>
+        <div class="content_item">
+          <div class="content_item_chapter">Chapter: 103 [EN]</div>
+          <div class="content_item_title">
+            <a title="Blue Exorcist" href="#">Blue Exorcist</a>
+          </div>
+          <div class="content_item_details">
+            <div class="content_item_details_des">After a fight with his foster father Shirou Fujimoto, Rin Okumura's life is transformed overnight when Rin is revealed to be the son of the demon lord Satan, king of the demonic realm of Gehenna. Soon...</div>
+            <div class="content_item_details_genre">
+              <span>Action</span><span>Comedy</span><span>Martial Arts</span><span>Shounen</span><span>Super Power</span>
+            </div>
+          </div>
+          <div class="content_item_buttons">
+            <a href="#" class="content_item_buttons_read">Read Now</a>
+            <a href="#" class="content_item_buttons_view">View Info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
 
- <!-- If we need navigation buttons -->
- <div class="swiper-button-prev"></div>
- <div class="swiper-button-next"></div>
-
- <!-- If we need scrollbar -->
- <div class="swiper-scrollbar"></div>
-</div>]]></b:widget-setting>
+  </div>
+  <div class="boox_bt">
+    <div class="swiper-button swiper-bt-prev" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-2e1b7fb7710fad0f4"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 320 512"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path></svg></div>
+    <div class="swiper-button swiper-bt-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-2e1b7fb7710fad0f4"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></div>
+  </div>
+<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>]]></b:widget-setting>
                           </b:widget-settings>
                           <b:includable id='main'>
                               <data:content/>
@@ -2158,7 +2247,7 @@ https://cararegistrasi.com/zeistmanga
                       <b:section class='max-w mla mra mb-15' cond='data:view.isHomepage' id='slide' maxwidgets='3' showaddelement='true'>
                         <b:widget cond='data:view.isHomepage' id='HTML6' locked='true' title='Ads' type='HTML' version='2' visible='false'>
                           <b:widget-settings>
-                            <b:widget-setting name='content'><![CDATA[<img src="https://1.bp.blogspot.com/-FmfAILeAUs4/YQJE9dL6VhI/AAAAAAAAHXA/qm9QN_rJxwsG84UY9LYcD4Y58XTvQcwNQCLcBGAsYHQ/s720/ads.png"/>]]></b:widget-setting>
+                            <b:widget-setting name='content'><![CDATA[<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhFOykBjCVPvtAyUkopdGveCAq4A-Ep5DpKXtBo5IUZudt5IVtgw3eQufGXvRuHR58lZhYT2T8D-nEeZjd2Bcd0iuEKUVENZ9dhZY6INfpxc2uBQ3CcFOKVQdtUF5yB6-7B2VCdcA5Yk0q4/s720/ads.png"/>]]></b:widget-setting>
                           </b:widget-settings>
                           <b:includable id='main'>
                               <b:class name='ads'/>
@@ -3678,7 +3767,7 @@ window.open(location.protocol+ '//' + location.hostname + '/search/label/' + o.j
                                     </li>
                                     &#8250;
                                     <li class='i-block' itemprop='itemListElement' itemscope='itemscope' itemtype='http://schema.org/ListItem'>
-                                      <b:with value='[&quot;Chapter&quot;,&quot;Project&quot;]' var='chf'>
+                                      <b:with value='[&quot;Chapter&quot;,&quot;Project&quot;,&quot;Lock&quot;]' var='chf'>
                                         <b:loop index='i' values='data:post.labels' var='label'>
                                           <b:if cond='data:label.name not in data:chf'>
                                             <a class='c-999' expr:data='data:label.name' expr:href='data:label.url' itemprop='item'><span itemprop='name'>
@@ -3937,6 +4026,9 @@ window.open(location.protocol+ '//' + location.hostname + '/search/label/' + o.j
                                       <b:if cond='data:post.link or (data:post.url and data:view.url != data:post.url)'>
                                         <a class='ck' expr:href='data:post.link ?: data:post.url'><data:post.title/></a>
                                         <b:else/>
+                                        <b:if cond='data:post.labels any (l =&gt; l.name == &quot;Manga&quot;)'><span class='share-icon r4 pinterestThis'>Manga</span></b:if>
+                                        <b:if cond='data:post.labels any (l =&gt; l.name == &quot;Manhua&quot;)'><span class='share-icon r4 whatsappThis'>Manhua</span></b:if>
+                                        <b:if cond='data:post.labels any (l =&gt; l.name == &quot;Manhwa&quot;)'><span class='share-icon r4 twitterThis'>Manhwa</span></b:if>
                                         <data:post.title/>
                                       </b:if>
                                     </b:tag>
@@ -4352,7 +4444,7 @@ if(autlist==true){function autolist(e){for(var t=0;t<e.feed.entry.length;t++){fo
                           </b:widget>
                           <b:widget cond='data:view.isHomepage' id='HTML7' locked='true' title='Ads' type='HTML' version='2' visible='false'>
                             <b:widget-settings>
-                              <b:widget-setting name='content'><![CDATA[<img src="https://1.bp.blogspot.com/-FmfAILeAUs4/YQJE9dL6VhI/AAAAAAAAHXA/qm9QN_rJxwsG84UY9LYcD4Y58XTvQcwNQCLcBGAsYHQ/s720/ads.png"/>]]></b:widget-setting>
+                              <b:widget-setting name='content'><![CDATA[<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhFOykBjCVPvtAyUkopdGveCAq4A-Ep5DpKXtBo5IUZudt5IVtgw3eQufGXvRuHR58lZhYT2T8D-nEeZjd2Bcd0iuEKUVENZ9dhZY6INfpxc2uBQ3CcFOKVQdtUF5yB6-7B2VCdcA5Yk0q4/s720/ads.png"/>]]></b:widget-setting>
                             </b:widget-settings>
                             <b:includable id='main'>
                               <b:class name='ads'/>
@@ -4457,7 +4549,7 @@ if(autlist==true){function autolist(e){for(var t=0;t<e.feed.entry.length;t++){fo
           }
         }
 
-        item_thumb = "//3.bp.blogspot.com/-FHhLnZncaZE/XF-c-Ey_n2I/AAAAAAAAAkA/TXD5_-NJvH0nWEVliT1vS0RR_R2lsr0TQCLcBGAs/s72-c/no-image.jpg";
+        item_thumb = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhtsFpNS28Er3MMaxONKQQofJJq_FDv17DEXyDgDyCRMpX1M4G9E328j2TtHqVft4nQrKImXn1DN5iZo26JF2nHIVY7z_9CfXMxBzhp7442yY6bxQDzewATdgVYCyRZbfIVHJJkweUb_n0/s72-c/no-image.jpg";
         if ("media$thumbnail" in entry) {
           item_thumb = entry.media$thumbnail.url.replace("/s72-c/", "/w" + rp_thumbnailSize[0] + "-h" + rp_thumbnailSize[1] + "-p-k-no-nu/");
         }
@@ -5665,7 +5757,7 @@ window.open(location.protocol+ '//' + location.hostname + '/search/label/' + o.j
                             </b:widget>
                             <b:widget cond='data:view.isMultipleItems' id='HTML8' locked='true' title='Ads' type='HTML' version='2' visible='false'>
                               <b:widget-settings>
-                                <b:widget-setting name='content'><![CDATA[<img src="https://1.bp.blogspot.com/-5ac6z8YEE8k/YQJLaybLKgI/AAAAAAAAHXI/NPoZjxVgbFQrUmJ3qMoXaYO19IXCoRZ7ACLcBGAsYHQ/s300/ads-sidebar.png"/>]]></b:widget-setting>
+                                <b:widget-setting name='content'><![CDATA[<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJroGBlN3aXmYVGWT3X4rhNRJ4xHG3Gqkx6VUT29T5W3UAzS_It7QhKIuMQYsi4um3nMQd0wCZsvbLTfAxY0PjZOPQPf79lpNHEAz09balJ8o4OgjhPxfx2q84Q4qU0yx-xwPE3yB5FK3w/s300/ads-sidebar.png"/>]]></b:widget-setting>
                               </b:widget-settings>
                               <b:includable id='main'>
                               <b:class name='ads'/>
@@ -6007,7 +6099,7 @@ window.open(location.protocol+ '//' + location.hostname + '/search/label/' + o.j
                                 var rdp_current=[];var rdp_total_posts=0;var rdp_current=new Array(rdp_numposts);function totalposts(json){rdp_total_posts=json.feed.openSearch$totalResults.$t}document.write('<script type=\"text/javascript\" src=\"/feeds/posts/default/-/Series?alt=json-in-script&max-results=0&callback=totalposts\"><\/script>');function getvalue(){for(var i=0;i<rdp_numposts;i++){var found=false;var rndValue=get_random();for(var j=0;j<rdp_current.length;j++){if(rdp_current[j]==rndValue){found=true;break}};if(found){i--}else{rdp_current[i]=rndValue}}};function get_random(){var ranNum=1+Math.round(Math.random()*(rdp_total_posts-1));return ranNum};
                                 </script>
                                 <script type='text/javaScript'> 
-                                function random_posts(json){for(var i=0;i<rdp_numposts;i++){var entry=json.feed.entry[i];var rdp_posttitle=entry.title.$t;if('content'in entry){var rdp_get_snippet=entry.content.$t}else{if('summary'in entry){var rdp_get_snippet=entry.summary.$t}else{var rdp_get_snippet="";}};rdp_get_snippet=rdp_get_snippet.replace(/<[^>]*>/g,"");if(rdp_get_snippet.length<rdp_snippet_length){var rdp_snippet=rdp_get_snippet}else{rdp_get_snippet=rdp_get_snippet.substring(0,rdp_snippet_length);var space=rdp_get_snippet.lastIndexOf(" ");rdp_snippet=rdp_get_snippet.substring(0,space)+"&#133;";};for(var j=0;j<entry.link.length;j++){if('thr$total'in entry){var rdp_commentsNum=entry.thr$total.$t+' '+rdp_comment}else{rdp_commentsNum=rdp_disable};if(entry.link[j].rel=='alternate'){var rdp_posturl=entry.link[j].href;var rdp_postdate=entry.published.$t;if('media$thumbnail'in entry){var rdp_thumb=entry.media$thumbnail.url.replace(/\/s72\-c\//,'/s200/')}else{rdp_thumb="http://1.bp.blogspot.com/-PPTJQCe-atQ/U4ca2QTr_5I/AAAAAAAAEEc/TRrKNK1fqQY/s1600/no-image-available.jpg"}}};document.write('<li>');document.write('<a href="'+rdp_posturl+'" rel="nofollow"><img alt="'+rdp_posttitle+'" loading="lazy" src="'+rdp_thumb+'"/></a>');document.write('<div class="hidden"><a href="'+rdp_posturl+'" rel="nofollow" title="'+rdp_snippet+'">'+rdp_posttitle+'</a></div>');if(rdp_info=='yes'){document.write('<span><div  class="rp-info">'+rdp_postdate.substring(8,10)+'/'+rdp_postdate.substring(5,7)+'/'+rdp_postdate.substring(0,4)+' - '+rdp_commentsNum)+'</div></span>'};document.write('<div class="hidden">'+rdp_snippet+'</div></li>')}};getvalue();for(var i=0;i<rdp_numposts;i++){document.write('<script type=\"text/javascript\" src=\"/feeds/posts/default/-/Series?alt=json-in-script&start-index='+rdp_current[i]+'&max-results=1&callback=random_posts\"><\/script>')};
+                                function random_posts(json){for(var i=0;i<rdp_numposts;i++){var entry=json.feed.entry[i];var rdp_posttitle=entry.title.$t;if('content'in entry){var rdp_get_snippet=entry.content.$t}else{if('summary'in entry){var rdp_get_snippet=entry.summary.$t}else{var rdp_get_snippet="";}};rdp_get_snippet=rdp_get_snippet.replace(/<[^>]*>/g,"");if(rdp_get_snippet.length<rdp_snippet_length){var rdp_snippet=rdp_get_snippet}else{rdp_get_snippet=rdp_get_snippet.substring(0,rdp_snippet_length);var space=rdp_get_snippet.lastIndexOf(" ");rdp_snippet=rdp_get_snippet.substring(0,space)+"&#133;";};for(var j=0;j<entry.link.length;j++){if('thr$total'in entry){var rdp_commentsNum=entry.thr$total.$t+' '+rdp_comment}else{rdp_commentsNum=rdp_disable};if(entry.link[j].rel=='alternate'){var rdp_posturl=entry.link[j].href;var rdp_postdate=entry.published.$t;if('media$thumbnail'in entry){var rdp_thumb=entry.media$thumbnail.url.replace(/\/s72\-c\//,'/s200/')}else{rdp_thumb="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh8rhKa-pnChBSm0XFcicAmOQLoMYVujRVZNbmDpFzu3Lbcr5EYIEko9thgdXEz2v6jvhlHgiKYQpuQQdf2LQw0JAOIhaHTEkoQLSIhF3Gsn8TAitGrG69Nn-OrYmxcswn3j2ZIHGAaW88/s1600/no-image-available.jpg"}}};document.write('<li>');document.write('<a href="'+rdp_posturl+'" rel="nofollow"><img alt="'+rdp_posttitle+'" loading="lazy" src="'+rdp_thumb+'"/></a>');document.write('<div class="hidden"><a href="'+rdp_posturl+'" rel="nofollow" title="'+rdp_snippet+'">'+rdp_posttitle+'</a></div>');if(rdp_info=='yes'){document.write('<span><div  class="rp-info">'+rdp_postdate.substring(8,10)+'/'+rdp_postdate.substring(5,7)+'/'+rdp_postdate.substring(0,4)+' - '+rdp_commentsNum)+'</div></span>'};document.write('<div class="hidden">'+rdp_snippet+'</div></li>')}};getvalue();for(var i=0;i<rdp_numposts;i++){document.write('<script type=\"text/javascript\" src=\"/feeds/posts/default/-/Series?alt=json-in-script&start-index='+rdp_current[i]+'&max-results=1&callback=random_posts\"><\/script>')};
                                 </script>
                                 </ul>]]></b:widget-setting>
                               </b:widget-settings>
@@ -6683,27 +6775,17 @@ if(list.length<limitBookmark){
     //]]></script>
 <script type='text/javascript'>
 /*<![CDATA[*/
-const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  direction: 'horizontal',
-  loop: true,
 
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
+  var swiper = new Swiper(".slider_Manga_Reader", {
+    effect: "fade",
+    navigation: {
+      nextEl: ".swiper-bt-next",
+      prevEl: ".swiper-bt-prev",
+    },
+    loop: true,
+    lazy: true,
+  });
 
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
 /*]]>*/
 </script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js'/>
